@@ -1,8 +1,8 @@
 {
   "name": "nivapay-shared-library",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Provides entities, common dtos and generalised functions to all nivapay microservices",
+  "author": "nu10",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -21,10 +21,12 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
-    "@nestjs/core": "^9.0.0",
+    "@nestjs/core": "^9.4.3",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^10.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "typeorm": "^0.3.17"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
