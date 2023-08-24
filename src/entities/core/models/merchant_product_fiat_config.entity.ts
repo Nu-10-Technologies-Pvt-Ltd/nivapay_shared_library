@@ -1,15 +1,15 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm"
 
-@Entity('nivapay_product')
-export class NivapayProductModel {
+@Entity('merchant_product_fiatcurrency_configuration')
+export class MerchantProductFiatCurrencyConfigurationModel {
     @PrimaryGeneratedColumn("uuid")
     id: string
 
     @Column()
-    name: string
+    product_config_id: string
 
     @Column()
-    direction: string //enum => pay-in, pay-out
+    fiat_currency_id: string
     
     @Column({type:'boolean', default: true })
     is_enabled: boolean
