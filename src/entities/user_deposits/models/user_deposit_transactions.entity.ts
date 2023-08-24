@@ -1,6 +1,5 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-
 @Entity("user-deposit-transactions")
 export class UserDepositTransactions {
     @PrimaryGeneratedColumn("uuid")

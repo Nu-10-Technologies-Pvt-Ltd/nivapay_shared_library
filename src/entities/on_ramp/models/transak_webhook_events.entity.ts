@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('ramp-webhook-events')
-export class RampWebHookEvent {
+@Entity('transak-webhook-events')
+export class TransakWebHookEvent {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
