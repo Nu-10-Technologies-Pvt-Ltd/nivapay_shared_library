@@ -1,3 +1,4 @@
+import { OnRampMerchantWebhookDto, OnRampWebhookContext, OnRampWebhookData } from "./on-ramp-webhook.dto"
 import { KmsWalletCreateDto } from "./kmsWalletCreate.dto"
 import { SdkRampOrderUpdateDto } from "./sdk-ramp-order-update.dto"
 import { SdkWithdrawalOrderDetailsDto } from "./sdk-withdrawal-order-details.dto"
@@ -8,5 +9,8 @@ export{
     KmsWalletCreateDto,
     UpdateBalanceDTO,
     SdkRampOrderUpdateDto,
-    SdkWithdrawalOrderDetailsDto
+    SdkWithdrawalOrderDetailsDto,
+    OnRampMerchantWebhookDto,
+    OnRampWebhookData,
+    OnRampWebhookContext
 }
