@@ -9,6 +9,7 @@ import { MerchantNetworkFeeConfigurationModel } from './models/merchant_networkf
 import { MerchantServiceFeeConfigurationModel } from './models/merchant_servicefee_config.entity';
 import { MerchantUser } from './models/merchant_user.entity';
 import { NivapayHousewalletModel } from './models/nivapay_housewallet.entity';
+import { Merchant_Webhook_log } from './models/callback_log.entity';
 
 const Core_Entities = [
     NivapayProductModel,
@@ -21,7 +22,8 @@ const Core_Entities = [
     MerchantProductFiatCurrencyConfigurationModel,
     MerchantNetworkFeeConfigurationModel,
     MerchantServiceFeeConfigurationModel,
-    MerchantUser
+    MerchantUser,
+    Merchant_Webhook_log
 ]
 
 export {
@@ -35,7 +37,8 @@ export {
     MerchantProductFiatCurrencyConfigurationModel,
     MerchantNetworkFeeConfigurationModel,
     MerchantServiceFeeConfigurationModel,
-    MerchantUser
+    MerchantUser,
+    Merchant_Webhook_log
 }
 
 export default Core_Entities
