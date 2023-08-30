@@ -6,3 +6,5 @@ export * from './entities/user_deposits'
 export * from './dtos'
 
 export * from './services/rounding'
+
+export * from './fetch_nivapay_services'
