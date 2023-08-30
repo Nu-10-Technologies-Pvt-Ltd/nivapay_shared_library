@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MerchantUser = exports.MerchantServiceFeeConfigurationModel = exports.MerchantNetworkFeeConfigurationModel = exports.MerchantProductFiatCurrencyConfigurationModel = exports.MerchantProductVirtualCurrencyConfigurationModel = exports.MerchantProductConfigurationModel = exports.NivapayMerchantModel = exports.NivapayHousewalletModel = exports.NivapayFiatCurrencyModel = exports.NivapayCryptoCurrencyModel = exports.NivapayProductModel = void 0;
+exports.Merchant_Webhook_log = exports.MerchantUser = exports.MerchantServiceFeeConfigurationModel = exports.MerchantNetworkFeeConfigurationModel = exports.MerchantProductFiatCurrencyConfigurationModel = exports.MerchantProductVirtualCurrencyConfigurationModel = exports.MerchantProductConfigurationModel = exports.NivapayMerchantModel = exports.NivapayHousewalletModel = exports.NivapayFiatCurrencyModel = exports.NivapayCryptoCurrencyModel = exports.NivapayProductModel = void 0;
 const nivapay_product_entity_1 = require("./models/nivapay_product.entity");
 Object.defineProperty(exports, "NivapayProductModel", { enumerable: true, get: function () { return nivapay_product_entity_1.NivapayProductModel; } });
 const nivapay_crypto_currency_entity_1 = require("./models/nivapay_crypto_currency.entity");
@@ -23,6 +23,8 @@ const merchant_user_entity_1 = require("./models/merchant_user.entity");
 Object.defineProperty(exports, "MerchantUser", { enumerable: true, get: function () { return merchant_user_entity_1.MerchantUser; } });
 const nivapay_housewallet_entity_1 = require("./models/nivapay_housewallet.entity");
 Object.defineProperty(exports, "NivapayHousewalletModel", { enumerable: true, get: function () { return nivapay_housewallet_entity_1.NivapayHousewalletModel; } });
+const callback_log_entity_1 = require("./models/callback_log.entity");
+Object.defineProperty(exports, "Merchant_Webhook_log", { enumerable: true, get: function () { return callback_log_entity_1.Merchant_Webhook_log; } });
 const Core_Entities = [
     nivapay_product_entity_1.NivapayProductModel,
     nivapay_crypto_currency_entity_1.NivapayCryptoCurrencyModel,
@@ -34,7 +36,8 @@ const Core_Entities = [
     merchant_product_fiat_config_entity_1.MerchantProductFiatCurrencyConfigurationModel,
     merchant_networkfee_config_entity_1.MerchantNetworkFeeConfigurationModel,
     merchant_servicefee_config_entity_1.MerchantServiceFeeConfigurationModel,
-    merchant_user_entity_1.MerchantUser
+    merchant_user_entity_1.MerchantUser,
+    callback_log_entity_1.Merchant_Webhook_log
 ];
 exports.default = Core_Entities;
 //# sourceMappingURL=index.js.map

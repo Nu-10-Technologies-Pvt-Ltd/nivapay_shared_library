@@ -1,8 +1,8 @@
-import { OnRampMerchantWebhookDto, OnRampWebhookContext, OnRampWebhookData } from "./on-ramp-webhook.dto"
-import { KmsWalletCreateDto } from "./kmsWalletCreate.dto"
-import { SdkRampOrderUpdateDto } from "./sdk-ramp-order-update.dto"
-import { SdkWithdrawalOrderDetailsDto } from "./sdk-withdrawal-order-details.dto"
-import { UpdateBalanceDTO } from "./update_balance.dto"
+import { OnRampMerchantWebhookDto, OnRampWebhookContext, OnRampWebhookData } from "./dtos/on-ramp-webhook.dto"
+import { KmsWalletCreateDto } from "./dtos/kmsWalletCreate.dto"
+import { SdkRampOrderUpdateDto } from "./dtos/sdk-ramp-order-update.dto"
+import { SdkWithdrawalOrderDetailsDto } from "./dtos/sdk-withdrawal-order-details.dto"
+import { UpdateBalanceDTO } from "./dtos/update_balance.dto"
 
 
 export{

@@ -1,4 +1,4 @@
-export declare class M_Balance {
+export declare class M_Balance_Track {
     id: string;
     merchant_id: string;
     crypto_coin_id: string;
