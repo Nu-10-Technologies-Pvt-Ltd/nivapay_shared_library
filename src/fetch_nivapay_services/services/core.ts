@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import * as Config from '../../config'
 
-export async function getInterComApiKey (env: string): Promise<AxiosResponse<any>> {
+export async function getInterComApiKey (env: string): Promise<AxiosResponse<string>> {
     const host = Config.default.hosts.core_service[env];
     console.log(host)
     return await axios.get(
