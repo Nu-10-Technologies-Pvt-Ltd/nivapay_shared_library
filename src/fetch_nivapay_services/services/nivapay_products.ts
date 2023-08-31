@@ -1,11 +1,11 @@
 import axios, { AxiosResponse } from 'axios';
 
-export async function getProductIdByName (productName: string): Promise<AxiosResponse<any>> {
+export async function getProductIdByName (host: string, api_key: string, query: {productName: string}): Promise<AxiosResponse<any>> {
     return await axios.get(
-        `http://localhost:5004/nivapay/products/id-by-name/${productName}`,
+        `${host}/nivapay/products/id-by-name/${query.productName}`,
         {
             headers: {
-                'x-api-key': this.api_key,
+                'x-api-key': api_key,
             },
         }
     )
