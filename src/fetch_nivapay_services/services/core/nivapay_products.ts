@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import * as Config from '../../config';
+import * as Config from '../../../config';
 
 export async function getProductIdByName (env: string, api_key: string, query: {productName: string}): Promise<AxiosResponse<any>> {
     const host = Config.default.hosts.core_service[env];
