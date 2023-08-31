@@ -1,4 +1,4 @@
-import * as fetch_nivapay_services from './fetch_nivapay_services'
+export * as FetchNivapayServices from './fetch_nivapay_services'
 
 export * from './entities/common'
 export * from './entities/core'
