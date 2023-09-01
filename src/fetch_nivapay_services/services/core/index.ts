@@ -18,4 +18,4 @@ export * as merchant_network_fee_config from './merchant_network_fee_config';
 
 export * as aws_secret_manager from './aws_secret_manager';
 
-export * as email from './email';
+export * as email from './email'
