@@ -51,3 +51,18 @@ export async function withdrawal_success (env: string, api_key: string, query: {
         }
     )
 }
+
+export async function withdrawal_failure (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto }): Promise<AxiosResponse<any>> {
+    const host = Config.default.hosts.core_service[env];
+    return await axios.post(
+        `${host}/merchant/transactions/email/send-failure-mail-withdrawal`,
+        {
+            payload: query.payload
+        },
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+}
