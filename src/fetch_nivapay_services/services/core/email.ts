@@ -3,20 +3,19 @@ import * as Config from '../../../config';
 import { SdkWithdrawalOrderDetailsDto } from '../../../dtos/dtos/sdk-withdrawal-order-details.dto';
 
 export class merchant_transactions {
-        async deposit_success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, txUrl: string }): Promise<AxiosResponse<any>> {
-            const host = Config.default.hosts.core_service[env];
-            return await axios.post(
-                `${host}/merchant/transactions/email`,
-                {
-                    payload: query.payload,
-                    txUrl: query.txUrl
+    async deposit_success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, txUrl: string }): Promise<AxiosResponse<any>> {
+        const host = Config.default.hosts.core_service[env];
+        return await axios.post(
+            `${host}/merchant/transactions/email`,
+            {
+                payload: query.payload,
+                txUrl: query.txUrl
+            },
+            {
+                headers: {
+                    'x-api-key': api_key,
                 },
-                {
-                    headers: {
-                        'x-api-key': api_key,
-                    },
-                }
-            )
-        }
+            }
+        )
     }
 }
