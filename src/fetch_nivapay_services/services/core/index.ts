@@ -17,3 +17,5 @@ export * as merchant_service_fee_config from './merchant_servie_fee_config';
 export * as merchant_network_fee_config from './merchant_network_fee_config';
 
 export * as aws_secret_manager from './aws_secret_manager';
+
+export * as email from './aws_secret_manager';
