@@ -8,7 +8,7 @@ export * as nivapay_merchant from './nivapay_merchant';
 
 export * as merchant_product_config from './merchant_product_config';
 
-export * as merchnat_product_crypto_config from './merchant_product_crypto_config';
+export * as merchant_product_crypto_config from './merchant_product_crypto_config';
 
 export * as merchant_product_fiat_config from './merchant_product_fiat_config';
 
