@@ -7,7 +7,8 @@ export default {
         },
         third_party_service:{
             local: "http://localhost:3100",
-            dev: "https://dev-api-thirdparty-service.nivapay.com",
+            // dev: "https://dev-api-thirdparty-service.nivapay.com",
+            dev: "http://nivapay-main-api-lb2-77118926.us-east-1.elb.amazonaws.com:3100",
             prod: "https://api-thirdparty-service.nivapay.com"
         }
     }
