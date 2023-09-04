@@ -39,3 +39,23 @@ export async function getKmsWalletRepoByUser(
 
     return response.data
 }
+
+export async function createWallet (
+    env: string, 
+    api_key: string, 
+    query: {currency: string, network: string, userId: string, merchantId: string, testnet: boolean, is_merchant: boolean}
+) {
+
+const host = Config.default.hosts.core_service[env];
+const response = await axios.post(
+    `${host}/kms/address/createWallet`,
+    query,
+    {
+        headers: {
+            'x-api-key': api_key,
+        },
+    }
+)
+
+return response.data ? response.data : null
+}
