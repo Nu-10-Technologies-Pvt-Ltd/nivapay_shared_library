@@ -7,7 +7,7 @@ export async function createRampWallet (
         query: {currency: string, network: string, userId: string, merchantId: string, testnet: boolean, is_merchant: boolean}
     ) {
 
-    const host = Config.default.hosts.core_service[env];
+    const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
         `${host}/kms/address/createRampWallet`,
         query,
@@ -26,7 +26,7 @@ export async function getKmsWalletRepoByUser(
     api_key: string, 
     query: {merchant_id: string, userId: string, crypto: string, network: string}
 ) {
-    const host = Config.default.hosts.core_service[env];
+    const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
         `${host}/kms/address/getKmsWalletRepoByUser`,
         query,
@@ -46,7 +46,7 @@ export async function createWallet (
     query: {currency: string, network: string, userId: string, merchantId: string, testnet: boolean, is_merchant: boolean}
 ) {
 
-const host = Config.default.hosts.core_service[env];
+const host = Config.default.hosts.third_party_service[env];
 const response = await axios.post(
     `${host}/kms/address/createWallet`,
     query,

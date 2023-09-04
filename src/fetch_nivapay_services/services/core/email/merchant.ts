@@ -1,9 +1,9 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import * as Config from '../../../../config';
 
-export async function password (env: string, api_key: string, query: { payload: any}): Promise<AxiosResponse<any>> {
+export async function password (env: string, api_key: string, query: { payload: any}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/nivapay-merchant-email/send-password`,
         query.payload,
         {
@@ -12,4 +12,5 @@ export async function password (env: string, api_key: string, query: { payload: 
             },
         }
     )
+    return response.data
 }

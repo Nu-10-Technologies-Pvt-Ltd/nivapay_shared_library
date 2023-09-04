@@ -1,16 +1,17 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import * as Config from '../../../config'
 
-export async function getInterComApiKey (env: string): Promise<AxiosResponse<string>> {
+export async function getInterComApiKey (env: string) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/aws/intercomm/apikey`
     )
+    return response.data
 }
 
-export async function getTatumApiKey (env: string, api_key: string): Promise<AxiosResponse<string>> {
+export async function getTatumApiKey (env: string, api_key: string) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/aws/tatum-key`,
         {
             headers: {
@@ -18,11 +19,12 @@ export async function getTatumApiKey (env: string, api_key: string): Promise<Axi
             },
         }
     )
+    return response.data
 }
 
-export async function getNivapayAuthCredentials (env: string, api_key: string): Promise<AxiosResponse<string>> {
+export async function getNivapayAuthCredentials (env: string, api_key: string) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/aws/nivapay-auth`,
         {
             headers: {
@@ -30,11 +32,12 @@ export async function getNivapayAuthCredentials (env: string, api_key: string): 
             },
         }
     )
+    return response.data
 }
 
-export async function getAesPwd (env: string, api_key: string): Promise<AxiosResponse<string>> {
+export async function getAesPwd (env: string, api_key: string) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/aws/aes-password`,
         {
             headers: {
@@ -42,11 +45,12 @@ export async function getAesPwd (env: string, api_key: string): Promise<AxiosRes
             },
         }
     )
+    return response.data
 }
 
-export async function getIsMerchantWebhookSecretAvailable (env: string, api_key: string): Promise<AxiosResponse<string>> {
+export async function getIsMerchantWebhookSecretAvailable (env: string, api_key: string) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/aws/merchant-webhook-exist`,
         {
             headers: {
@@ -54,4 +58,5 @@ export async function getIsMerchantWebhookSecretAvailable (env: string, api_key:
             },
         }
     )
+    return response.data
 }

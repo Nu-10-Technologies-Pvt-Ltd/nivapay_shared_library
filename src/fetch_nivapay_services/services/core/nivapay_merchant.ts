@@ -1,10 +1,10 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import * as Config from '../../../config';
 
 
-export async function getById (env: string, api_key: string, query: {id: string}): Promise<AxiosResponse<any>> {
+export async function getById (env: string, api_key: string, query: {id: string}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/nivapay/merchant/${query.id}`,
         {
             headers: {
@@ -12,4 +12,5 @@ export async function getById (env: string, api_key: string, query: {id: string}
             },
         }
     )
+    return response.data
 }

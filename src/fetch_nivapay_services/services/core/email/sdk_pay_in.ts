@@ -2,9 +2,9 @@ import axios, { AxiosResponse } from 'axios';
 import * as Config from '../../../../config';
 import { SdkWithdrawalOrderDetailsDto } from '../../../../dtos/dtos/sdk-withdrawal-order-details.dto';
 
-export async function error (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string}): Promise<AxiosResponse<any>> {
+export async function error (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/sdk-payin-mail/send-error-email`,
         {
             payload: query.payload,
@@ -16,11 +16,12 @@ export async function error (env: string, api_key: string, query: { payload: Sdk
             },
         }
     )
+    return response.data
 }
 
-export async function session_time_out (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto}): Promise<AxiosResponse<any>> {
+export async function session_time_out (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/sdk-payin-mail/session-timed-out`,
         query.payload,
         {
@@ -29,11 +30,12 @@ export async function session_time_out (env: string, api_key: string, query: { p
             },
         }
     )
+    return response.data
 }
 
-export async function success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto}): Promise<AxiosResponse<any>> {
+export async function success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/sdk-payin-mail/success`,
         query.payload,
         {
@@ -42,11 +44,12 @@ export async function success (env: string, api_key: string, query: { payload: S
             },
         }
     )
+    return response.data
 }
 
-export async function processing (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string}): Promise<AxiosResponse<any>> {
+export async function processing (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/sdk-payin-mail/processing`,
         {
             payload: query.payload,
@@ -58,4 +61,5 @@ export async function processing (env: string, api_key: string, query: { payload
             },
         }
     )
+    return response.data
 }

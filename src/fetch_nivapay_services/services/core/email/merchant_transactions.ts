@@ -1,10 +1,10 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import * as Config from '../../../../config';
 import { SdkWithdrawalOrderDetailsDto } from '../../../../dtos/dtos/sdk-withdrawal-order-details.dto';
 
-export async function deposit_success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, txUrl: string }): Promise<AxiosResponse<any>> {
+export async function deposit_success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, txUrl: string }) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/merchant/transactions/email/deposit-success`,
         {
             payload: query.payload,
@@ -16,11 +16,12 @@ export async function deposit_success (env: string, api_key: string, query: { pa
             },
         }
     )
+    return response.data
 }
 
-export async function withdrawal_processing (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string, wallet_name: string }): Promise<AxiosResponse<any>> {
+export async function withdrawal_processing (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string, wallet_name: string }) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/merchant/transactions/email/withdrawal-processing`,
         {
             payload: query.payload,
@@ -33,11 +34,12 @@ export async function withdrawal_processing (env: string, api_key: string, query
             },
         }
     )
+    return response.data
 }
 
-export async function withdrawal_success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, txUrl: string, wallet_name: string }): Promise<AxiosResponse<any>> {
+export async function withdrawal_success (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, txUrl: string, wallet_name: string }) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/merchant/transactions/email/withdrawal-success`,
         {
             payload: query.payload,
@@ -50,11 +52,12 @@ export async function withdrawal_success (env: string, api_key: string, query: {
             },
         }
     )
+    return response.data
 }
 
-export async function withdrawal_failure (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto }): Promise<AxiosResponse<any>> {
+export async function withdrawal_failure (env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto }) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/merchant/transactions/email/send-failure-mail-withdrawal`,
         {
             payload: query.payload
@@ -65,4 +68,5 @@ export async function withdrawal_failure (env: string, api_key: string, query: {
             },
         }
     )
+    return response.data
 }

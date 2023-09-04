@@ -1,9 +1,9 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import * as Config from '../../../config';
 
-export async function update_balance (env: string, api_key: string, query: { payload: any }): Promise<AxiosResponse<any>> {
+export async function update_balance (env: string, api_key: string, query: { payload: any }) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.post(
+    const response = await axios.post(
         `${host}/core/update-balance`,
         query.payload,
         {
@@ -12,4 +12,5 @@ export async function update_balance (env: string, api_key: string, query: { pay
             },
         }
     )
+    return response.data
 }

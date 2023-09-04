@@ -1,10 +1,10 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import * as Config from '../../../config';
 
 
-export async function getBySymbol (env: string, api_key: string, query: {symbol: string}): Promise<AxiosResponse<any>> {
+export async function getBySymbol (env: string, api_key: string, query: {symbol: string}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/nivapay/crypto/currencies/by-crypto/${query.symbol}`,
         {
             headers: {
@@ -12,11 +12,12 @@ export async function getBySymbol (env: string, api_key: string, query: {symbol:
             },
         }
     )
+    return response.data
 }
 
-export async function getById (env: string, api_key: string, query: {id: string}): Promise<AxiosResponse<any>> {
+export async function getById (env: string, api_key: string, query: {id: string}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/nivapay/crypto/currencies/${query.id}`,
         {
             headers: {
@@ -24,11 +25,12 @@ export async function getById (env: string, api_key: string, query: {id: string}
             },
         }
     )
+    return response.data
 }
 
-export async function getByNetworkSymbolTestnet (env: string, api_key: string, query: {network: string, symbol: string, isTestnet: boolean}): Promise<AxiosResponse<any>> {
+export async function getByNetworkSymbolTestnet (env: string, api_key: string, query: {network: string, symbol: string, isTestnet: boolean}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/nivapay/crypto/currencies/by-network-crypto-testnet/${query.symbol}/${query.network}/${query.isTestnet}`,
         {
             headers: {
@@ -36,11 +38,12 @@ export async function getByNetworkSymbolTestnet (env: string, api_key: string, q
             },
         }
     )
+    return response.data
 }
 
-export async function getByNetworkSymbol (env: string, api_key: string, query: {network: string, symbol: string}): Promise<AxiosResponse<any>> {
+export async function getByNetworkSymbol (env: string, api_key: string, query: {network: string, symbol: string}) {
     const host = Config.default.hosts.core_service[env];
-    return await axios.get(
+    const response = await axios.get(
         `${host}/nivapay/crypto/currencies/by-network-crypto/${query.symbol}/${query.network}`,
         {
             headers: {
@@ -48,4 +51,5 @@ export async function getByNetworkSymbol (env: string, api_key: string, query: {
             },
         }
     )
+    return response.data
 }
