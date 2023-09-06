@@ -19,7 +19,7 @@ export async function getTransactionDetailsByHash(
     return response.data ? response.data : null
 }
 
-export async function getTransactionsByAddress(
+export async function getTransactionByAddress(
     env: string,
     api_key: string,
     query: { wallet_address: string, testnet: boolean }
