@@ -7,4 +7,4 @@ export * from './entities/user_deposits'
 
 export * from './dtos'
 
-export * as services from './services'
+export * as NivapayFunctions from './services'
