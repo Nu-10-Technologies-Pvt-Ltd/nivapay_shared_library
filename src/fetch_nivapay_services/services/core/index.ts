@@ -20,4 +20,6 @@ export * as aws_secret_manager from './aws_secret_manager';
 
 export * as email from './email'
 
-export * as postfres_functions from  './postgres_functions';
+export * as postgres_functions from  './postgres_functions';
+
+export * as merchant_accounting from './merchant_accounting'
