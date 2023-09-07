@@ -63,7 +63,7 @@ export async function createWallet(
 export async function createDepositWallet(
     env: string,
     api_key: string,
-    query: { currency: string, network: string, merchant_id: string, testnet: boolean, is_merchant: boolean, order_id: string, currency_id: string }
+    query: { symbol: string, network: string, merchant_id: string, testnet: boolean, is_merchant: boolean, order_id: string, currency_id: string }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
