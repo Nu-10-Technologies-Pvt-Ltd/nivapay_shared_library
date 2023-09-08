@@ -2,7 +2,7 @@ export default {
     hosts: {
         core_service: {
             local: "http://192.168.0.197:4000",
-            dev: "http://dev-api-core-service.nivapay.com",
+            dev: "http://dev-core-service.nivapay.com",
             prod: "https://api-core-service.nivapay.com"
         },
         third_party_service: {
