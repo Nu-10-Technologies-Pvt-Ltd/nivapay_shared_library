@@ -22,40 +22,20 @@ export class NivapayMerchantModel {
   @Column({ nullable: true })
   merchant_legal_name: string
 
-//   // id from products table
-//   @Column({ type: 'simple-array', nullable: true })
-//   products_enabled: string[]
-
-
-//   // id from coins table
-//   @Column({ type: 'simple-array', nullable: true })
-//   product_crypto_coins_enabled: string[]
-
-
-//   // id from coins table
-//   @Column({ type: 'simple-array', nullable: true })
-//   product_fiat_coins_enabled: string[]
-
-//   // id from commercial config table => combo of coin + product + fee(user/merchant/nivapay)
-//   @Column({ type: 'simple-array', nullable: true })
-//   commercial_configs: string[]
-
-
-//   // id from network fee config table => combo of coin + product + fee(user/merchant/nivapay)
-//   @Column({ type: 'simple-array', nullable: true })
-//   network_fee_configs: string[]
-
-  @Column({nullable: true})
+  @Column({ nullable: true })
   webhook_url: string;
 
   @Column({ nullable: true })
   registered_email_id: string
 
+  @Column({ nullable: true })
+  is_demo: string
+
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date;
 }
 
-// TODO: enum for 
+// TODO: enum for
 // orderType . etc wherever applicable.
 
 // export interface Product_fiat_coins_enabled {
