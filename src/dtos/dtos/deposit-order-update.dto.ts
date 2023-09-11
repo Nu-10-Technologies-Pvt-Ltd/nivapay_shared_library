@@ -5,9 +5,6 @@ export class updateDepositOrderDto {
     @IsString()
     id: string;
 
-    @IsArray()
-    deposit_wallet_addresses: deposit_wallet_addresses[];
-
     @IsString()
     order_status: string; // optional
 
