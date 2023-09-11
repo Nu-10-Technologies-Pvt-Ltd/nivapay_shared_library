@@ -1,15 +1,16 @@
 import axios, { AxiosResponse } from 'axios';
 import * as Config from '../../../../config';
-import { SdkWithdrawalOrderDetailsDto } from '../../../../dtos/dtos/sdk-withdrawal-order-details.dto';
+import { updateDepositOrderDto } from 'src/dtos';
 
-export async function error(env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string }) {
+
+export async function success(env: string, api_key: string, query: {
+    payload: updateDepositOrderDto,
+    transaction_amount: number, wallet_address: string, symbol: string, txId: string, explore_url: string
+}) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
-        `${host}/sdk-payin-mail/send-error-email`,
-        {
-            payload: query.payload,
-            eta: query.eta
-        },
+        `${host}/sdk-payin-mail/success`,
+        query,
         {
             headers: {
                 'x-api-key': api_key,
@@ -19,7 +20,7 @@ export async function error(env: string, api_key: string, query: { payload: SdkW
     return response.data
 }
 
-export async function session_time_out(env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto }) {
+export async function session_time_out(env: string, api_key: string, query: { payload: updateDepositOrderDto }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
         `${host}/sdk-payin-mail/session-timed-out`,
@@ -33,27 +34,15 @@ export async function session_time_out(env: string, api_key: string, query: { pa
     return response.data
 }
 
-export async function success(env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto }) {
-    const host = Config.default.hosts.core_service[env];
-    const response = await axios.post(
-        `${host}/sdk-payin-mail/success`,
-        query.payload,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
-        }
-    )
-    return response.data
-}
 
-export async function detecting(env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string }) {
+export async function detecting(env: string, api_key: string, query: { payload: updateDepositOrderDto, eta: string, wallet_address: string }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
         `${host}/sdk-payin-mail/detecting`,
         {
             payload: query.payload,
-            eta: query.eta
+            eta: query.eta,
+            wallet_address: query.wallet_address
         },
         {
             headers: {
@@ -64,13 +53,13 @@ export async function detecting(env: string, api_key: string, query: { payload: 
     return response.data
 }
 
-export async function failure(env: string, api_key: string, query: { payload: SdkWithdrawalOrderDetailsDto, eta: string }) {
+export async function failure(env: string, api_key: string, query: { payload: updateDepositOrderDto, wallet_address: string }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
         `${host}/sdk-payin-mail/failure`,
         {
             payload: query.payload,
-            eta: query.eta
+            wallet_address: query.wallet_address
         },
         {
             headers: {
