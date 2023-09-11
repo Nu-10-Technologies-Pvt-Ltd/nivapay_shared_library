@@ -18,7 +18,7 @@ export async function getByMerchantId(env: string, api_key: string, query: { mer
 export async function getByMerchantIdProductId(env: string, api_key: string, query: { merchant_id: string, product_id: string }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.get(
-        `${host}/nivapay/merchant/product/virtual_currency/config/get/${query.merchant_id}/${query.product_id}`,
+        `${host}/nivapay/merchant/product/virtual_currency/config/${query.merchant_id}/${query.product_id}`,
         {
             headers: {
                 'x-api-key': api_key,
