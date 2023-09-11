@@ -3,7 +3,7 @@ import { KmsWalletCreateDto } from "./dtos/kmsWalletCreate.dto"
 import { SdkRampOrderUpdateDto } from "./dtos/sdk-ramp-order-update.dto"
 import { SdkWithdrawalOrderDetailsDto } from "./dtos/sdk-withdrawal-order-details.dto"
 import { UpdateBalanceDTO } from "./dtos/update_balance.dto"
-
+import { UserDepositsMerchantWebhookDto } from "./dtos/user-deposits-webhook.dto"
 
 export{
     KmsWalletCreateDto,
@@ -12,5 +12,6 @@ export{
     SdkWithdrawalOrderDetailsDto,
     OnRampMerchantWebhookDto,
     OnRampWebhookData,
-    OnRampWebhookContext
+    OnRampWebhookContext,
+    UserDepositsMerchantWebhookDto
 }
