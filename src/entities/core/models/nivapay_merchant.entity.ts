@@ -29,7 +29,7 @@ export class NivapayMerchantModel {
   registered_email_id: string
 
   @Column({ nullable: true })
-  is_demo: string
+  is_demo: boolean
 
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date;
