@@ -45,7 +45,7 @@ export class UserDepositTransactions {
     networkFeeCoinId: string
 
     @Column({ nullable: true })
-    confirmedAt: Date
+    confirmedAt: string
 
     @CreateDateColumn({ type: 'timestamp', nullable: true, default: () => 'CURRENT_TIMESTAMP' })
     createdAt: string
