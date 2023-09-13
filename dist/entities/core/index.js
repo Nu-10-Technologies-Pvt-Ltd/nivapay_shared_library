@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Merchant_Webhook_log = exports.MerchantUser = exports.MerchantServiceFeeConfigurationModel = exports.MerchantNetworkFeeConfigurationModel = exports.MerchantProductFiatCurrencyConfigurationModel = exports.MerchantProductVirtualCurrencyConfigurationModel = exports.MerchantProductConfigurationModel = exports.NivapayMerchantModel = exports.NivapayHousewalletModel = exports.NivapayFiatCurrencyModel = exports.NivapayCryptoCurrencyModel = exports.NivapayProductModel = void 0;
+exports.NivapaySdkUsersModel = exports.Merchant_Webhook_log = exports.MerchantUser = exports.MerchantServiceFeeConfigurationModel = exports.MerchantNetworkFeeConfigurationModel = exports.MerchantProductFiatCurrencyConfigurationModel = exports.MerchantProductVirtualCurrencyConfigurationModel = exports.MerchantProductConfigurationModel = exports.NivapayMerchantModel = exports.NivapayHousewalletModel = exports.NivapayFiatCurrencyModel = exports.NivapayCryptoCurrencyModel = exports.NivapayProductModel = void 0;
 const nivapay_product_entity_1 = require("./models/nivapay_product.entity");
 Object.defineProperty(exports, "NivapayProductModel", { enumerable: true, get: function () { return nivapay_product_entity_1.NivapayProductModel; } });
 const nivapay_crypto_currency_entity_1 = require("./models/nivapay_crypto_currency.entity");
@@ -25,6 +25,8 @@ const nivapay_housewallet_entity_1 = require("./models/nivapay_housewallet.entit
 Object.defineProperty(exports, "NivapayHousewalletModel", { enumerable: true, get: function () { return nivapay_housewallet_entity_1.NivapayHousewalletModel; } });
 const callback_log_entity_1 = require("./models/callback_log.entity");
 Object.defineProperty(exports, "Merchant_Webhook_log", { enumerable: true, get: function () { return callback_log_entity_1.Merchant_Webhook_log; } });
+const nivapay_sdk_users_entity_1 = require("./models/nivapay_sdk_users.entity");
+Object.defineProperty(exports, "NivapaySdkUsersModel", { enumerable: true, get: function () { return nivapay_sdk_users_entity_1.NivapaySdkUsersModel; } });
 const Core_Entities = [
     nivapay_product_entity_1.NivapayProductModel,
     nivapay_crypto_currency_entity_1.NivapayCryptoCurrencyModel,

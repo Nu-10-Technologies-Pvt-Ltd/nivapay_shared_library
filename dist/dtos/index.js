@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OnRampWebhookContext = exports.OnRampWebhookData = exports.OnRampMerchantWebhookDto = exports.SdkWithdrawalOrderDetailsDto = exports.SdkRampOrderUpdateDto = exports.UpdateBalanceDTO = exports.KmsWalletCreateDto = void 0;
+exports.updateDepositOrderDto = exports.UserDepositsWebhookData = exports.UserDepositsWebhookContext = exports.UserDepositsMerchantWebhookDto = exports.OnRampWebhookContext = exports.OnRampWebhookData = exports.OnRampMerchantWebhookDto = exports.SdkWithdrawalOrderDetailsDto = exports.SdkRampOrderUpdateDto = exports.UpdateBalanceDTO = exports.KmsWalletCreateDto = void 0;
 const on_ramp_webhook_dto_1 = require("./dtos/on-ramp-webhook.dto");
 Object.defineProperty(exports, "OnRampMerchantWebhookDto", { enumerable: true, get: function () { return on_ramp_webhook_dto_1.OnRampMerchantWebhookDto; } });
 Object.defineProperty(exports, "OnRampWebhookContext", { enumerable: true, get: function () { return on_ramp_webhook_dto_1.OnRampWebhookContext; } });
@@ -13,4 +13,10 @@ const sdk_withdrawal_order_details_dto_1 = require("./dtos/sdk-withdrawal-order-
 Object.defineProperty(exports, "SdkWithdrawalOrderDetailsDto", { enumerable: true, get: function () { return sdk_withdrawal_order_details_dto_1.SdkWithdrawalOrderDetailsDto; } });
 const update_balance_dto_1 = require("./dtos/update_balance.dto");
 Object.defineProperty(exports, "UpdateBalanceDTO", { enumerable: true, get: function () { return update_balance_dto_1.UpdateBalanceDTO; } });
+const user_deposits_webhook_dto_1 = require("./dtos/user-deposits-webhook.dto");
+Object.defineProperty(exports, "UserDepositsMerchantWebhookDto", { enumerable: true, get: function () { return user_deposits_webhook_dto_1.UserDepositsMerchantWebhookDto; } });
+Object.defineProperty(exports, "UserDepositsWebhookContext", { enumerable: true, get: function () { return user_deposits_webhook_dto_1.UserDepositsWebhookContext; } });
+Object.defineProperty(exports, "UserDepositsWebhookData", { enumerable: true, get: function () { return user_deposits_webhook_dto_1.UserDepositsWebhookData; } });
+const deposit_order_update_dto_1 = require("./dtos/deposit-order-update.dto");
+Object.defineProperty(exports, "updateDepositOrderDto", { enumerable: true, get: function () { return deposit_order_update_dto_1.updateDepositOrderDto; } });
 //# sourceMappingURL=index.js.map

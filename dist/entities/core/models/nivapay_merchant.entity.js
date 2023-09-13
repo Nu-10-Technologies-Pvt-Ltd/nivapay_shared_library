@@ -42,6 +42,10 @@ __decorate([
     __metadata("design:type", String)
 ], NivapayMerchantModel.prototype, "registered_email_id", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", Boolean)
+], NivapayMerchantModel.prototype, "is_demo", void 0);
+__decorate([
     (0, typeorm_1.CreateDateColumn)({ type: 'timestamptz' }),
     __metadata("design:type", Date)
 ], NivapayMerchantModel.prototype, "createdAt", void 0);

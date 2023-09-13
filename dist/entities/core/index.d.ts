@@ -10,6 +10,7 @@ import { MerchantServiceFeeConfigurationModel } from './models/merchant_servicef
 import { MerchantUser } from './models/merchant_user.entity';
 import { NivapayHousewalletModel } from './models/nivapay_housewallet.entity';
 import { Merchant_Webhook_log } from './models/callback_log.entity';
+import { NivapaySdkUsersModel } from './models/nivapay_sdk_users.entity';
 declare const Core_Entities: (typeof NivapayProductModel | typeof NivapayFiatCurrencyModel | typeof NivapayMerchantModel | typeof MerchantProductConfigurationModel | typeof MerchantProductVirtualCurrencyConfigurationModel | typeof MerchantProductFiatCurrencyConfigurationModel | typeof MerchantNetworkFeeConfigurationModel | typeof MerchantUser | typeof NivapayHousewalletModel | typeof Merchant_Webhook_log)[];
-export { NivapayProductModel, NivapayCryptoCurrencyModel, NivapayFiatCurrencyModel, NivapayHousewalletModel, NivapayMerchantModel, MerchantProductConfigurationModel, MerchantProductVirtualCurrencyConfigurationModel, MerchantProductFiatCurrencyConfigurationModel, MerchantNetworkFeeConfigurationModel, MerchantServiceFeeConfigurationModel, MerchantUser, Merchant_Webhook_log };
+export { NivapayProductModel, NivapayCryptoCurrencyModel, NivapayFiatCurrencyModel, NivapayHousewalletModel, NivapayMerchantModel, MerchantProductConfigurationModel, MerchantProductVirtualCurrencyConfigurationModel, MerchantProductFiatCurrencyConfigurationModel, MerchantNetworkFeeConfigurationModel, MerchantServiceFeeConfigurationModel, MerchantUser, Merchant_Webhook_log, NivapaySdkUsersModel };
 export default Core_Entities;

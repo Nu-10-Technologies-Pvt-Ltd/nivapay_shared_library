@@ -70,7 +70,7 @@ __decorate([
     __metadata("design:type", String)
 ], UserDepositTransactions.prototype, "networkFeeCoinId", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', nullable: true, default: () => 'CURRENT_TIMESTAMP' }),
+    (0, typeorm_1.Column)({ type: 'string', nullable: true, default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)
 ], UserDepositTransactions.prototype, "confirmedAt", void 0);
 __decorate([

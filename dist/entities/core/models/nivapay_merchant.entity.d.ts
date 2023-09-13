@@ -6,5 +6,6 @@ export declare class NivapayMerchantModel {
     merchant_legal_name: string;
     webhook_url: string;
     registered_email_id: string;
+    is_demo: boolean;
     createdAt: Date;
 }

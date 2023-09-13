@@ -3,4 +3,6 @@ import { KmsWalletCreateDto } from "./dtos/kmsWalletCreate.dto";
 import { SdkRampOrderUpdateDto } from "./dtos/sdk-ramp-order-update.dto";
 import { SdkWithdrawalOrderDetailsDto } from "./dtos/sdk-withdrawal-order-details.dto";
 import { UpdateBalanceDTO } from "./dtos/update_balance.dto";
-export { KmsWalletCreateDto, UpdateBalanceDTO, SdkRampOrderUpdateDto, SdkWithdrawalOrderDetailsDto, OnRampMerchantWebhookDto, OnRampWebhookData, OnRampWebhookContext };
+import { UserDepositsMerchantWebhookDto, UserDepositsWebhookContext, UserDepositsWebhookData } from "./dtos/user-deposits-webhook.dto";
+import { updateDepositOrderDto } from "./dtos/deposit-order-update.dto";
+export { KmsWalletCreateDto, UpdateBalanceDTO, SdkRampOrderUpdateDto, SdkWithdrawalOrderDetailsDto, OnRampMerchantWebhookDto, OnRampWebhookData, OnRampWebhookContext, UserDepositsMerchantWebhookDto, UserDepositsWebhookContext, UserDepositsWebhookData, updateDepositOrderDto };
