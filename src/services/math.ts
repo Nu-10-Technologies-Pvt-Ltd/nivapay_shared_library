@@ -11,7 +11,7 @@ export function roundDownToDecimalPlaces(numberStr, decimalPlacesStr) {
     const decimalNumber = new Decimal(parseFloat(numberStr));
     const decimalPlaces = parseInt(decimalPlacesStr);
     const rounded = decimalNumber.toFixed(decimalPlaces, Decimal.ROUND_DOWN);
-    return parseFloat(rounded);
+    return rounded.toString();
 }
 
 export function multiply(numberOne, numberTwo) {
