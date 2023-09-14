@@ -14,6 +14,13 @@ export function roundDownToDecimalPlaces(numberStr, decimalPlacesStr) {
     return parseFloat(rounded);
 }
 
+export function multiply(numberOne, numberTwo) {
+    const currentValue = new Decimal(numberOne);
+    const result = currentValue.times(new Decimal(numberTwo));
+    return result.toString();
+}
+
+
 // export function roundUpToDecimalPlaces(number: number, decimalPlaces: number): number {
 //     const multiplier = Math.pow(10, decimalPlaces);
 //     return Math.ceil(number * multiplier) / multiplier;
