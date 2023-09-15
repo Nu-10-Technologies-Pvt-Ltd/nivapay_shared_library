@@ -28,7 +28,7 @@ export function roundUpToNearestInteger(numberIp){
     const rounded = decimalNumber.ceil();
     return {
         resultAsString : rounded.toString(),
-        resultAsNumber : rounded
+        resultAsNumber : rounded.toNumber()
     }
 }
 
