@@ -1,9 +1,9 @@
 import Decimal from "decimal.js";
 import bigDecimal from "js-big-decimal";
 
-export function roundUpToDecimalPlaces(numberStr, decimalPlacesStr) {
-    const decimalNumber = new Decimal(parseFloat(numberStr));
-    const decimalPlaces = parseInt(decimalPlacesStr);
+export function roundUpToDecimalPlaces(numberIp, decimalPlacesIp) {
+    const decimalNumber = new Decimal(parseFloat(numberIp));
+    const decimalPlaces = parseInt(decimalPlacesIp);
     const rounded = decimalNumber.toFixed(decimalPlaces, Decimal.ROUND_UP);
     return {
         resultAsString : rounded.toString(),
@@ -11,24 +11,22 @@ export function roundUpToDecimalPlaces(numberStr, decimalPlacesStr) {
     }
 }
 
-// export function roundDownToDecimalPlaces(numberStr, decimalPlacesStr) {
-//     const decimalNumber = new Decimal(parseFloat(numberStr));
-//     const decimalPlaces = parseInt(decimalPlacesStr);
-//     const rounded = decimalNumber.toFixed(decimalPlaces, Decimal.ROUND_DOWN);
-    // return {
-    //     resultAsString : rounded.toString(),
-    //     resultAsNumber : parseFloat(rounded)
-    // }
-// }
-
-export function roundDownToDecimalPlaces(numberStr, decimalPlacesStr) {
-    const decimalNumber = new bigDecimal(numberStr);
-    const decimalPlaces = parseInt(decimalPlacesStr);
-    const rounded = decimalNumber.round(decimalPlaces, bigDecimal.RoundingModes.DOWN)
-
+export function roundDownToDecimalPlaces(numberIp, decimalPlacesIp) {
+    const decimalNumber = new Decimal(parseFloat(numberIp));
+    const decimalPlaces = parseInt(decimalPlacesIp);
+    const rounded = decimalNumber.toFixed(decimalPlaces, Decimal.ROUND_DOWN);
     return {
         resultAsString : rounded.toString(),
-        resultAsNumber : parseFloat(rounded.toString())
+        resultAsNumber : parseFloat(rounded)
+    }
+}
+
+export function roundUpToNearestInteger(numberIp){
+    const decimalNumber = new Decimal(numberIp);
+    const rounded = decimalNumber.ceil();
+    return {
+        resultAsString : rounded.toString(),
+        resultAsNumber : rounded
     }
 }
 
@@ -41,9 +39,9 @@ export function multiply(numberOne, numberTwo) {
     }
 }
 
-export function divide(dividendStr, divisorStr){
-    const dividend = new Decimal(dividendStr); 
-    const divisor = new Decimal(divisorStr); 
+export function divide(dividendIp, divisorIp){
+    const dividend = new Decimal(dividendIp); 
+    const divisor = new Decimal(divisorIp); 
     const result = dividend.dividedBy(divisor);
     return {
         resultAsString : result.toString(),
