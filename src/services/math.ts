@@ -7,7 +7,8 @@ export function roundUpToDecimalPlaces(numberIp, decimalPlacesIp) {
     const rounded = decimalNumber.toFixed(decimalPlaces, Decimal.ROUND_UP);
     return {
         resultAsString : rounded.toString(),
-        resultAsNumber : parseFloat(rounded)
+        resultAsNumber : parseFloat(rounded),
+        resultAsNumberString : `${parseFloat(rounded)}`
     }
 }
 
@@ -17,7 +18,8 @@ export function roundDownToDecimalPlaces(numberIp, decimalPlacesIp) {
     const rounded = decimalNumber.toFixed(decimalPlaces, Decimal.ROUND_DOWN);
     return {
         resultAsString : rounded.toString(),
-        resultAsNumber : parseFloat(rounded)
+        resultAsNumber : parseFloat(rounded),
+        resultAsNumberString : `${parseFloat(rounded)}`
     }
 }
 
@@ -43,6 +45,26 @@ export function divide(dividendIp, divisorIp){
     const dividend = new Decimal(dividendIp); 
     const divisor = new Decimal(divisorIp); 
     const result = dividend.dividedBy(divisor);
+    return {
+        resultAsString : result.toString(),
+        resultAsNumber : result.toNumber()
+    }
+}
+
+export function addition(numberOne, numberTwo){
+    const decimalOne = new Decimal(numberOne);
+    const decimalTwo = new Decimal(numberTwo);
+    const result = decimalOne.plus(decimalTwo);
+    return {
+        resultAsString : result.toString(),
+        resultAsNumber : result.toNumber()
+    }
+}
+
+export function subtraction(numberOne, numberTwo){
+    const decimalOne = new Decimal(numberOne);
+    const decimalTwo = new Decimal(numberTwo);
+    const result = decimalOne.minus(decimalTwo);
     return {
         resultAsString : result.toString(),
         resultAsNumber : result.toNumber()
