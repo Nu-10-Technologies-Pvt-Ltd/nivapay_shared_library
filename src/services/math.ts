@@ -28,7 +28,7 @@ export function roundDownToDecimalPlaces(numberStr, decimalPlacesStr) {
 
     return {
         resultAsString : rounded.toString(),
-        resultAsNumber : rounded
+        resultAsNumber : parseFloat(rounded.toString())
     }
 }
 
