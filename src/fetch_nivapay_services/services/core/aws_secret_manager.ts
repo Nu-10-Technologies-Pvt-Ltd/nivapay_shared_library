@@ -48,10 +48,11 @@ export async function getAesPwd (env: string, api_key: string) {
     return response.data
 }
 
-export async function getIsMerchantWebhookSecretAvailable (env: string, api_key: string) {
+export async function getIsMerchantWebhookSecretAvailable (env: string, api_key: string, query:{merchant_id: string}) {
     const host = Config.default.hosts.core_service[env];
-    const response = await axios.get(
+    const response = await axios.post(
         `${host}/aws/merchant-webhook-exist`,
+        query,
         {
             headers: {
                 'x-api-key': api_key,
