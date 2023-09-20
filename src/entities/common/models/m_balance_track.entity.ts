@@ -40,7 +40,7 @@ export class M_Balance_Track {
 
     @Column({ type: "numeric", default: 0, nullable: true })
     outgoing_nivapay_fee_in_crypto: number;
-    
+
     @Column({ type: "numeric", default: 0, nullable: true })
     total_outgoing_fee_in_crypto: number;
 
