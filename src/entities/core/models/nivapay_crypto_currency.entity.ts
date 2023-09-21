@@ -37,8 +37,6 @@ export class NivapayCryptoCurrencyModel {
   @Column({ nullable: true })
   payUriNetwork: string
 
-  nativeCurrencySymbol: ""
-
   @Column({ nullable: true })
   chainId: string //for evm network only
 
@@ -49,16 +47,7 @@ export class NivapayCryptoCurrencyModel {
   contractDecimals: number;
 
   @Column({ nullable: true })
-  decimal_digits_custom: number;
-
-  @Column({ nullable: true })
-  icon_url: string;
-
-  @Column({ nullable: true })
   token_standard: string;
-
-  @Column({ nullable: true })
-  is_native: boolean
 
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date
