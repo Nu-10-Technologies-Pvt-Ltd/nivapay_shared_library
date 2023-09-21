@@ -49,6 +49,12 @@ export class NivapayCryptoCurrencyModel {
   @Column({ nullable: true })
   token_standard: string;
 
+  @Column({ nullable: true })
+  block_explorer_txn_url_prefix: string;
+
+  @Column({ nullable: true })
+  block_explorer_wallet_url_prefix: string;
+
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date
 
