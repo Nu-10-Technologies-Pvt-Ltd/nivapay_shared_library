@@ -82,12 +82,12 @@ export async function getTransactionByAddress(
 export async function getTransactionDetailsByHash(
     env: string,
     api_key: string,
-    query: { hash: string, testnet: boolean }
+    query: { hash: string, testnet: boolean, direction: TransactionDirection }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byhash/${query.testnet}/${query.hash}`,
+        `${host}/provider/tatum/bsc/transaction/byhash/${query.testnet}/${query.hash}/${query.direction}`,
         {
             headers: {
                 'x-api-key': api_key,
