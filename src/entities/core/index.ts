@@ -27,6 +27,8 @@ const Core_Entities = [
     MerchantServiceFeeConfigurationModel,
     MerchantUser,
     Merchant_Webhook_log,
+    NivapaySdkUsersModel,
+    Accounts,
     Accounts_Accounting
 ]
 
@@ -44,7 +46,8 @@ export {
     MerchantUser,
     Merchant_Webhook_log,
     NivapaySdkUsersModel,
-    Accounts
+    Accounts,
+    Accounts_Accounting
 }
 
 export default Core_Entities
