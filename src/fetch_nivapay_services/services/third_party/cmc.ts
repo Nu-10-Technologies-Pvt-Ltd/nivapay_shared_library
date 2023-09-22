@@ -5,7 +5,7 @@ import * as Config from '../../../config';
 export async function rateConversion(
     env: string,
     api_key: string,
-    query: { amount: number, symbol: string, convertSymbol }
+    query: { amount: number, id: string, convertToId }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
