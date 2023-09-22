@@ -41,6 +41,6 @@ export class Accounts_Accounting{
     @Column({nullable: true})
     balanceAfter_$: number;
 
-    @CreateDateColumn({ type: 'timestamptz' })
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
 }

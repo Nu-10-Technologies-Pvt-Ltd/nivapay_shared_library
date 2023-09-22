@@ -17,6 +17,6 @@ export class Accounts{
     @Column({nullable: true})
     merchantUserId: string;
 
-    @CreateDateColumn({ type: 'timestamptz' })
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     created_at: Date;
 }
