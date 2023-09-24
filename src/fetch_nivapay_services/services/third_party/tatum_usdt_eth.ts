@@ -51,7 +51,7 @@ export async function getEstimatedFee(
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
-        `${host}/provider/tatum/ethereum/estimate/fee`,
+        `${host}/provider/tatum/usdt-eth/estimate/fee`,
         query,
         {
             headers: {
@@ -61,3 +61,5 @@ export async function getEstimatedFee(
     )
     return response.data ? response.data : null
 }
+
+// provider/tatum/usdt-eth
