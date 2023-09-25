@@ -36,3 +36,27 @@ export async function getTransactionByAddress(
     )
     return response.data ? response.data : null
 }
+
+export async function getEstimatedFee(
+    env: string,
+    api_key: string,
+    query: {
+        fromAddress: string
+        toAddress: string
+        amount: string
+        testnet: boolean
+    }
+) {
+
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/provider/tatum/ethereum/estimate/fee`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
