@@ -55,7 +55,7 @@ export async function detecting(env: string, api_key: string, query: { payload: 
     return response.data
 }
 
-export async function failure(env: string, api_key: string, query: { payload: updateDepositOrderDto, wallet_address: string }) {
+export async function failure(env: string, api_key: string, query: { payload: updateDepositOrderDto, wallet_address: string, asset_symbol: string, asset_amount: string }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
         `${host}/sdk-payin-mail/failure`,
