@@ -61,7 +61,8 @@ export async function failure(env: string, api_key: string, query: { payload: up
         `${host}/sdk-payin-mail/failure`,
         {
             payload: query.payload,
-            wallet_address: query.wallet_address
+            wallet_address: query.wallet_address,
+            asset_symbol: query.asset_symbol, asset_amount: query.asset_amount
         },
         {
             headers: {
