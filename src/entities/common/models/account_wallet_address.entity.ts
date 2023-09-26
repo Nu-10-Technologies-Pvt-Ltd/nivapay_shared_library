@@ -29,12 +29,12 @@ export class AccountWalletAddress {
     @Column()
     usageFrequency: string;
 
-    @CreateDateColumn({ type: "timestamp" })
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
 
     @Column() // in order to avoid the date mismatch will make the date type as string and store that 
     expiryAt: string;
 
-    @Column()
+    @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     lastCheckedAt: string
 }
