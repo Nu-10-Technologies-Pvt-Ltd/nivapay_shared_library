@@ -1,4 +1,4 @@
-import { accountWalletAddress } from "./models/account_wallet_address.entity";
+import { AccountWalletAddress } from "./models/account_wallet_address.entity";
 import { Accounts_Accounting } from "./models/accounts_accounting.entity";
 import { Accounts_Balance } from "./models/accounts_balance.entity";
 import { M_Balance } from "./models/m_balance.entity";
@@ -10,7 +10,7 @@ const Common_Entities = [
     M_Balance,
     M_Balance_Track,
     onChainTransactions,
-    accountWalletAddress,
+    AccountWalletAddress,
     Accounts,
     Accounts_Accounting,
     Accounts_Balance
@@ -20,7 +20,7 @@ export {
     M_Balance,
     M_Balance_Track,
     onChainTransactions,
-    accountWalletAddress,
+    AccountWalletAddress,
     Accounts,
     Accounts_Accounting,
     Accounts_Balance
