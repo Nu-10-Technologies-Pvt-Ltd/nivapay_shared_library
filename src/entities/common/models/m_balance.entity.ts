@@ -5,6 +5,9 @@ export class M_Balance {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
+    @Column({nullable: true})
+    account_id: string;
+
     @Column()
     merchant_id: string;
 
