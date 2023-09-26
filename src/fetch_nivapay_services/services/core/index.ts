@@ -23,3 +23,5 @@ export * as email from './email'
 export * as postgres_functions from  './postgres_functions';
 
 export * as merchant_accounting from './merchant_accounting'
+
+export * as nivapay_accounts from './nivapay_accounts'
