@@ -5,7 +5,7 @@ import { SdkWithdrawalOrderDetailsDto } from "./dtos/sdk-withdrawal-order-detail
 import { UpdateBalanceDTO } from "./dtos/update_balance.dto"
 import { UserDepositsMerchantWebhookDto, UserDepositsWebhookContext, UserDepositsWebhookData } from "./dtos/user-deposits-webhook.dto"
 import { updateDepositOrderDto } from "./dtos/deposit-order-update.dto"
-import { CreateAccountDTO } from "./dtos/create-account.dto"
+import { AccountsEntityType, CreateAccountDTO } from "./dtos/create-account.dto"
 export {
     KmsWalletCreateDto,
     UpdateBalanceDTO,
@@ -18,5 +18,6 @@ export {
     UserDepositsWebhookContext,
     UserDepositsWebhookData,
     updateDepositOrderDto,
-    CreateAccountDTO
+    CreateAccountDTO,
+    AccountsEntityType
 }
