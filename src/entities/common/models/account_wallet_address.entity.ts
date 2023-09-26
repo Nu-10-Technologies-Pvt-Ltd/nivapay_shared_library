@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("account-wallet-addresses")
-export class accountWalletAddress {
+export class AccountWalletAddress {
     @PrimaryGeneratedColumn("uuid")
     walletId: string;
 
