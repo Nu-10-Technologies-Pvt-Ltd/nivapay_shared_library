@@ -1,6 +1,6 @@
 import { IsEnum, IsNotEmpty, IsOptional, IsString, ValidateIf } from "class-validator";
 
-enum EntityType {
+export enum AccountsEntityType {
     Nivapay = 'nivapay',
     Merchant = 'merchant',
     MerchantUser = 'merchant-user',
@@ -14,15 +14,15 @@ export class CreateAccountDTO{
 
     @IsNotEmpty()
     @IsString()
-    @IsEnum(EntityType,{message: 'Invalid entity type'})
+    @IsEnum(AccountsEntityType,{message: 'Invalid entity type'})
     entityType: string;
 
-    @ValidateIf(data => data.entityType !== EntityType.Nivapay)
+    @ValidateIf(data => data.entityType !== AccountsEntityType.Nivapay)
     @IsNotEmpty({message: 'Customer ID is requireed if Entity Type is not Nivapay'})
     @IsString()
     customerId: string;
 
-    @ValidateIf(data => data.entityType !== EntityType.Nivapay && data.entityType !== EntityType.Merchant)
+    @ValidateIf(data => data.entityType !== AccountsEntityType.Nivapay && data.entityType !== AccountsEntityType.Merchant)
     @IsNotEmpty({message: 'Customer ID is requireed if Entity Type is not Nivapay'})
     @IsString()
     merchantUserId: string;
