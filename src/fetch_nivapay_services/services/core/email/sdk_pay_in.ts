@@ -35,14 +35,16 @@ export async function session_time_out(env: string, api_key: string, query: { pa
 }
 
 
-export async function detecting(env: string, api_key: string, query: { payload: updateDepositOrderDto, eta: string, wallet_address: string }) {
+export async function detecting(env: string, api_key: string, query: { payload: updateDepositOrderDto, expected_amount: string, expected_symbol: string, eta: string, wallet_address: string }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
         `${host}/sdk-payin-mail/detecting`,
         {
             payload: query.payload,
             eta: query.eta,
-            wallet_address: query.wallet_address
+            wallet_address: query.wallet_address,
+            expected_amount: query.expected_amount,
+            expected_symbol: query.expected_symbol
         },
         {
             headers: {
