@@ -11,7 +11,7 @@ import {
     id: string;
   
     @Column()
-    wallet_id: string;
+    walletId: string;
   
     @Column({ nullable: true })
     walletAddress: string
