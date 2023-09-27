@@ -71,7 +71,6 @@ export function subtraction(numberOne, numberTwo) {
     }
 }
 
-
 export function scientificToDecimal(scientificNotation) {
     const bigNumber = new BigNumber(scientificNotation);
     const decimalNumber = bigNumber.toFormat(Math.abs(bigNumber.e))

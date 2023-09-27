@@ -1,49 +1,55 @@
 import axios from 'axios';
 import * as Config from '../../../config';
 
-export async function createRampWallet(
-    env: string,
-    api_key: string,
-    query: { currency: string, network: string, userId: string, merchantId: string, testnet: boolean, is_merchant: boolean }
-) {
-
-    const host = Config.default.hosts.third_party_service[env];
-    const response = await axios.post(
-        `${host}/kms/address/createRampWallet`,
-        query,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
-        }
-    )
-
-    return response.data ? response.data : null
+export enum WalletAddressType {
+    EOA = 'EOA',
+    Contract = 'contract'
 }
 
-export async function getKmsWalletRepoByUser(
-    env: string,
-    api_key: string,
-    query: { merchant_id: string, userId: string, crypto: string, network: string }
-) {
-    const host = Config.default.hosts.third_party_service[env];
-    const response = await axios.post(
-        `${host}/kms/address/getKmsWalletRepoByUser`,
-        query,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
-        }
-    )
-
-    return response.data
+export enum WalletDirectionToWatch {
+    INCOMING = 'INCOMING',
+    OUTGOING = 'OUTGOING',
+    BIDIRECTIONAL = 'BI-DIRECTIONAL'
 }
+
+export enum WalletUsageFrequency {
+    ONE = 'ONE',
+    MANY = 'MANY'
+}
+
+
+// export async function getKmsWalletRepoByUser(
+//     env: string,
+//     api_key: string,
+//     query: { merchant_id: string, userId: string, crypto: string, network: string }
+// ) {
+//     const host = Config.default.hosts.third_party_service[env];
+//     const response = await axios.post(
+//         `${host}/kms/address/getKmsWalletRepoByUser`,
+//         query,
+//         {
+//             headers: {
+//                 'x-api-key': api_key,
+//             },
+//         }
+//     )
+
+//     return response.data
+// }
 
 export async function createWallet(
     env: string,
     api_key: string,
-    query: { currency: string, network: string, userId: string, merchantId: string, testnet: boolean, is_merchant: boolean }
+    query: {
+        currency_id: string,
+        account_id: string,
+        address_type: WalletAddressType, //optional
+        contract_owner_address: string, //optional
+        walletName: string, //optional
+        direction_to_watch: WalletDirectionToWatch,
+        usage_frequency: WalletUsageFrequency,
+        expiry_at: string
+    }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];

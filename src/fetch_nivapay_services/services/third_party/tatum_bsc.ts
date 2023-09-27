@@ -9,7 +9,7 @@ enum TransactionDirection {
 export async function getGasEstimate(
     env: string,
     api_key: string,
-    query: {fromAddress: string, toAddress: string, amount: string, testnet: string, currency: string, contractAddress?: string}
+    query: {fromAddress: string, toAddress: string, amount: string, currencyId: string}
 ) {
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
@@ -28,7 +28,7 @@ export async function getGasEstimate(
 export async function transfer(
     env: string,
     api_key: string,
-    query: {fromAddress: string, toAddress: string, amount: string, testnet: string, currency: string, contractAddress?: string, contractDecimals?:string}
+    query: {fromAddress: string, toAddress: string, amount: string, currencyId: string}
 ) {
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
@@ -46,7 +46,7 @@ export async function transfer(
 export async function getBalance(
     env: string,
     api_key: string,
-    query: { address: string, testnet: boolean, currency: string, contractAddress?: string }
+    query: { address: string, currencyId: string }
 ) {
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
@@ -64,12 +64,12 @@ export async function getBalance(
 export async function getTransactionByAddress(
     env: string,
     api_key: string,
-    query: { wallet_address: string, testnet: boolean, direction: TransactionDirection }
+    query: { wallet_address: string, currencyId: string, direction: TransactionDirection }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byaddress/${query.testnet}/${query.wallet_address}/${query.direction}`,
+        `${host}/provider/tatum/bsc/transaction/byaddress/${query.currencyId}/${query.wallet_address}/${query.direction}`,
         {
             headers: {
                 'x-api-key': api_key,
@@ -82,12 +82,12 @@ export async function getTransactionByAddress(
 export async function getTransactionDetailsByHash(
     env: string,
     api_key: string,
-    query: { hash: string, testnet: boolean, direction: TransactionDirection }
+    query: { hash: string, currencyId: string, direction: TransactionDirection }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byhash/${query.testnet}/${query.hash}/${query.direction}`,
+        `${host}/provider/tatum/bsc/transaction/byhash/${query.currencyId}/${query.hash}/${query.direction}`,
         {
             headers: {
                 'x-api-key': api_key,
@@ -96,6 +96,3 @@ export async function getTransactionDetailsByHash(
     )
     return response.data ? response.data : null
 }
-
-
-
