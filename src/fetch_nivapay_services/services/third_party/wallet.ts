@@ -43,9 +43,9 @@ export async function createWallet(
     query: {
         currency_id: string,
         account_id: string,
-        address_type: WalletAddressType, //optional
-        contract_owner_address: string, //optional
-        walletName: string, //optional
+        address_type?: WalletAddressType, //optional
+        contract_owner_address?: string, //optional
+        walletName?: string, //optional
         direction_to_watch: WalletDirectionToWatch,
         usage_frequency: WalletUsageFrequency,
         expiry_at: string
