@@ -9,8 +9,8 @@ import {
   export class NivapayKmsWallet {
     @PrimaryGeneratedColumn('uuid')
     id: string;
-  
-    @Column()
+
+    @Column({nullable: true})
     walletId: string;
   
     @Column({ nullable: true })
