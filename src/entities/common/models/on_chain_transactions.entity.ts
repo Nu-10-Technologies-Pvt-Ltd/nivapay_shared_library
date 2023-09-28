@@ -27,10 +27,10 @@ export class onChainTransactions {
     networkFeeAmount: string;
 
     @Column()
-    destinationAddresses: string;
+    destinationAddresses: string[];
 
     @Column()
-    senderAddresses: string;
+    senderAddresses: string[];
 
     @Column({ nullable: true })
     confirmedAt: string;
