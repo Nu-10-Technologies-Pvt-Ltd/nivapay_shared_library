@@ -26,11 +26,11 @@ export class onChainTransactions {
     @Column()
     networkFeeAmount: string;
 
-    @Column('text',{array: true})
-    destinationAddresses: string[];
+    @Column({type:'jsonb'})
+    destinationAddresses: any;
 
-    @Column('text',{array: true})
-    senderAddresses: string[];
+    @Column({type:'jsonb'})
+    senderAddresses: any;
 
     @Column({ nullable: true })
     confirmedAt: string;
