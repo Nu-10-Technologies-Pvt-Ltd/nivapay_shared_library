@@ -35,6 +35,6 @@ export class onChainTransactions {
     @Column({ nullable: true })
     confirmedAt: string;
 
-    @CreateDateColumn({ type: "timestamp" })
-    createdAt: Date;
+    @Column()
+    createdAt: string;
 }
