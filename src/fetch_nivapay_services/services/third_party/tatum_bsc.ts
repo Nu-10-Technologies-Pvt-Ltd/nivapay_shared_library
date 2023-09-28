@@ -78,7 +78,7 @@ export async function getTransactionByAddress(
 export async function getTransactionDetailsByHash(
     env: string,
     api_key: string,
-    query: { hash: string, currencyId: string, direction: WalletDirectionToWatch }
+    query: { hash: string, currencyId: string}
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
