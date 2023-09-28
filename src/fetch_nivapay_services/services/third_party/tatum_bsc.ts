@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as Config from '../../../config';
+import { WalletDirectionToWatch } from './wallet';
 
 export async function getGasEstimate(
     env: string,
@@ -59,12 +60,12 @@ export async function getBalance(
 export async function getTransactionByAddress(
     env: string,
     api_key: string,
-    query: { wallet_address: string, currencyId: string, direction: string }
+    query: { wallet_address: string, currencyId: string, direction: WalletDirectionToWatch }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byaddress/${query.currencyId}/${query.wallet_address}/${query.direction}`,
+        `${host}/provider/tatum/bsc/transaction/byaddress/${query.currencyId}/${query.wallet_address}/${(query.direction).toLowerCase()}`,
         {
             headers: {
                 'x-api-key': api_key,
@@ -77,12 +78,12 @@ export async function getTransactionByAddress(
 export async function getTransactionDetailsByHash(
     env: string,
     api_key: string,
-    query: { hash: string, currencyId: string, direction: string }
+    query: { hash: string, currencyId: string, direction: WalletDirectionToWatch }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byhash/${query.currencyId}/${query.hash}/${query.direction}`,
+        `${host}/provider/tatum/bsc/transaction/byhash/${query.currencyId}/${query.hash}/${(query.direction).toLowerCase()}`,
         {
             headers: {
                 'x-api-key': api_key,
