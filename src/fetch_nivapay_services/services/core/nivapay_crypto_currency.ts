@@ -12,7 +12,7 @@ export async function getBySymbol (env: string, api_key: string, query: {symbol:
             },
         }
     )
-    return response.data
+    return response.data;
 }
 
 export async function getById (env: string, api_key: string, query: {id: string}) {
@@ -25,7 +25,7 @@ export async function getById (env: string, api_key: string, query: {id: string}
             },
         }
     )
-    return response.data
+    return response.data;
 }
 
 export async function getByNetworkSymbolTestnet (env: string, api_key: string, query: {network: string, symbol: string, isTestnet: boolean}) {
@@ -38,7 +38,7 @@ export async function getByNetworkSymbolTestnet (env: string, api_key: string, q
             },
         }
     )
-    return response.data
+    return response.data;
 }
 
 export async function getByNetworkSymbol (env: string, api_key: string, query: {network: string, symbol: string}) {
@@ -51,5 +51,19 @@ export async function getByNetworkSymbol (env: string, api_key: string, query: {
             },
         }
     )
-    return response.data
+    return response.data;
+}
+
+export async function getByNetworkArray(env:string, api_key: string, query:{network: string[]}){
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.post(
+        `${host}/nivapay/crypto/currencies/get/by-network-array`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data;
 }
