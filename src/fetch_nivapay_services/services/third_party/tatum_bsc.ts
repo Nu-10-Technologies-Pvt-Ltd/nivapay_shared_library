@@ -70,7 +70,7 @@ export async function getTransactionByAddress(
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byaddress/${query.currencyId}/${query.wallet_address}/${(query.direction).toLowerCase()}`,
+        `${host}/provider/tatum/bsc/transaction/byaddress/${query.currencyId}/${query.wallet_address}/${query.direction}`,
         {
             headers: {
                 'x-api-key': api_key,
