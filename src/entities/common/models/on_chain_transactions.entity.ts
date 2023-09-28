@@ -26,10 +26,10 @@ export class onChainTransactions {
     @Column()
     networkFeeAmount: string;
 
-    @Column()
+    @Column('text',{array: true})
     destinationAddresses: string[];
 
-    @Column()
+    @Column('text',{array: true})
     senderAddresses: string[];
 
     @Column({ nullable: true })
