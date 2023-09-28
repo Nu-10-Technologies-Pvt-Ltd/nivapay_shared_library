@@ -1,11 +1,5 @@
 import axios from 'axios';
 import * as Config from '../../../config';
-import { WalletDirectionToWatch } from './wallet';
-
-enum TransactionDirection {
-    INCOMING = "incoming",
-    OUTGOING = "outgoing",
-}
 
 export async function getGasEstimate(
     env: string,
@@ -65,7 +59,7 @@ export async function getBalance(
 export async function getTransactionByAddress(
     env: string,
     api_key: string,
-    query: { wallet_address: string, currencyId: string, direction: WalletDirectionToWatch }
+    query: { wallet_address: string, currencyId: string, direction: string }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
@@ -83,7 +77,7 @@ export async function getTransactionByAddress(
 export async function getTransactionDetailsByHash(
     env: string,
     api_key: string,
-    query: { hash: string, currencyId: string, direction: TransactionDirection }
+    query: { hash: string, currencyId: string, direction: string }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
