@@ -83,7 +83,7 @@ export async function getTransactionDetailsByHash(
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bsc/transaction/byhash/${query.currencyId}/${query.hash}}`,
+        `${host}/provider/tatum/bsc/transaction/byhash/${query.currencyId}/${query.hash}`,
         {
             headers: {
                 'x-api-key': api_key,
