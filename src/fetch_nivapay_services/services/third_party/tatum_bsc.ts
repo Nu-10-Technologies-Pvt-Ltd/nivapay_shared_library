@@ -2,8 +2,8 @@ import axios from 'axios';
 import * as Config from '../../../config';
 
 enum TransactionDirection {
-    Incoming = "incoming",
-    Outgoing = "outgoing",
+    INCOMING = "incoming",
+    OUTGOING = "outgoing",
 }
 
 export async function getGasEstimate(
