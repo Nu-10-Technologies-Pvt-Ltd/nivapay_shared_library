@@ -11,16 +11,16 @@ export class AccountWalletAddress {
     @Column()
     currencyId: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     walletName: string;
 
     @Column()
     accountId: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     addressType: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     contractOwnerAddress: string;
 
     @Column()
@@ -32,9 +32,9 @@ export class AccountWalletAddress {
     @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
 
-    @Column({nullable: true}) // in order to avoid the date mismatch will make the date type as string and store that 
+    @Column({ nullable: true }) // in order to avoid the date mismatch will make the date type as string and store that 
     expiryAt: string;
 
-    @Column({ nullable: true})
+    @Column({ nullable: true })
     lastCheckedAt: string
 }

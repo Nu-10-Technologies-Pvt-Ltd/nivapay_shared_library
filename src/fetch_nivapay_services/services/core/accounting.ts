@@ -8,7 +8,7 @@ export async function onRampOrderAccounting(env: string, api_key: string, query:
 }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
-        `${host}//sdk/accounting/on-ramp`,
+        `${host}/sdk/accounting/on-ramp`,
         query,
         {
             headers: {
