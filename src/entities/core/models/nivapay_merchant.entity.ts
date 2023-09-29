@@ -31,6 +31,9 @@ export class NivapayMerchantModel {
   @Column({ nullable: true })
   is_demo: boolean
 
+  @Column({ nullable: true })
+  account_id: string
+
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date;
 }
