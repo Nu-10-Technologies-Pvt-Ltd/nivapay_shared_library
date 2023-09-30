@@ -44,7 +44,7 @@ export async function detecting(env: string, api_key: string, query: { payload: 
             eta: query.eta,
             wallet_address: query.wallet_address,
             expected_amount: query.expected_amount,
-            expected_symbol: query.expected_symbol
+            expected_symbol: query.expected_symbol,
         },
         {
             headers: {
