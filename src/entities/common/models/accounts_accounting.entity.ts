@@ -30,16 +30,16 @@ export class Accounts_Accounting{
     balanceAfter: string;
 
     @Column({nullable: true})
-    balanceBefore_$: number;
+    balanceBefore_$: string;
 
     @Column({nullable: true})
-    credit_$: number;
+    credit_$: string;
 
     @Column({nullable: true})
-    debit_$: number;
+    debit_$: string;
 
     @Column({nullable: true})
-    balanceAfter_$: number;
+    balanceAfter_$: string;
 
     @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
