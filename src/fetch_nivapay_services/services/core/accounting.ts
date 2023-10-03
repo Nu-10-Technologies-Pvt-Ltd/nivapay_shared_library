@@ -18,3 +18,7 @@ export async function onRampOrderAccounting(env: string, api_key: string, query:
     )
     return response.data
 }
+
+export async function handleUpdateAccountBalance(body: { account_id: string, order_id: string, transaction_id: string, currency_id: string, incoming_amount: string, outgoing_amount: number }) {
+
+}
