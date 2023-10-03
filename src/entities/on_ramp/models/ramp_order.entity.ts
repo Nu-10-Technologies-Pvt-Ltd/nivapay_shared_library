@@ -136,11 +136,14 @@ export class RampOrderModel {
   @Column({ nullable: true })
   transfer_id: string;
 
-  @Column({ nullable: true, type: "numeric", default: 0 })
-  service_fee_in_crypto: number;
+  @Column({ nullable: true })
+  order_virtual_currency_id: string;
 
-  @Column({ nullable: true, type: "numeric", default: 0 })
-  network_fee_in_crypto: number;
+  @Column({ nullable: true })
+  ramp_order_status: string
+
+  @Column({ nullable: true })
+  transfer_order_status: string;
 
   @Column({ nullable: true, default: false })
   redirected: boolean
