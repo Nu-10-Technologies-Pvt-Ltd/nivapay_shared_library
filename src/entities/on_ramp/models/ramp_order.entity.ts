@@ -145,6 +145,9 @@ export class RampOrderModel {
   @Column({ nullable: true, default: "PENDING" })
   transfer_order_status: string;
 
+  @Column({ nullable: true })
+  product_id: string
+
   @Column({ nullable: true, default: false })
   redirected: boolean
 
