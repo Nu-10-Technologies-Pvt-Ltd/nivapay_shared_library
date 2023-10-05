@@ -19,6 +19,25 @@ export async function onRampOrderAccounting(env: string, api_key: string, query:
     return response.data
 }
 
+export async function userDepositOrderAccounting(env: string, api_key: string, query: {
+    orderDetails: any,
+    merchantDetails: any,
+    orderVirtualCurrencyDetails: any,
+    netAmountVirtual: any,
+}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.post(
+        `${host}/sdk/accounting/user-deposit`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+};
+
 export async function handleUpdateAccountBalance(env: string, api_key: string, query: { account_id: string, order_id: string, transaction_id: string, currency_id: string, incoming_amount: string, outgoing_amount: number }) {
     try {
         const host = Config.default.hosts.core_service[env];
