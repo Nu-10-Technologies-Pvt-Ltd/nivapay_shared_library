@@ -26,15 +26,15 @@ export class onChainTransactions {
     @Column()
     networkFeeAmount: string;
 
-    @Column({type:'jsonb'})
+    @Column({ type: 'jsonb' })
     destinationAddresses: any;
 
-    @Column({type:'jsonb'})
+    @Column({ type: 'jsonb' })
     senderAddresses: any;
 
     @Column({ nullable: true })
     confirmedAt: string;
 
-    @Column()
+    @CreateDateColumn({ nullable: true, type: "timestamp" })
     createdAt: string;
 }
