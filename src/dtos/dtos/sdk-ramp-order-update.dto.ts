@@ -160,4 +160,21 @@ export class SdkRampOrderUpdateDto {
     @IsOptional()
     @IsString()
     transfer_id: string;
+
+    @IsOptional()
+    @IsString()
+    order_virtual_currency_id: string;
+
+    @IsOptional()
+    @IsString()
+    ramp_order_status: string
+
+    @IsOptional()
+    @IsString()
+    transfer_order_status: string;
+
+    @IsOptional()
+    @IsString()
+    product_id: string
+
 }
