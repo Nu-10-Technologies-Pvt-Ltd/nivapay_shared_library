@@ -21,7 +21,7 @@ export async function getTransactionDetailsByHash(
 export async function getTransactionDetailsByHash_v2(
     env: string,
     api_key: string,
-    query: { hash: string, currencyId: boolean }
+    query: { hash: string, currencyId: string }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
