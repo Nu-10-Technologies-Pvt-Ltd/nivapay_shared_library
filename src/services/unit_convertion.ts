@@ -10,7 +10,7 @@ export enum ETH_CONVERT_UNITS {
 
 export function eth_convert(value, unitFrom, unitTo){
     const decimalNumber = new Decimal(value);
-    return convert(decimalNumber, ETH_CONVERT_UNITS[unitFrom], ETH_CONVERT_UNITS[unitTo])
+    return convert(decimalNumber, unitFrom, unitTo)
 }
 
 export function sathoshis_to_BTC(value){
