@@ -37,6 +37,25 @@ export async function getTransactionByAddress(
     return response.data ? response.data : null
 }
 
+
+export async function getTransactionByAddress_v2(
+    env: string,
+    api_key: string,
+    query: { wallet_address: string, currencyId: string, direction: string }
+) {
+
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/provider/tatum/ethereum/transaction/by/address/${query.wallet_address}/${query.currencyId}/${query.direction}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
 export async function getEstimatedFee(
     env: string,
     api_key: string,
