@@ -8,13 +8,13 @@ export class onrampTreasureSwapOrder {
     @Column()
     id: string; // on ramp order id   :string
 
-    @Column()
+    @Column({ default: "PENDING" })
     onramp_order_status: string
 
-    @Column()
+    @Column({ default: "PENDING" })
     swap_order_status: string
 
-    @Column()
+    @Column({ default: "PENDING" })
     order_status: string
 
     @Column()
