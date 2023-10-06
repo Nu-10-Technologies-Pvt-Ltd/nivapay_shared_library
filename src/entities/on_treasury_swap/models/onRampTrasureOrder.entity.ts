@@ -44,8 +44,8 @@ export class onrampTreasureSwapOrder {
     @Column()
     convertToCryptoName: string
 
-    @Column()
-    conversionRoute: string
+    @Column({ type: "jsonb" })
+    conversionRoute: any
 
     @Column()
     transfer_to_wallet_address: string
