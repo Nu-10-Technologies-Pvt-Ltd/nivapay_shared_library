@@ -29,5 +29,8 @@ export function formatToISOString(timestamp) {
     }
   
     return date.toISOString();
-  }
+}
   
+export function getCurrentDateTime(){
+    return new Date().toISOString()
+}
