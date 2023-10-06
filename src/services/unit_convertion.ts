@@ -1,10 +1,16 @@
-import Units from 'ethereumjs-units'
+import { convert } from 'ethereumjs-units';
 import Decimal from 'decimal.js';
 import { divide } from './math';
 
+export enum ETH_CONVERT_UNITS {
+    wei = 'wei',
+    gwei = 'gwei',
+    ether = 'ether'
+}
+
 export function eth_convert(value, unitFrom, unitTo){
     const decimalNumber = new Decimal(value);
-    return Units.convert(decimalNumber, unitFrom, unitTo)
+    return convert(decimalNumber, ETH_CONVERT_UNITS[unitFrom], ETH_CONVERT_UNITS[unitTo])
 }
 
 export function sathoshis_to_BTC(value){
