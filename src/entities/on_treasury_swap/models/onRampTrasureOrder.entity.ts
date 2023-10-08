@@ -35,7 +35,7 @@ export class onrampTreasureSwapOrder {
     @Column()
     convert_to_crypto_network: string
 
-    @Column()
+    @Column({ nullable: true })
     convert_to_crypto_contractAddress: string
 
     @Column()
@@ -53,10 +53,10 @@ export class onrampTreasureSwapOrder {
     @Column()
     onrampVirtualCurrencyId: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_crypto_symbol: string
 
-    @Column()
+    @Column(({ nullable: true }))
     transak_crypto_network: string
 
     @Column()
@@ -71,13 +71,13 @@ export class onrampTreasureSwapOrder {
     @Column()
     merchant_redirect_url: string
 
-    @Column()
+    @Column({ nullable: true })
     merchant_webhook_url: string
 
     @Column()
     merchant_user_id: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_order_id: string
 
     @Column()
@@ -86,73 +86,73 @@ export class onrampTreasureSwapOrder {
     @Column()
     isBuyOrSell: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_key_type: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_api_key: string
 
-    @Column()
+    @Column({ nullable: true })
     is_autofilluserdata: boolean
 
-    @Column()
+    @Column({ nullable: true })
     disableWalletAddressForm: boolean
 
-    @Column()
+    @Column({ nullable: true })
     order_user_email_id: string
 
     @Column()
     user_email_id: string
 
-    @Column()
+    @Column({ nullable: true })
     user_first_name: string
 
-    @Column()
+    @Column({ nullable: true })
     user_last_name: string
 
-    @Column()
+    @Column({ nullable: true })
     user_mobileNumber: string
 
-    @Column()
+    @Column({ nullable: true })
     user_dob: string
 
-    @Column()
+    @Column({ nullable: true })
     user_addressLine1: string
 
-    @Column()
+    @Column({ nullable: true })
     user_addressLine2: string
 
-    @Column()
+    @Column({ nullable: true })
     user_city: string
 
-    @Column()
+    @Column({ nullable: true })
     user_state: string
 
-    @Column()
+    @Column({ nullable: true })
     user_postCode: string
 
-    @Column()
+    @Column({ nullable: true })
     user_countryCode: string
 
     @Column()
     hash: string
 
-    @Column()
+    @Column({ nullable: true })
     gateway_url: string
 
-    @Column()
+    @Column({ nullable: true })
     nivapay_hash: string
 
-    @Column()
+    @Column({ default: false })
     redirected: boolean
 
-    @Column()
+    @Column({ nullable: true })
     transak_txn_crypto_symbol: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_txn_crypto_network: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_txn_crypto_amount: string
 
     @Column()
@@ -161,7 +161,7 @@ export class onrampTreasureSwapOrder {
     @Column()
     product_id: string
 
-    @Column()
+    @Column({ nullable: true })
     transak_txn_hash: string
 
     @UpdateDateColumn({ type: "timestamp" })
