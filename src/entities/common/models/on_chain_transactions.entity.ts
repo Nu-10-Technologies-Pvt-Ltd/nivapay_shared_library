@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("on-chain-transactions")
 export class onChainTransactions {
@@ -14,16 +14,16 @@ export class onChainTransactions {
     @Column()
     transactionDirection: string;
 
-    @Column()
+    @Column({ nullable: true })
     transactionCurrencyId: string;
 
     @Column()
     transactionAmount: string
 
-    @Column()
+    @Column({ nullable: true })
     networkFeeCurrencyId: string;
 
-    @Column()
+    @Column({ nullable: true })
     networkFeeAmount: string;
 
     @Column({ type: 'jsonb' })
@@ -35,6 +35,6 @@ export class onChainTransactions {
     @Column({ nullable: true })
     confirmedAt: string;
 
-    @Column({ nullable: true})
+    @CreateDateColumn({ nullable: true, type: "timestamp" })
     createdAt: string;
 }
