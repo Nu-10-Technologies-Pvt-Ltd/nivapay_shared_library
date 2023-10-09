@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("on-chain-transactions")
 export class onChainTransactions {
@@ -35,6 +35,6 @@ export class onChainTransactions {
     @Column({ nullable: true })
     confirmedAt: string;
 
-    @CreateDateColumn({ nullable: true, type: "timestamp" })
+    @Column({ nullable: true, type: "timestamp" })
     createdAt: string;
 }
