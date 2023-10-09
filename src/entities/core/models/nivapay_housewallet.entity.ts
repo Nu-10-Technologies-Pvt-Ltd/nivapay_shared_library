@@ -12,26 +12,11 @@ export class NivapayHousewalletModel {
   id: string;
 
   @Column({ nullable: true })
-  userId: string // admin-users . who created. etc.
+  walletId: string
 
   @Column({ nullable: true })
-  walletAddress: string
+  wallet_type: string
 
   @Column({ nullable: true })
-  env: string
-
-  @Column({ nullable: true })
-  network: string
-
-  @Column({ nullable: true })
-  crypto: string
-
-  @Column({ nullable: true })
-  testnet: boolean
-
-  @Column({ nullable: true })
-  type: string // reserve // gas-station etc
-
-  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date;
 }
