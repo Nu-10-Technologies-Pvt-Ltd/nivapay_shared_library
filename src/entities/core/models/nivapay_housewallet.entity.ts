@@ -18,5 +18,5 @@ export class NivapayHousewalletModel {
   wallet_type: string
 
   @Column({ nullable: true })
-  createdAt: Date;
+  createdAt: string;
 }
