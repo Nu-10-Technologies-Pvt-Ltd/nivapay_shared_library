@@ -1,4 +1,3 @@
-import { AccountCurrencyBalances } from "./models/account_currency_balances.entity";
 import { AccountWalletAddress } from "./models/account_wallet_address.entity";
 import { Accounts_Accounting } from "./models/accounts_accounting.entity";
 import { M_Balance } from "./models/m_balance.entity";
@@ -14,8 +13,7 @@ const Common_Entities = [
     AccountWalletAddress,
     Accounts,
     Accounts_Accounting,
-    NivapayKmsWallet,
-    AccountCurrencyBalances
+    NivapayKmsWallet
 ]
 
 export {
@@ -25,8 +23,7 @@ export {
     AccountWalletAddress,
     Accounts,
     Accounts_Accounting,
-    NivapayKmsWallet,
-    AccountCurrencyBalances
+    NivapayKmsWallet
 }
 
 export default Common_Entities;
