@@ -1,0 +1,4 @@
+export enum HOUSE_WALLET_TYPES {
+    GAS_STATION = 'GAS_STATION',
+    TREASURY = 'TREASURY'
+}
