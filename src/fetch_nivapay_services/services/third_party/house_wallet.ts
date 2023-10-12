@@ -54,3 +54,21 @@ export async function estimateGasFromHouseWallet(
     )
     return response.data ? response.data : null
 }
+
+export async function gasFeeFundingToTreasury(
+    env: string,
+    api_key: string,
+    query: {gasCurrencyId: string, treasuryCurrencyId: string, amount: string}
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/nivapay-housewallet/gas/funding`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
