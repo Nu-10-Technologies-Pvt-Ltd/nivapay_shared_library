@@ -6,10 +6,10 @@ export class M_Balance {
     id: string;
 
     @Column({nullable: true})
-    account_id: string;
+    accountId: string;
 
     @Column({nullable: true})
-    currency_id: string;
+    currencyId: string;
 
     @Column({ default: '0' })
     balance: string;
