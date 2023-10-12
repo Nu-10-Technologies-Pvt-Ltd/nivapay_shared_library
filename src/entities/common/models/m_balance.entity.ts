@@ -17,16 +17,16 @@ export class M_Balance {
     @Column({ default: '0' })
     balance_$: string;
 
-    @Column()
+    @Column({nullable: true})
     merchant_id: string;
 
     @Column({ nullable: true })
     crypto_coin_id: string
 
-    @Column()
+    @Column({nullable: true})
     currency: string;
 
-    @Column()
+    @Column({nullable: true})
     network: string
 
     @Column({ type: "numeric", default: 0 })
