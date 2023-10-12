@@ -8,6 +8,15 @@ export class M_Balance {
     @Column({nullable: true})
     account_id: string;
 
+    @Column({nullable: true})
+    currency_id: string;
+
+    @Column({ default: '0' })
+    balance: string;
+
+    @Column({ default: '0' })
+    balance_$: string;
+
     @Column()
     merchant_id: string;
 
