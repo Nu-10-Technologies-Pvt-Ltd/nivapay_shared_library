@@ -9,5 +9,3 @@ export * from "./entities/on_treasury_swap"
 export * from './dtos'
 
 export * as NivapayFunctions from './services'
-
-export * as enums from './enums'
