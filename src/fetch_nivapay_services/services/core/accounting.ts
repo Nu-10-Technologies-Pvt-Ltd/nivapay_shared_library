@@ -72,3 +72,25 @@ export async function handleUpdateAccountBalance(env: string, api_key: string, q
         throw new Error(error.message);
     }
 }
+
+export async function CreateTreasurySwapOrderAccounting(env: string, api_key: string, query: { 
+    order_id: string, 
+    onChaintransactionId: string, 
+    offChaintransactionId: string
+}) {
+    try {
+        const host = Config.default.hosts.core_service[env];
+        const response = await axios.post(
+            `${host}/sdk/accounting/treasury_swap`,
+            query,
+            {
+                headers: {
+                    'x-api-key': api_key,
+                },
+            }
+        )
+        return response.data
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
