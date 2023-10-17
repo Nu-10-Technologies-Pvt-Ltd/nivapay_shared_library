@@ -113,3 +113,21 @@ export async function getAccountById (env: string, api_key: string, query: {
     )
     return response.data
 }
+
+export async function getAccountBy (env: string, api_key: string, query: {
+    merchant_user_id:string,
+    customerId: string,
+    entityType: string
+}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.post(
+        `${host}/nivapay/accounts/getBy`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
