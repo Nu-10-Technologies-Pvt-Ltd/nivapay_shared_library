@@ -65,7 +65,7 @@ export class onrampTreasureSwapOrder {
     @Column()
     merchant_brand_name: string
 
-    @Column()
+    @Column({ nullable: true })
     merchant_txn_id: string
 
     @Column()
@@ -101,7 +101,7 @@ export class onrampTreasureSwapOrder {
     @Column({ nullable: true })
     order_user_email_id: string
 
-    @Column()
+    @Column({ nullable: true })
     user_email_id: string
 
     @Column({ nullable: true })
@@ -154,12 +154,6 @@ export class onrampTreasureSwapOrder {
 
     @Column({ nullable: true })
     transak_txn_crypto_amount: string
-
-    @Column()
-    order_virtual_currency_id: string
-
-    @Column()
-    product_id: string
 
     @Column({ nullable: true })
     transak_txn_hash: string
