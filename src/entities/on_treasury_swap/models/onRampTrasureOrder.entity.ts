@@ -140,9 +140,6 @@ export class onrampTreasureSwapOrder {
     @Column({ nullable: true })
     gateway_url: string
 
-    @Column({ nullable: true })
-    nivapay_hash: string
-
     @Column({ default: false })
     redirected: boolean
 
