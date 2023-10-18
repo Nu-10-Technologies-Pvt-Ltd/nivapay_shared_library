@@ -75,8 +75,10 @@ export async function handleUpdateAccountBalance(env: string, api_key: string, q
 
 export async function CreateTreasurySwapOrderAccounting(env: string, api_key: string, query: { 
     order_id: string, 
-    onChaintransactionId: string, 
-    offChaintransactionId: string
+    onChaintransactionId?: string, 
+    offChaintransactionId?: string,
+    eq_pzp_amount?: string,
+    gas_fee_required: string
 }) {
     try {
         const host = Config.default.hosts.core_service[env];
