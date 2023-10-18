@@ -37,6 +37,25 @@ export async function getBalanceFromHouseWallet(
     return response.data ? response.data : null
 }
 
+export async function getNativeBalanceFromHouseWallet(
+    env: string,
+    api_key: string,
+    query: {house_wallet_type:string, currencyId: string}
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/nivapay-housewallet/get/native/balance`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
+
 export async function estimateGasFromHouseWallet(
     env: string,
     api_key: string,
