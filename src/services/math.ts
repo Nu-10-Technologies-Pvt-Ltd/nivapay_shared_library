@@ -76,3 +76,11 @@ export function scientificToDecimal(scientificNotation) {
     const decimalNumber = bigNumber.toFormat(Math.abs(bigNumber.e))
     return decimalNumber
 }
+
+export function getAbsoluteValue(value){
+    const result = new Decimal(value).abs();
+    return {
+        resultAsString: result.toString(),
+        resultAsNumber: result.toNumber()
+    }
+}
