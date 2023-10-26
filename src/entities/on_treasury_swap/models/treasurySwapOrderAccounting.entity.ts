@@ -38,25 +38,25 @@ export class treasurySwapOrderAccountingModal {
     @Column()
     swapOutNetAmount: string;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     swapInGrossAmount_$: number;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     serviceFee_$: number;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     swapInNetworkFeeEstimated_$: number;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     swapInNetAmount_$: number;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     swapOutGrossAmount_$: number;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     swapOutNetworkFeeEstimated_$: number;
     
-    @Column({type:'decimal', default:0})
+    @Column({type:'numeric', default:0, nullable: true})
     swapOutNetAmount_$: number;
     
     @CreateDateColumn({ type: "timestamp" })
