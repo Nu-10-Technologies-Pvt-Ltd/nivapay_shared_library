@@ -11,6 +11,7 @@ import { MerchantUser } from './models/merchant_user.entity';
 import { NivapayHousewalletModel } from './models/nivapay_housewallet.entity';
 import { Merchant_Webhook_log } from './models/callback_log.entity';
 import { NivapaySdkUsersModel } from './models/nivapay_sdk_users.entity';
+import { nvpNetworks } from './models/nvp_networks.entity';
 
 
 const Core_Entities = [
@@ -26,7 +27,8 @@ const Core_Entities = [
     MerchantServiceFeeConfigurationModel,
     MerchantUser,
     Merchant_Webhook_log,
-    NivapaySdkUsersModel
+    NivapaySdkUsersModel,
+    nvpNetworks
 ]
 
 export {
@@ -42,7 +44,8 @@ export {
     MerchantServiceFeeConfigurationModel,
     MerchantUser,
     Merchant_Webhook_log,
-    NivapaySdkUsersModel
+    NivapaySdkUsersModel,
+    nvpNetworks
 }
 
 export default Core_Entities
