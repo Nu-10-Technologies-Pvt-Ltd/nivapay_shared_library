@@ -8,6 +8,7 @@ import { updateDepositOrderDto } from "./dtos/deposit-order-update.dto"
 import { AccountsEntityType, CreateAccountDTO } from "./dtos/create-account.dto"
 import { nvpNetworksDTO } from "./dtos/nvpNetworksDTO.dto"
 import { checkConfigDto } from "./dtos/check_config.dto"
+import { createSwapOrderDto } from "./dtos/swap_component/create_swap_order.dto"
 export {
     KmsWalletCreateDto,
     UpdateBalanceDTO,
@@ -23,5 +24,6 @@ export {
     CreateAccountDTO,
     AccountsEntityType,
     nvpNetworksDTO,
-    checkConfigDto
+    checkConfigDto,
+    createSwapOrderDto
 }
