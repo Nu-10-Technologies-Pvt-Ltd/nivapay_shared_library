@@ -9,7 +9,7 @@ export class npvNetworks {
     network: string;
 
     @Column({ default: false })
-    supports_memo: boolean
+    supportsMemo: boolean
 
     @Column({ type: 'boolean' })
     isTestNet: boolean
@@ -20,38 +20,38 @@ export class npvNetworks {
     @Column({ nullable: true })
     chainId: string //for evm network only 
 
+    @Column({ nullable: true })
+    nativeAssetId: string;
+
+    @Column({ nullable: true })
+    rpcUrlEvm: string;
+
     @Column()
-    native_asset_id: string;
-
-    @Column()
-    rpc_url_evm: string;
-
-    @Column()
-    block_time_secs: number;
+    blockTimeSecs: number;
 
     @Column({ nullable: true })
-    finality_block_confirmations_count: number;
+    finalityBlockConfirmationsCount: number;
 
     @Column({ nullable: true })
-    transaction_out_eta_mins_1: number;
+    transactionOutEtaMins1: number;
 
     @Column({ nullable: true })
-    transaction_out_eta_mins_2: number;
+    transactionOutEtaMins2: number;
 
     @Column({ nullable: true })
-    transaction_in_eta_mins_1: number;
+    transactionInEtaMins1: number;
 
     @Column({ nullable: true })
-    transaction_in_eta_mins_2: number;
+    transactionInEtaMins2: number;
 
     @Column({ nullable: true })
-    transaction_in_eta_mins_3: number;
+    transactionInEtaMins3: number;
 
     @Column({ nullable: true })
-    block_explorer_txn_url_prefix: string;
+    blockExplorerTxnUrlPrefix: string;
 
     @Column({ nullable: true })
-    block_explorer_wallet_url_prefix: string;
+    blockExplorerWalletUrlPrefix: string;
 
     @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date
