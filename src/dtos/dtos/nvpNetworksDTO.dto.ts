@@ -1,6 +1,6 @@
 import { IsString, IsBoolean, IsNumber, IsDefined, IsNotEmpty } from 'class-validator';
 
-export class npvNetworksDTO {
+export class nvpNetworksDTO {
     @IsString()
     @IsDefined()
     @IsNotEmpty()

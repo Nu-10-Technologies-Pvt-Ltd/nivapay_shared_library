@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("nivapay-networks")
-export class npvNetworks {
+export class nvpNetworks {
     @PrimaryGeneratedColumn("uuid")
     network_id: string;
 
