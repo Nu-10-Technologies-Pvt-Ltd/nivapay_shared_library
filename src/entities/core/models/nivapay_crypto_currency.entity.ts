@@ -56,7 +56,10 @@ export class NivapayCryptoCurrencyModel {
   block_explorer_wallet_url_prefix: string;
 
   @Column({ nullable: true })
-  cmc_id: number
+  cmc_id: number;
+
+  @Column({ nullable: true })
+  network_id: string
 
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date
