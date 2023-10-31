@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 
 @Entity('swap_order')
 export class SwapOrderModel {
-    @PrimaryGeneratedColumn('uuid')
+    @Column()
     id: string;
 
     @Column()
