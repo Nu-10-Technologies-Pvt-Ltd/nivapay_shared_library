@@ -6,6 +6,7 @@ import { UpdateBalanceDTO } from "./dtos/update_balance.dto"
 import { UserDepositsMerchantWebhookDto, UserDepositsWebhookContext, UserDepositsWebhookData } from "./dtos/user-deposits-webhook.dto"
 import { updateDepositOrderDto } from "./dtos/deposit-order-update.dto"
 import { AccountsEntityType, CreateAccountDTO } from "./dtos/create-account.dto"
+import { nvpNetworksDTO } from "./dtos/nvpNetworksDTO.dto"
 export {
     KmsWalletCreateDto,
     UpdateBalanceDTO,
@@ -19,5 +20,6 @@ export {
     UserDepositsWebhookData,
     updateDepositOrderDto,
     CreateAccountDTO,
-    AccountsEntityType
+    AccountsEntityType,
+    nvpNetworksDTO
 }
