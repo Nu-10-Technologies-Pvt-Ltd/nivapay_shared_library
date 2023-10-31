@@ -1,4 +1,4 @@
-import { IsString, IsBoolean, IsNumber, IsDefined, IsNotEmpty } from 'class-validator';
+import { IsString, IsBoolean, IsNumber, IsDefined, IsNotEmpty, IsOptional } from 'class-validator';
 
 export class nvpNetworksDTO {
     @IsString()
@@ -7,8 +7,6 @@ export class nvpNetworksDTO {
     network: string;
 
     @IsBoolean()
-    @IsDefined()
-    @IsNotEmpty()
     supportsMemo: boolean;
 
     @IsBoolean()
@@ -22,8 +20,7 @@ export class nvpNetworksDTO {
     payUriNetwork: string;
 
     @IsString()
-    @IsDefined()
-    @IsNotEmpty()
+    @IsOptional()
     chainId: string;
 
     @IsString()
@@ -32,28 +29,34 @@ export class nvpNetworksDTO {
     nativeAssetId: string;
 
     @IsString()
-    @IsDefined()
-    @IsNotEmpty()
+    @IsOptional()
     rpcUrlEvm: string;
 
     @IsNumber()
+    @IsOptional()
     blockTimeSecs: number;
 
     @IsNumber()
+    @IsOptional()
     finalityBlockConfirmationsCount: number;
 
     @IsNumber()
+    @IsOptional()
     transactionOutEtaMins1: number;
 
     @IsNumber()
+    @IsOptional()
     transactionOutEtaMins2: number;
 
+    @IsOptional()
     @IsNumber()
     transactionInEtaMins1: number;
 
+    @IsOptional()
     @IsNumber()
     transactionInEtaMins2: number;
 
+    @IsOptional()
     @IsNumber()
     transactionInEtaMins3: number;
 

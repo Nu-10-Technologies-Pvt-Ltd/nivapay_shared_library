@@ -8,7 +8,7 @@ export class nvpNetworks {
     @Column()
     network: string;
 
-    @Column({ default: false })
+    @Column({ default: false, nullable: true })
     supportsMemo: boolean
 
     @Column({ type: 'boolean' })
@@ -26,7 +26,7 @@ export class nvpNetworks {
     @Column({ nullable: true })
     rpcUrlEvm: string;
 
-    @Column()
+    @Column({ nullable: true })
     blockTimeSecs: number;
 
     @Column({ nullable: true })
