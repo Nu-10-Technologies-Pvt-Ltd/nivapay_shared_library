@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString } from "class-validator";
 
 export class createSwapOrderDto {
-    order_id?: string;
+    id?: string;
     order_status?: string;
 
     @IsNotEmpty()
