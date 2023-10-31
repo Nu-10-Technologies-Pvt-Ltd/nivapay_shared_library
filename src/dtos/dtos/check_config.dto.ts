@@ -27,10 +27,6 @@ export class ChecksRequiredDto{
 
     @IsNotEmpty()
     @IsBoolean()
-    nvp_merchant_config: boolean;
-
-    @IsNotEmpty()
-    @IsBoolean()
     nvp_crypto_currency_config: boolean;
 
     @IsNotEmpty()
