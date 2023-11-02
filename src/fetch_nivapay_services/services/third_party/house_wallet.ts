@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as Config from '../../../config';
+import { HOUSE_WALLET_TYPES } from '../../../enums';
 
 export async function transferFromHouseWallet(
     env: string,
@@ -100,6 +101,24 @@ export async function gasFeeFundingToTreasury(
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
         `${host}/nivapay-housewallet/gas/funding`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
+export async function checkHouseWalletExists(
+    env: string,
+    api_key: string,
+    query: {currency_id: string, wallet_type: HOUSE_WALLET_TYPES}
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/nivapay-housewallet/exists`,
         query,
         {
             headers: {
