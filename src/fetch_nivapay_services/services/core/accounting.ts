@@ -55,7 +55,7 @@ export async function userDepositOrderAccounting(env: string, api_key: string, q
     return response.data
 };
 
-export async function handleUpdateAccountBalance(env: string, api_key: string, query: { account_id: string, order_id: string, transaction_id: string, currency_id: string, incoming_amount: string, outgoing_amount: number }) {
+export async function handleUpdateAccountBalance(env: string, api_key: string, query: { account_id: string, order_id: string, transaction_id: string, currency_id: string, incoming_amount: string, outgoing_amount: string }) {
     try {
         const host = Config.default.hosts.core_service[env];
         const response = await axios.post(
@@ -73,9 +73,9 @@ export async function handleUpdateAccountBalance(env: string, api_key: string, q
     }
 }
 
-export async function CreateTreasurySwapOrderAccounting(env: string, api_key: string, query: { 
-    order_id: string, 
-    onChaintransactionId?: string, 
+export async function CreateTreasurySwapOrderAccounting(env: string, api_key: string, query: {
+    order_id: string,
+    onChaintransactionId?: string,
     offChaintransactionId?: string,
     eq_pzp_amount?: string,
     gas_fee_required: string
