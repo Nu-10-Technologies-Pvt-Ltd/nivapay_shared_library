@@ -23,6 +23,9 @@ export class SwapOrderModel {
     @Column()
     swap_out_wallet_address: string;
 
+    @Column()
+    order_status_detail: string;
+
     @CreateDateColumn({ type: 'timestamptz' })
     createdAt: Date;
 
