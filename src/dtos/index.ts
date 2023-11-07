@@ -27,3 +27,5 @@ export {
     checkConfigDto,
     createSwapOrderDto
 }
+
+export * as core_dtos from './dtos/core'
