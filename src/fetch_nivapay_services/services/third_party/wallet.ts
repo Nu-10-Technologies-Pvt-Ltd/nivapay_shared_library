@@ -66,6 +66,25 @@ export async function createWallet(
     return response.data ? response.data : null
 }
 
+export async function getWalletDetailsById(
+    env: string,
+    api_key: string,
+    query: {
+        wallet_id: string,
+    }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/kms/address/wallet/details/${query.wallet_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
 export async function createDepositWallet(
     env: string,
     api_key: string,
