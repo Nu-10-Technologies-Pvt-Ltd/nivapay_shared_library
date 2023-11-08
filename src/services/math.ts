@@ -61,6 +61,17 @@ export function addition(numberOne, numberTwo) {
     }
 }
 
+export function arrayAddition(numbers){
+    let sum = 0;
+    for(const number of numbers){
+        sum = addition(sum,number).resultAsNumber
+    }
+    return {
+        resultAsString: sum.toString(),
+        resultAsNumber: sum
+    }
+}
+
 export function subtraction(numberOne, numberTwo) {
     const decimalOne = new Decimal(numberOne);
     const decimalTwo = new Decimal(numberTwo);
@@ -82,5 +93,19 @@ export function getAbsoluteValue(value){
     return {
         resultAsString: result.toString(),
         resultAsNumber: result.toNumber()
+    }
+}
+
+export function getAverageAbsoluteValue(numbers){
+    const average = divide(
+        arrayAddition(numbers).resultAsString,
+        numbers.length
+    ).resultAsString
+    
+    const result = getAbsoluteValue(average).resultAsNumber
+
+    return {
+        resultAsString: result.toString(),
+        resultAsNumber: result
     }
 }
