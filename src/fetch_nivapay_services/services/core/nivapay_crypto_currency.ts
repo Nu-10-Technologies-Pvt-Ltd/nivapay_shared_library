@@ -80,3 +80,16 @@ export async function getNativeByNetwork(env:string, api_key: string, query:{net
     )
     return response.data;
 }
+
+export async function getAllByNetworkId(env:string, api_key: string, query:{network_id: string}){
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.get(
+        `${host}/nivapay/crypto/currencies/get/by-network-id/${query.network_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data;
+}
