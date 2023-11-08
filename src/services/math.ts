@@ -96,13 +96,13 @@ export function getAbsoluteValue(value){
     }
 }
 
-export function getAverageAbsoluteValue(numbers){
+export function getAverageInteger(numbers){
     const average = divide(
         arrayAddition(numbers).resultAsString,
         numbers.length
     ).resultAsString
     
-    const result = getAbsoluteValue(average).resultAsNumber
+    const result = roundUpToNearestInteger(average).resultAsNumber
 
     return {
         resultAsString: result.toString(),
