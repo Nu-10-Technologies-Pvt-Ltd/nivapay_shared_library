@@ -29,3 +29,5 @@ export * as nivapay_accounts from './nivapay_accounts'
 export * as accounting from "./accounting"
 
 export * as config from "./config"
+
+export * as nivapay_networks from './nivapay_networks'
