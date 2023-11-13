@@ -29,7 +29,6 @@ export async function getOrderDetails(
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
         `${host}/sdk/onramp/order/details/${query.order_id}`,
-        query,
         {
             headers: {
                 'x-api-key': api_key,
@@ -46,7 +45,6 @@ export async function getOrderStatus(
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
         `${host}/sdk/onramp/order/status/${query.order_id}`,
-        query,
         {
             headers: {
                 'x-api-key': api_key,
@@ -63,7 +61,6 @@ export async function getTransactionDetails(
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
         `${host}/sdk/onramp/transaction/details/${query.order_id}`,
-        query,
         {
             headers: {
                 'x-api-key': api_key,
