@@ -1,0 +1,108 @@
+import axios from 'axios';
+import * as Config from '../../../config';
+import { onrampOrderDto } from 'src/dtos/dtos/onramp_component/onrampOrderDto.dto';
+
+
+export async function createOrder(
+    env: string,
+    api_key: string,
+    query: onrampOrderDto
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/merchant/sdk/onramp-order`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
+export async function getOrderDetails(
+    env: string,
+    api_key: string,
+    query: { order_id: string }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/sdk/onramp/order/details/${query.order_id}`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+export async function getOrderStatus(
+    env: string,
+    api_key: string,
+    query: { order_id: string }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/sdk/onramp/order/status/${query.order_id}`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+export async function getTransactionDetails(
+    env: string,
+    api_key: string,
+    query: { order_id: string }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/sdk/onramp/transaction/details/${query.order_id}`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+export async function updateTransactionStatus(
+    env: string,
+    api_key: string,
+    query: { order_id: string, order_status: string }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.put(
+        `${host}/sdk/onramp/update/status`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+export async function orderEvent(
+    env: string,
+    api_key: string,
+    query: { user_event: string, provider: string, data: any, timestamp: string }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.put(
+        `${host}/sdk/onramp/order/events`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
