@@ -8,7 +8,7 @@ export async function createOrder(
     api_key: string,
     query: onrampOrderDto
 ) {
-    const host = Config.default.hosts.third_party_service[env];
+    const host = Config.default.hosts.onramp_service[env];
     const response = await axios.post(
         `${host}/merchant/sdk/onramp-order`,
         query,
@@ -26,7 +26,7 @@ export async function getOrderDetails(
     api_key: string,
     query: { order_id: string }
 ) {
-    const host = Config.default.hosts.third_party_service[env];
+    const host = Config.default.hosts.onramp_service[env];
     const response = await axios.get(
         `${host}/sdk/onramp/order/details/${query.order_id}`,
         {
@@ -42,7 +42,7 @@ export async function getOrderStatus(
     api_key: string,
     query: { order_id: string }
 ) {
-    const host = Config.default.hosts.third_party_service[env];
+    const host = Config.default.hosts.onramp_service[env];
     const response = await axios.get(
         `${host}/sdk/onramp/order/status/${query.order_id}`,
         {
@@ -58,7 +58,7 @@ export async function getTransactionDetails(
     api_key: string,
     query: { order_id: string }
 ) {
-    const host = Config.default.hosts.third_party_service[env];
+    const host = Config.default.hosts.onramp_service[env];
     const response = await axios.get(
         `${host}/sdk/onramp/transaction/details/${query.order_id}`,
         {
@@ -74,7 +74,7 @@ export async function updateTransactionStatus(
     api_key: string,
     query: { order_id: string, order_status: string }
 ) {
-    const host = Config.default.hosts.third_party_service[env];
+    const host = Config.default.hosts.onramp_service[env];
     const response = await axios.put(
         `${host}/sdk/onramp/update/status`,
         query,
@@ -91,7 +91,7 @@ export async function orderEvent(
     api_key: string,
     query: { user_event: string, provider: string, data: any, timestamp: string }
 ) {
-    const host = Config.default.hosts.third_party_service[env];
+    const host = Config.default.hosts.onramp_service[env];
     const response = await axios.put(
         `${host}/sdk/onramp/order/events`,
         query,

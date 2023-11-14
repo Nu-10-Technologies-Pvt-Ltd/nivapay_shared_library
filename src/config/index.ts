@@ -15,6 +15,11 @@ export default {
             local: "http://localhost:5006",
             dev: "http://dev-api-user-deposits.nivapay.com",
             prod: "http://api-user-deposits.nivapay.com"
+        },
+        onramp_service: {
+            local: "http://localhost:6000",
+            dev: "http://dev-ramp-component.nivapay.com",
+            prod: "http://ramp-component.nivapay.com"
         }
     }
 }
