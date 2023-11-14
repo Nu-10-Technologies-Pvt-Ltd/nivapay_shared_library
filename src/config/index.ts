@@ -8,13 +8,17 @@ export default {
         third_party_service: {
             local: "http://localhost:3100",
             dev: "http://dev-api-thirdparty-service.nivapay.com",
-            // dev: "http://nivapay-main-api-lb2-77118926.us-east-1.elb.amazonaws.com:5004",
             prod: "https://api-thirdparty-service.nivapay.com"
         },
         user_deposits_service: {
             local: "http://localhost:5006",
             dev: "http://dev-api-user-deposits.nivapay.com",
-            prod: "http://api-user-deposits.nivapay.com"
+            prod: "https://api-user-deposits.nivapay.com"
+        },
+        swap_component: {
+            local: "http://localhost:5010",
+            dev: "http://dev-swap-component.nivapay.com",
+            prod: "https://swap-component.nivapay.com"
         }
     }
 }
