@@ -16,8 +16,8 @@ export class NivapayCryptoCurrencyModel {
   @Column()
   symbol: string
 
-  @Column()
-  network: string
+  // @Column()
+  // network: string
 
   @Column({ type: 'boolean' })
   isTestNet: boolean
@@ -28,17 +28,17 @@ export class NivapayCryptoCurrencyModel {
   @Column({ default: 0 })
   decimal_digits: Number
 
-  @Column({ default: 0 })
-  incoming_detecting_eta_mins: Number
+  // @Column({ default: 0 })
+  // incoming_detecting_eta_mins: Number
 
   @Column({ nullable: true, default: false })
   IsERC20Token: boolean
 
-  @Column({ nullable: true })
-  payUriNetwork: string
+  // @Column({ nullable: true })
+  // payUriNetwork: string
 
-  @Column({ nullable: true })
-  chainId: string //for evm network only
+  // @Column({ nullable: true })
+  // chainId: string //for evm network only
 
   @Column({ nullable: true })
   contractAddress: string;
@@ -49,11 +49,11 @@ export class NivapayCryptoCurrencyModel {
   @Column({ nullable: true })
   token_standard: string;
 
-  @Column({ nullable: true })
-  block_explorer_txn_url_prefix: string;
+  // @Column({ nullable: true })
+  // block_explorer_txn_url_prefix: string;
 
-  @Column({ nullable: true })
-  block_explorer_wallet_url_prefix: string;
+  // @Column({ nullable: true })
+  // block_explorer_wallet_url_prefix: string;
 
   @Column({ nullable: true })
   cmc_id: number;
