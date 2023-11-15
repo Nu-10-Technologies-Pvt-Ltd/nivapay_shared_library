@@ -34,3 +34,11 @@ export function formatToISOString(timestamp) {
 export function getCurrentDateTime(){
     return new Date().toISOString()
 }
+
+export function currentTimePlusMinutes(minutesToAdd: number){
+    const currentTime = getCurrentDateTime();
+    const currentTimeInMilliseconds = Date.parse(currentTime);
+
+    const newTimeInMilliseconds = currentTimeInMilliseconds + minutesToAdd * 60000; // 60000 milliseconds in a minute
+    return formatToISOString(newTimeInMilliseconds);
+}
