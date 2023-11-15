@@ -20,9 +20,6 @@ export class DepositComponentOrderModel{
     @Column({comment: 'The amount that should be credited/debited'})
     transaction_amount: string;
 
-    @Column({comment: 'More details reflecting the reason for order status'})
-    order_status_detail: string;
-
     @CreateDateColumn({ type: 'timestamptz' })
     createdAt: Date;
 
