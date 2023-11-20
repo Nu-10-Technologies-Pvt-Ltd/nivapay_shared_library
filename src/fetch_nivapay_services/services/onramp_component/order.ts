@@ -1,13 +1,12 @@
+/* eslint-disable prettier/prettier */
 import axios from 'axios';
 import * as Config from '../../../config';
 // import { OnrampOrderDto } from 'src/dtos/dtos/onramp_component/OnrampOrderDto.dto';
-import { OnrampOrderDto } from '../../../dtos/dtos/onramp_component/OnrampOrderDto.dto';
-
 
 export async function createOrder(
     env: string,
     api_key: string,
-    query: OnrampOrderDto
+    query: any,
 ) {
     const host = Config.default.hosts.onramp_service[env];
     const response = await axios.post(
@@ -17,15 +16,15 @@ export async function createOrder(
             headers: {
                 'x-api-key': api_key,
             },
-        }
-    )
-    return response.data ? response.data : null
+        },
+    );
+    return response.data ? response.data : null;
 }
 
 export async function getOrderDetails(
     env: string,
     api_key: string,
-    query: { order_id: string }
+    query: { order_id: string },
 ) {
     const host = Config.default.hosts.onramp_service[env];
     const response = await axios.get(
@@ -34,14 +33,14 @@ export async function getOrderDetails(
             headers: {
                 'x-api-key': api_key,
             },
-        }
-    )
-    return response.data ? response.data : null
+        },
+    );
+    return response.data ? response.data : null;
 }
 export async function getOrderStatus(
     env: string,
     api_key: string,
-    query: { order_id: string }
+    query: { order_id: string },
 ) {
     const host = Config.default.hosts.onramp_service[env];
     const response = await axios.get(
@@ -50,14 +49,14 @@ export async function getOrderStatus(
             headers: {
                 'x-api-key': api_key,
             },
-        }
-    )
-    return response.data ? response.data : null
+        },
+    );
+    return response.data ? response.data : null;
 }
 export async function getTransactionDetails(
     env: string,
     api_key: string,
-    query: { order_id: string }
+    query: { order_id: string },
 ) {
     const host = Config.default.hosts.onramp_service[env];
     const response = await axios.get(
@@ -66,41 +65,33 @@ export async function getTransactionDetails(
             headers: {
                 'x-api-key': api_key,
             },
-        }
-    )
-    return response.data ? response.data : null
+        },
+    );
+    return response.data ? response.data : null;
 }
 export async function updateTransactionStatus(
     env: string,
     api_key: string,
-    query: { order_id: string, order_status: string }
+    query: { order_id: string; order_status: string },
 ) {
     const host = Config.default.hosts.onramp_service[env];
-    const response = await axios.put(
-        `${host}/sdk/onramp/update/status`,
-        query,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
-        }
-    )
-    return response.data ? response.data : null
+    const response = await axios.put(`${host}/sdk/onramp/update/status`, query, {
+        headers: {
+            'x-api-key': api_key,
+        },
+    });
+    return response.data ? response.data : null;
 }
 export async function orderEvent(
     env: string,
     api_key: string,
-    query: { user_event: string, provider: string, data: any, timestamp: string }
+    query: { user_event: string; provider: string; data: any; timestamp: string },
 ) {
     const host = Config.default.hosts.onramp_service[env];
-    const response = await axios.put(
-        `${host}/sdk/onramp/order/events`,
-        query,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
-        }
-    )
-    return response.data ? response.data : null
+    const response = await axios.put(`${host}/sdk/onramp/order/events`, query, {
+        headers: {
+            'x-api-key': api_key,
+        },
+    });
+    return response.data ? response.data : null;
 }
