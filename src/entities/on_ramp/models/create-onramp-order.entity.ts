@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity('onramp-order')
-export class onRampOrder {
+export class OnrampOrder {
     @PrimaryColumn()
     id: string; // on ramp order id   :string
 

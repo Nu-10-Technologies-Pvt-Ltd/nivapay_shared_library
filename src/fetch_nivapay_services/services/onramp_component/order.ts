@@ -1,12 +1,12 @@
 import axios from 'axios';
 import * as Config from '../../../config';
-import { onrampOrderDto } from 'src/dtos/dtos/onramp_component/onrampOrderDto.dto';
+import { OnrampOrderDto } from 'src/dtos/dtos/onramp_component/OnrampOrderDto.dto';
 
 
 export async function createOrder(
     env: string,
     api_key: string,
-    query: onrampOrderDto
+    query: OnrampOrderDto
 ) {
     const host = Config.default.hosts.onramp_service[env];
     const response = await axios.post(
