@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios';
 import * as Config from '../../../config';
-// import { OnrampOrderDto } from 'src/dtos/dtos/onramp_component/OnrampOrderDto.dto';
 
 export async function createOrder(
     env: string,
