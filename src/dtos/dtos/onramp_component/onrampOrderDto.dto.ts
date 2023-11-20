@@ -7,7 +7,7 @@ import {
     IsOptional,
 } from 'class-validator';
 
-export class onrampOrderDto {
+export class OnrampOrderDto {
     @IsString()
     @IsOptional()
     id: string;
