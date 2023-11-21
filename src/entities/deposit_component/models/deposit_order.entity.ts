@@ -8,7 +8,7 @@ export class DepositComponentOrderModel {
     @Column({ comment: 'Status of order' })
     order_status: string;
 
-    @Column({ comment: 'Wallet from which the amount should be debited' })
+    @Column({ nullable: true, comment: 'Wallet from which the amount should be debited' })
     from_wallet_id: string;
 
     @Column({ nullable: true, comment: 'Wallet to which the amount should be credited' })
@@ -20,7 +20,7 @@ export class DepositComponentOrderModel {
     @Column({ nullable: true, comment: 'Account to which the amount should be credited' })
     to_account_id: string;
 
-    @Column({ nullable: true, comment: 'The currency which amount credit and debit will take place' })
+    @Column({ comment: 'The currency which amount credit and debit will take place' })
     transaction_currency_id: string
 
     @Column({ comment: 'The amount that should be credited/debited' })
