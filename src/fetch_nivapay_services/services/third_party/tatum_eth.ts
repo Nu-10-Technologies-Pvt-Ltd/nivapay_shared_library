@@ -97,3 +97,27 @@ export async function getEstimatedFee(
     )
     return response.data ? response.data : null
 }
+
+export async function estimateGasFee(
+    env: string,
+    api_key: string,
+    query: {
+        fromAddress: string
+        toAddress: string
+        amount: string
+        currencyId: string
+    }
+) {
+
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/provider/tatum/ethereum/estimate/gas/fee`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
