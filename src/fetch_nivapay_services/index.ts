@@ -8,4 +8,4 @@ export * as on_ramp from './services/onramp_component';
 
 export * as swap_component from './services/swap_component';
 
-export * as deposit_process from './services/deposit_component';
+export * as deposit_component from './services/deposit_component';
