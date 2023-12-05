@@ -2,9 +2,9 @@ import axios from 'axios';
 import * as Config from '../../../config';
 
 export async function initiateOrder(env: string, api_key: string, query: { order_id: string }) {
-    const host = Config.default.hosts.deposit_component[env];
+    const host = Config.default.hosts.dw_component[env];
     const response = await axios.get(
-        `${host}/deposit/initiate/order/${query.order_id}`,
+        `${host}/dw/initiate/order/${query.order_id}`,
         {
             headers: {
                 'x-api-key': api_key,
@@ -15,9 +15,9 @@ export async function initiateOrder(env: string, api_key: string, query: { order
 }
 
 export async function getTransactionDetails(env: string, api_key: string, query: { order_id: string }) {
-    const host = Config.default.hosts.deposit_component[env];
+    const host = Config.default.hosts.dw_component[env];
     const response = await axios.get(
-        `${host}/deposit/transaction/details/${query.order_id}`,
+        `${host}/dw/transaction/details/${query.order_id}`,
         {
             headers: {
                 'x-api-key': api_key,

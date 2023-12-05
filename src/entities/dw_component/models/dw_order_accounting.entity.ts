@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm"
 
-@Entity("deposit_component_order_accounting")
-export class DepositComponentOrderAccountingModel {
+@Entity("dw_order_accounting")
+export class DwComponentOrderAccountingModel {
     @PrimaryGeneratedColumn('uuid')
     accountingEntryId: string;
 

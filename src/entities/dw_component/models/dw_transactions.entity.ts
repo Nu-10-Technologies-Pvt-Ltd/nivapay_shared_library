@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("deposit_component_transactions")
-export class DepositComponentTransactionsModel {
+@Entity("dw_transactions")
+export class DwComponentTransactionsModel {
     @PrimaryGeneratedColumn("uuid")
     transactionId: string;
 
