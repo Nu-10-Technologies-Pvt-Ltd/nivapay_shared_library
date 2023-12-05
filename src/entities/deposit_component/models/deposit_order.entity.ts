@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
-@Entity('dwt_order')
+@Entity('dw_order')
 export class DwComponentOrderModel {
     @PrimaryColumn({ comment: "Order Id" })
     id: string;
