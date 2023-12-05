@@ -15,11 +15,21 @@ export async function emailsAndWebhook(
         explore_url: string;
     },
 ) {
-    const host = Config.default.hosts.core_service[env];
-    const response = await axios.post(`${host}/sdk-payin-mail/success`, query, {
-        headers: {
-            'x-api-key': api_key,
-        },
-    });
-    return response.data;
+    try {
+
+        const host = Config.default.hosts.core_service[env];
+        const response = await axios.post(`${host}/sdk-payin-mail/success`, query, {
+            headers: {
+                'x-api-key': api_key,
+            },
+        });
+        return response.data;
+
+    } catch (error) {
+        console.log("error")
+        return {
+            status: false,
+            message: error.message
+        }
+    }
 }
