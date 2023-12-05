@@ -6,7 +6,7 @@ export * from './entities/on_ramp'
 export * from './entities/user_deposits'
 export * from "./entities/on_treasury_swap"
 export * from "./entities/swap_component"
-export * from "./entities/deposit_component"
+export * from "./entities/dw_component"
 
 export * from './dtos'
 
