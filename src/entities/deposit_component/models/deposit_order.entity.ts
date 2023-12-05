@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
-@Entity('deposit_component_order')
-export class DepositComponentOrderModel {
+@Entity('dwt_order')
+export class DwComponentOrderModel {
     @PrimaryColumn({ comment: "Order Id" })
     id: string;
 
