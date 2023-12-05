@@ -93,17 +93,26 @@ export async function transfer_failed(env: string, api_key: string, query: {
         merchant_user_id: string;
     }
 }) {
-    const host = Config.default.hosts.core_service[env];
-    const response = await axios.post(
-        `${host}/sdk-o2d-mail/transfer_failed`,
-        query.payload,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
+    try {
+
+        const host = Config.default.hosts.core_service[env];
+        const response = await axios.post(
+            `${host}/sdk-o2d-mail/transfer_failed`,
+            query.payload,
+            {
+                headers: {
+                    'x-api-key': api_key,
+                },
+            }
+        )
+        return response.data
+    } catch (error) {
+        console.log("error")
+        return {
+            status: false,
+            message: error.message
         }
-    )
-    return response.data
+    }
 }
 
 export async function transferring(env: string, api_key: string, query: {
@@ -123,20 +132,29 @@ export async function transferring(env: string, api_key: string, query: {
     },
     eta: number
 }) {
-    const host = Config.default.hosts.core_service[env];
-    const response = await axios.post(
-        `${host}/sdk-o2d-mail/transferring`,
-        {
-            payload: query.payload,
-            eta: query.eta
-        },
-        {
-            headers: {
-                'x-api-key': api_key,
+    try {
+
+        const host = Config.default.hosts.core_service[env];
+        const response = await axios.post(
+            `${host}/sdk-o2d-mail/transferring`,
+            {
+                payload: query.payload,
+                eta: query.eta
             },
+            {
+                headers: {
+                    'x-api-key': api_key,
+                },
+            }
+        )
+        return response.data
+    } catch (error) {
+        console.log("error")
+        return {
+            status: false,
+            message: error.message
         }
-    )
-    return response.data
+    }
 }
 
 export async function transfer_success(env: string, api_key: string, query: {
@@ -155,17 +173,26 @@ export async function transfer_success(env: string, api_key: string, query: {
         deposit_id: string
     }
 }) {
-    const host = Config.default.hosts.core_service[env];
-    const response = await axios.post(
-        `${host}/sdk-o2d-mail/success`,
-        query.payload,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
+    try {
+
+        const host = Config.default.hosts.core_service[env];
+        const response = await axios.post(
+            `${host}/sdk-o2d-mail/success`,
+            query.payload,
+            {
+                headers: {
+                    'x-api-key': api_key,
+                },
+            }
+        )
+        return response.data
+    } catch (error) {
+        console.log("error")
+        return {
+            status: false,
+            message: error.message
         }
-    )
-    return response.data
+    }
 }
 
 
