@@ -9,7 +9,7 @@ import { AccountsEntityType, CreateAccountDTO } from "./dtos/create-account.dto"
 import { nvpNetworksDTO } from "./dtos/nvpNetworksDTO.dto"
 import { checkConfigDto } from "./dtos/check_config.dto"
 import { createSwapOrderDto } from "./dtos/swap_component/create_swap_order.dto"
-import { createOffChainDepositOrderDto, createOnChainDepositOrderDto } from "./dtos/deposit_component/create_deposit_component_order.dto"
+import { createOffChainDepositOrderDto, createOnChainDepositOrderDto, createWithdrawOrderDto } from "./dtos/dw_component/create_dw_component_order.dto"
 export {
     KmsWalletCreateDto,
     UpdateBalanceDTO,
@@ -28,7 +28,8 @@ export {
     checkConfigDto,
     createSwapOrderDto,
     createOffChainDepositOrderDto,
-    createOnChainDepositOrderDto
+    createOnChainDepositOrderDto,
+    createWithdrawOrderDto
 }
 
 export * as core_dtos from './dtos/core'
