@@ -41,3 +41,24 @@ export class createOnChainDepositOrderDto {
     @IsString()
     transaction_amount: string;
 }
+
+export class createWithdrawOrderDto {
+    id?: string;
+    order_status?: string;
+
+    @IsNotEmpty()
+    @IsString()
+    from_wallet_id: string;
+
+    @IsNotEmpty()
+    @IsString()
+    to_wallet_address: string;
+    
+    @IsNotEmpty()
+    @IsString()
+    transaction_currency_id: string
+    
+    @IsNotEmpty()
+    @IsString()
+    transaction_amount: string;
+}
