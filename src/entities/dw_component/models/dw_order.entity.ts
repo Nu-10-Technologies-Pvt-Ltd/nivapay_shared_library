@@ -19,6 +19,9 @@ export class DwComponentOrderModel {
 
     @Column({ nullable: true, comment: 'Account to which the amount should be credited' })
     to_account_id: string;
+    
+    @Column({ nullable: true, comment: 'In case of withdrawal this is the wallet to which amount is transferred' })
+    to_wallet_address: string;
 
     @Column({ comment: 'The currency which amount credit and debit will take place' })
     transaction_currency_id: string
