@@ -3,13 +3,16 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeor
 @Entity("dw_transactions")
 export class DwComponentTransactionsModel {
     @PrimaryGeneratedColumn("uuid")
-    transactionId: string;
+    id: string;
 
-    @Column({comment: "Deposit component order id"})
-    deposit_id: string
+    @Column({comment: "Dw component order id"})
+    order_id: string
 
     @Column()
     transactionHash: string;
+
+    @Column({nullable: true})
+    order_type: string;
 
     @CreateDateColumn({ type: "timestamp" })
     createdAt: Date
