@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as Config from '../../../config';
 
 
-export async function createOffChainOrder(env: string, api_key: string, query: {
+export async function createOffChainDepositOrder(env: string, api_key: string, query: {
     from_account_id: string,
     to_account_id: string,
     transaction_currency_id: string,
@@ -10,7 +10,7 @@ export async function createOffChainOrder(env: string, api_key: string, query: {
 }) {
     const host = Config.default.hosts.dw_component[env];
     const response = await axios.post(
-        `${host}/order/create/off_chain`,
+        `${host}/order/create/deposit/off_chain`,
         query,
         {
             headers: {
@@ -21,7 +21,7 @@ export async function createOffChainOrder(env: string, api_key: string, query: {
     return response.data;
 }
 
-export async function createOnChainOrder(env: string, api_key: string, query: {
+export async function createOnChainDepositOrder(env: string, api_key: string, query: {
     from_wallet_id: string,
     to_wallet_id: string,
     transaction_currency_id: string,
@@ -29,7 +29,26 @@ export async function createOnChainOrder(env: string, api_key: string, query: {
 }) {
     const host = Config.default.hosts.dw_component[env];
     const response = await axios.post(
-        `${host}/order/create/on_chain`,
+        `${host}/order/create/deposit/on_chain`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data;
+}
+
+export async function createWithdrawalOrder(env: string, api_key: string, query: {
+    from_wallet_id: string,
+    to_wallet_address: string,
+    transaction_currency_id: string,
+    transaction_amount: string,
+}) {
+    const host = Config.default.hosts.dw_component[env];
+    const response = await axios.post(
+        `${host}/order/create/withdraw`,
         query,
         {
             headers: {
