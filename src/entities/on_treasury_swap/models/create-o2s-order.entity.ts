@@ -27,7 +27,7 @@ export class onrampToTreasurySwapOrders {
     @Column()
     convertToVirtualCurrencyId: string;
 
-    @Column()
+    @Column({nullable: true})
     merchant_txn_id: string;
 
     @Column()
@@ -39,7 +39,7 @@ export class onrampToTreasurySwapOrders {
     @Column()
     transfer_to_wallet_address: string;
 
-    @Column()
+    @Column({nullable: true})
     convert_to_crypto_contractAddress: string
 
     @Column({ default: "PENDING" })
