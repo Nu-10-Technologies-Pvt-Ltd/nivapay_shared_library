@@ -9,10 +9,6 @@ export class CreateMerchantSelfTxnAddressDto{
     @IsString()
     currency_id: string;
     
-    @IsNotEmpty()
-    @IsString()
-    wallet_id: string;
-    
     @IsOptional()
     @IsString()
     merchant_nick_name: string;
