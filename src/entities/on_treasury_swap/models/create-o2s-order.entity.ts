@@ -33,7 +33,7 @@ export class onrampToTreasurySwapOrders {
     @Column()
     merchant_redirect_url: string;
 
-    @Column()
+    @Column({ nullable: true })
     merchant_webhook_url: string;
 
     @Column()
@@ -51,7 +51,7 @@ export class onrampToTreasurySwapOrders {
     @Column()
     onramp_order_id: string;
 
-    @Column()
+    @Column({default: false})
     redirected: boolean;
 
     @Column({ nullable: true })
