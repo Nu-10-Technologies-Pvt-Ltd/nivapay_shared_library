@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity('merchant_self_transaction_address')
-export class MerchantProductConfigurationModel {
+export class MerchantSelfTransactionAddressModel {
     @PrimaryGeneratedColumn("uuid")
     id: string
 
