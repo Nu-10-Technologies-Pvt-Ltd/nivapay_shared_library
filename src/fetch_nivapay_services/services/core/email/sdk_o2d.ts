@@ -29,6 +29,32 @@ export async function onramp_processing(env: string, api_key: string, query: {
     return response.data
 }
 
+export async function onramp_success(env: string, api_key: string, query: {
+    payload: {
+        id: string;
+        order_user_email_id: string;
+        order_fiat_amount: string;
+        convert_to_crypto_symbol: string
+        merchant_name: string;
+        user_first_name: string;
+        transak_txn_crypto_amount: number;
+        order_fiat_symbol: string;
+        merchant_id: string;
+        merchant_user_id: string;
+    }
+}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.post(
+        `${host}/sdk-o2d-mail/onramp_processing`,
+        query.payload,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
 
 export async function failure(env: string, api_key: string, query: {
     payload: {
