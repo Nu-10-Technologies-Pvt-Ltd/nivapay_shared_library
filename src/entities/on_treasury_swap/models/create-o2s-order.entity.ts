@@ -27,19 +27,19 @@ export class onrampToTreasurySwapOrders {
     @Column()
     convertToVirtualCurrencyId: string;
 
-    @Column()
+    @Column({nullable: true})
     merchant_txn_id: string;
 
     @Column()
     merchant_redirect_url: string;
 
-    @Column()
+    @Column({ nullable: true })
     merchant_webhook_url: string;
 
     @Column()
     transfer_to_wallet_address: string;
 
-    @Column()
+    @Column({nullable: true})
     convert_to_crypto_contractAddress: string
 
     @Column({ default: "PENDING" })
@@ -51,7 +51,7 @@ export class onrampToTreasurySwapOrders {
     @Column()
     onramp_order_id: string;
 
-    @Column()
+    @Column({default: false})
     redirected: boolean;
 
     @Column({ nullable: true })

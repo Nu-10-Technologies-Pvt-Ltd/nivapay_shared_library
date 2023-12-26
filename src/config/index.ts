@@ -27,8 +27,8 @@ export default {
         },
         dw_component: {
             local: 'http://localhost:5012',
-            dev: 'http://dev-deposit-component.nivapay.com',
-            prod: 'http://deposit-component.nivapay.com',
+            dev: 'http://dev-dw-component.nivapay.com',
+            prod: 'http://dw-component.nivapay.com',
         }
     },
 };

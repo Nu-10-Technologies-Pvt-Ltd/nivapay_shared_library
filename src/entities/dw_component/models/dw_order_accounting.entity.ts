@@ -9,47 +9,29 @@ export class DwComponentOrderAccountingModel {
     @Column()
     order_id: string;
 
-    @Column({ comment: "TransactionId from the on/off chain transactions table" })
-    transaction_id: string;
+    @Column()
+    order_type: string;
 
-    @Column({ default: "virtual", comment: "Type of currency virtual/fiat" })
-    currency_type: string;
+    @Column({ type:'jsonb', default:[], comment: "TransactionId from the on/off chain transactions table" })
+    transaction_id: string[];
 
-    @Column({ comment: "The detected transaction corresponds to which currency" })
-    currency_id: string;
+    @Column({ comment: "Gross amount which was received before deducting the applicable fee" })
+    grossAmount: string;
 
-    @Column({ type: "numeric", default: 0, comment: "Gross amount which was received after deducting the applicable fee" })
-    gross_amount: number;
+    @Column({ comment: "Service fee incurred as per config" })
+    serviceFee: string;
 
-    @Column({ type: "numeric", default: 0, comment: "Service fee incurred by merchant" })
-    serviceFeeByMerchant: number;
+    @Column({ comment: "Network fee incurred for transfer" })
+    networkFee: string;
 
-    @Column({ type: "numeric", default: 0, comment: "Service fee incurred by user" })
-    serviceFeeByUser: number;
+    @Column({ comment: "Net amount which was received after deducting the applicable fee" })
+    netAmount: string;
 
-    @Column({ type: "numeric", default: 0, comment: "Estimated network fee incurred by merchant for this transaction" })
-    estimatedNetworkFeeByMerchant: number;
+    @Column({type:'numeric', default:0, nullable: true, comment: "Gross amount USD value"})
+    grossAmount_$: number;
 
-    @Column({ type: "numeric", default: 0, nullable: true, comment: "Network fee incurred by user" })
-    actualNetworkFeeByUser: number;
-
-    @Column({ type: "numeric", default: 0, nullable: true, comment: "Estimated network fee incurred by user for this transaction" })
-    estimatedNetworkFeeByUser: number;
-
-    @Column({ type: "numeric", default: 0, comment: "Net amount which was received after deducting the applicable fee" })
-    netAmount: number;
-
-    @Column({ type: "numeric", default: 0 })
-    new_incoming_balance: number;
-
-    @Column({ type: "numeric", default: 0 })
-    new_outgoing_balance: number
-
-    @Column({ type: "numeric", default: 0 })
-    new_incoming_balance_$: number;
-
-    @Column({ type: "numeric", default: 0 })
-    new_outgoing_balance_$: number
+    @Column({type:'numeric', default:0, nullable: true, comment: "Net amount USD value"})
+    netAmount_$: number;
 
     @CreateDateColumn({ type: "timestamp" })
     createdAt: Date;
