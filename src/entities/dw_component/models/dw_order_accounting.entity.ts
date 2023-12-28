@@ -15,14 +15,20 @@ export class DwComponentOrderAccountingModel {
     @Column({ type:'jsonb', default:[], comment: "TransactionId from the on/off chain transactions table" })
     transaction_id: string[];
 
+    @Column({ comment: "Currency Id of the transaction" })
+    transactionCurrencyId: string;
+
     @Column({ comment: "Gross amount which was received before deducting the applicable fee" })
     grossAmount: string;
 
     @Column({ comment: "Service fee incurred as per config" })
     serviceFee: string;
 
+    @Column({ comment: "Network fee estimated for transfer" })
+    estimatedNetworkFee: string;
+
     @Column({ comment: "Network fee incurred for transfer" })
-    networkFee: string;
+    actualNetworkFee: string;
 
     @Column({ comment: "Net amount which was received after deducting the applicable fee" })
     netAmount: string;
