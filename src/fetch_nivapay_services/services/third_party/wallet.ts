@@ -17,26 +17,6 @@ export enum WalletUsageFrequency {
     MANY = 'MANY'
 }
 
-
-// export async function getKmsWalletRepoByUser(
-//     env: string,
-//     api_key: string,
-//     query: { merchant_id: string, userId: string, crypto: string, network: string }
-// ) {
-//     const host = Config.default.hosts.third_party_service[env];
-//     const response = await axios.post(
-//         `${host}/kms/address/getKmsWalletRepoByUser`,
-//         query,
-//         {
-//             headers: {
-//                 'x-api-key': api_key,
-//             },
-//         }
-//     )
-
-//     return response.data
-// }
-
 export async function createWallet(
     env: string,
     api_key: string,
@@ -66,6 +46,36 @@ export async function createWallet(
     return response.data ? response.data : null
 }
 
+export async function createWalletEntryInDB(
+    env: string,
+    api_key: string,
+    query: {
+        address: string,
+        currencyId: string,
+        walletName: string,
+        accountId: string,
+        addressType: string,
+        contractOwnerAddress: string,
+        directionToWatch: string,
+        usageFrequency: string,
+        expiryAt: any
+    }
+) {
+
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/kms/address/createWalletEntry`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+
+    return response.data ? response.data : null
+}
+
 export async function getWalletDetailsById(
     env: string,
     api_key: string,
@@ -82,25 +92,5 @@ export async function getWalletDetailsById(
             },
         }
     )
-    return response.data ? response.data : null
-}
-
-export async function createDepositWallet(
-    env: string,
-    api_key: string,
-    query: { symbol: string, network: string, merchant_id: string, testnet: boolean, is_merchant: boolean, order_id: string, currency_id: string }
-) {
-
-    const host = Config.default.hosts.third_party_service[env];
-    const response = await axios.post(
-        `${host}/kms/address/create/deposit/wallet`,
-        query,
-        {
-            headers: {
-                'x-api-key': api_key,
-            },
-        }
-    )
-
     return response.data ? response.data : null
 }
