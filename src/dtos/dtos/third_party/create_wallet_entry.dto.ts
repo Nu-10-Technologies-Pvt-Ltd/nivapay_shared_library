@@ -24,4 +24,7 @@ export class CreateWalletEntry{
     
     @IsString()
     usageFrequency: string;
+
+    @IsString()
+    expiryAt: string;
 }
