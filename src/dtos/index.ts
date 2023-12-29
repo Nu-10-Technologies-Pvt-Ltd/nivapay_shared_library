@@ -33,3 +33,5 @@ export {
 }
 
 export * as core_dtos from './dtos/core'
+
+export * as third_party_dtos from './dtos/third_party'
