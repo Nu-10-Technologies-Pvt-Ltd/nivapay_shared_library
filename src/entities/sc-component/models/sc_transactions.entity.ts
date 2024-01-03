@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity("sc-transactions")
 export class ScTransactionsModel {
+
     @Column()
     transactionId: string;
 
-    @Column()
+    @PrimaryColumn()
     scOrderId: string;
 
     @Column()
