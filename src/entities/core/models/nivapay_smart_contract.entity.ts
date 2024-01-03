@@ -3,6 +3,9 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 @Entity('nivapay_smart_contract')
 export class NivapaySmartContractModel {
     @PrimaryGeneratedColumn("uuid")
+    uuid: string;
+
+    @Column({comment: "Smart Contract id"})
     id: string;
 
     @Column({comment: "Address of smart contract"})
