@@ -18,8 +18,8 @@ export class ScTransactionsModel {
     @Column()
     scAddress: string;
 
-    @Column({ type:'boolean', default:[], comment: "check transaction status and this gets updated if success" })
-    status: boolean;
+    @Column({ comment: "check transaction status and this gets updated if success" })
+    status: string; //pending, success
 
     @CreateDateColumn({ type: "timestamp" })
     createdAt: Date;
