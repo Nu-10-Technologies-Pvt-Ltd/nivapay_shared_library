@@ -17,7 +17,7 @@ export class NivapaySmartContractModel {
     @Column({comment: "Signature of the smart contract method"})
     method_signature: string;
 
-    @Column({type: 'jsonb', comment: "ABI (Application Binary Interface) definition for the smart contract method"})
+    @Column({type: 'jsonb', array: true, comment: "ABI (Application Binary Interface) definition for the smart contract method"})
     method_ABI: any;
 
     @Column({comment: "Maximum amount of gas allowed for executing the smart contract method"})
