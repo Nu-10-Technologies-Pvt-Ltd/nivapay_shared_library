@@ -14,3 +14,16 @@ export async function get (env: string, api_key: string, query: {merchant_id: st
     )
     return response.data
 }
+
+export async function getForSmartContract (env: string, api_key: string, query: {merchant_id: string, product_id: string, smart_contract_id: string}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.get(
+        `${host}/nivapay/service_fee/sc/config/${query.merchant_id}/${query.product_id}/${query.smart_contract_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
