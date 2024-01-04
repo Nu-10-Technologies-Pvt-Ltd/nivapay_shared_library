@@ -15,6 +15,10 @@ export class checkConfigDto {
 
     @IsOptional()
     @IsArray()
+    smart_contract_ids?: string[];
+
+    @IsOptional()
+    @IsArray()
     fiat_currency_ids?: string[];
 
     checks_required: ChecksRequiredDto;
@@ -33,6 +37,14 @@ export class ChecksRequiredDto{
     @IsBoolean()
     nvp_fiat_currency_config: boolean;
 
+    @IsNotEmpty()
+    @IsBoolean()
+    nvp_smart_contract_config: boolean;
+
+    @IsNotEmpty()
+    @IsBoolean()
+    merchant_smart_contract_config: boolean;
+    
     @IsNotEmpty()
     @IsBoolean()
     merchant_product_config: boolean;
