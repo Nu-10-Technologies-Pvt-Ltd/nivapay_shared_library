@@ -40,6 +40,9 @@ export class nftCheckoutOrdersModel {
     @Column()
     merchant_id:string
 
+    @Column({type: "timestamp"})
+    order_expiry:Date
+
     @Column({nullable:true})
     merchant_txn_id: string;
 
