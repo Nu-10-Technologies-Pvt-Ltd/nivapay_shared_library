@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as Config from '../../../config';
+import { InvokeSmartContractDto } from '../../../dtos/dtos/third_party';
 
 export async function getTransactionDetailsByHash(
     env: string,
@@ -136,6 +137,24 @@ export async function transfer(
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
         `${host}/provider/tatum/ethereum/transfer`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
+export async function invokeSmartContract(
+    env: string,
+    api_key: string,
+    query: InvokeSmartContractDto
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/provider/tatum/ethereum/invoke/smart_contract`,
         query,
         {
             headers: {
