@@ -2,7 +2,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 @Entity("nft-checkout-orders")
-export class nftCheckoutOrdersModel {
+export class NftCheckoutOrdersModel {
     
     @PrimaryColumn()
     order_id: string;
