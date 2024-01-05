@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity('sc_order')
-export class SCOrderModel {
+export class ScOrderModel {
     @PrimaryColumn()
     id: string;
 
