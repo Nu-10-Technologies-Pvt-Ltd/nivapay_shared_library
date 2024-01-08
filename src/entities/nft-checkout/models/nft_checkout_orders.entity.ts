@@ -7,6 +7,9 @@ export class NftCheckoutOrdersModel {
     @PrimaryColumn()
     order_id: string;
 
+    @PrimaryColumn()
+    on_ramp_order_id: string;
+
     @Column()
     hash: string;
 
