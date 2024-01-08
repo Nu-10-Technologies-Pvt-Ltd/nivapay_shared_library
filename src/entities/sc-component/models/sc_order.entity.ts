@@ -12,7 +12,7 @@ export class ScOrderModel {
     smart_contract_id: string;
 
     @Column({type: 'jsonb'})
-    params: any;
+    functional_args: any;
 
     @Column()
     pay_from_wallet_id: string;
