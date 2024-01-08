@@ -10,6 +10,7 @@ import { nvpNetworksDTO } from "./dtos/nvpNetworksDTO.dto"
 import { checkConfigDto } from "./dtos/check_config.dto"
 import { createSwapOrderDto } from "./dtos/swap_component/create_swap_order.dto"
 import { createOffChainDepositOrderDto, createOnChainDepositOrderDto, createWithdrawOrderDto } from "./dtos/dw_component/create_dw_component_order.dto"
+
 export {
     KmsWalletCreateDto,
     UpdateBalanceDTO,
@@ -35,3 +36,5 @@ export {
 export * as core_dtos from './dtos/core'
 
 export * as third_party_dtos from './dtos/third_party'
+
+export * as sc_component_dtos from './dtos/sc_component'
