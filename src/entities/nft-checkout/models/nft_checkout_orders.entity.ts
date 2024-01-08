@@ -37,6 +37,10 @@ export class NftCheckoutOrdersModel {
     @Column()
     customGasLimit:number;
 
+    // Processing, Completed, Failed
+    @Column()
+    order_status:string
+
     @Column()
     merchant_id:string
 
