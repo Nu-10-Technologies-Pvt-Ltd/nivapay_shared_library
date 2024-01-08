@@ -88,6 +88,9 @@ export class NftCheckoutOrdersModel {
     @Column({nullable:true})
     user_countryCode:string
 
+    @Column({type:"boolean",default:false})
+    redirected:boolean
+
     @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
 
