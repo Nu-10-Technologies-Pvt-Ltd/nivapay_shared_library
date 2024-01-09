@@ -7,8 +7,17 @@ export class NftCheckoutOrdersModel {
     @PrimaryColumn()
     order_id: string;
 
-    @PrimaryColumn()
+    @Column()
     on_ramp_order_id: string;
+
+    @Column({nullable:true})
+    on_ramp_order_status: string;
+
+    @Column()
+    sc_order_id: string;
+
+    @Column({nullable:true})
+    sc_order_status: string;
 
     @Column()
     hash: string;
