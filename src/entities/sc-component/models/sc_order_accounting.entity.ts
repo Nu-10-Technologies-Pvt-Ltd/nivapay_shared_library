@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 @Entity("sc-order-accounting")
-export class scOrderAccountingModal {
+export class ScOrderAccountingModal {
     @PrimaryGeneratedColumn('uuid')
     accountingEntryId: string;
     
