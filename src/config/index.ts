@@ -28,7 +28,12 @@ export default {
         dw_component: {
             local: 'http://localhost:5012',
             dev: 'http://dev-dw-component.nivapay.com',
-            prod: 'http://dw-component.nivapay.com',
+            prod: 'https://dw-component.nivapay.com',
+        },
+        sc_component: {
+            local: 'http://localhost:5014',
+            dev: 'http://dev-api-sc-component.nivapay.com',
+            prod: 'https://api-sc-component.nivapay.com',
         }
     },
 };

@@ -9,3 +9,5 @@ export * as on_ramp from './services/onramp_component';
 export * as swap_component from './services/swap_component';
 
 export * as dw_component from './services/dw_component';
+
+export * as sc_component from './services/sc_component';
