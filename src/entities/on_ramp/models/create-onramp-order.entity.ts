@@ -33,7 +33,7 @@ export class OnrampOrder {
     @Column()
     convert_to_crypto_symbol: string;
 
-    @Column()
+    @Column({ nullable: true })
     convert_to_crypto_contractAddress: string;
 
     @Column()
