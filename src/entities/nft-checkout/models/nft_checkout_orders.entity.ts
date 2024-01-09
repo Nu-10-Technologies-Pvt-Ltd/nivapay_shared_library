@@ -13,7 +13,7 @@ export class NftCheckoutOrdersModel {
     @Column({nullable:true})
     on_ramp_order_status: string;
 
-    @Column()
+    @Column({nullable:true})
     sc_order_id: string;
 
     @Column({nullable:true})
