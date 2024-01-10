@@ -94,3 +94,22 @@ export async function getWalletDetailsById(
     )
     return response.data ? response.data : null
 }
+
+export async function getWalletDetailsByAddress(
+    env: string,
+    api_key: string,
+    query: {
+        wallet_address: string,
+    }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/kms/address/wallet_address/details/${query.wallet_address}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
