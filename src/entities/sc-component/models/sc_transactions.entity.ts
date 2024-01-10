@@ -4,10 +4,10 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn
 @Entity("sc-transactions")
 export class ScTransactionsModel {
 
-    @Column()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @PrimaryColumn()
+    @Column()
     scOrderId: string;
 
     @Column()
