@@ -12,4 +12,4 @@ export * as tatum_bsc from "./tatum_bsc"
 
 export * as house_wallet from './house_wallet'
 
-export * as trabsak from './transak'
+export * as transak from './transak'
