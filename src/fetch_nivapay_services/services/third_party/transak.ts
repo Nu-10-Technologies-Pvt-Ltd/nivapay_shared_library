@@ -39,7 +39,7 @@ export async function getFiatCurrencyDetailsByNVPFiatCurrencyId(
 export async function getFiatCurrencyDetailsByNVPFiatCurrencyIdArray(
     env: string,
     api_key: string,
-    query: {fiat_currency_ids: string}
+    query: {fiat_currency_ids: string[]}
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
