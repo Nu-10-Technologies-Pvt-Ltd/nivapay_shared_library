@@ -40,3 +40,20 @@ export async function isEnabled (env: string, api_key: string, query: {merchant_
     )
     return response.data
 }
+
+export async function getDetailsByMerchantProductId (env: string, api_key: string, query: {merchant_id: string, product_id: string}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.post(
+        `${host}/nivapay/merchant/product/fiat_currency/get/details`,
+        {
+            merchant_id: query.merchant_id,
+            product_id: query.product_id
+        },
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
