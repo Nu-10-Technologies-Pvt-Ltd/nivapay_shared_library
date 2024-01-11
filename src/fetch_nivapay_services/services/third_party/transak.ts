@@ -1,15 +1,14 @@
 import axios from 'axios';
 import * as Config from '../../../config';
 
-export async function getTransactionDetailsByHash(
+export async function getFiatCurrencyDetails(
     env: string,
-    api_key: string,
-    query: { transaction_hash: string, testnet: boolean, network: string }
+    api_key: string
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}provider/tatum/nft-checkout/transactiondetails/hash?testnet=${query.testnet}&transaction_hash=${query.transaction_hash}&network=${query.network}`,
+        `${host}/transak/get/fiat/currencies`,
         {
             headers: {
                 'x-api-key': api_key,
