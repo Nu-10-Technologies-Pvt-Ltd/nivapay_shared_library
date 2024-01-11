@@ -38,6 +38,9 @@ export class NivapaySmartContractModel {
     @Column({nullable: true, comment: "Name of parameter in ABI which indicates the total number of NFT's to be issued"})
     sc_FunctionTokenCountParam: string;
 
+    @Column({nullable: true, comment: "Name of parameter in ABI which indicates the to address where the NFT's to be issued"})
+    sc_FunctionToAddressParam: string;
+
     @Column({default: false, comment: "Is payment required to execute this smart contract"})
     is_payment_required: boolean;
 
