@@ -89,7 +89,7 @@ export async function getMerchantApiKey(env: string, api_key: string, query: {me
     try {
         const host = Config.default.hosts.core_service[env];
         const response = await axios.get(
-            `${host}/merchant/apikey/${query.merchant_id}`,
+            `${host}/aws/merchant/apikey/${query.merchant_id}`,
             {
                 headers: {
                     'x-api-key': api_key,
