@@ -87,7 +87,7 @@ export async function orderEvent(
     query: { user_event: string; provider: string; data: any; timestamp: string },
 ) {
     const host = Config.default.hosts.onramp_service[env];
-    const response = await axios.put(`${host}/sdk/onramp/order/events`, query, {
+    const response = await axios.post(`${host}/sdk/onramp/order/events`, query, {
         headers: {
             'x-api-key': api_key,
         },
