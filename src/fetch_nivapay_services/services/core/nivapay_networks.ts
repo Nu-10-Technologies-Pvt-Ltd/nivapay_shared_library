@@ -29,3 +29,18 @@ export async function getOneById(env: string, api_key: string, query: {
     return response.data
 }
 
+export async function getOneByChainId(env: string, api_key: string, query: {
+    chain_id: string;
+}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.get(
+        `${host}/nvp-networks/get_by_chain_id/${query.chain_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
+
