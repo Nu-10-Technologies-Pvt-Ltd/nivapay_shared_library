@@ -18,6 +18,33 @@ export async function getAllFiatCurrencyDetails(
     return response.data ? response.data : null
 }
 
+
+export async function getFiatConversion(
+    env: string,
+    api_key: string,
+    query: {
+        test: boolean,
+        fiat:string,
+        crypto:string,
+        type:string,
+        network:string,
+        paymentMethod:string,
+        cryptoAmount:number
+    }
+) {
+
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/transak/get/fiat/conversion/?test=${query.test}&fiat=${query.fiat}&crypto=${query.crypto}&type=${query.type}&network=${query.network}&paymentMethod=${query.paymentMethod}&cryptoAmount=${query.cryptoAmount}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
 export async function getFiatCurrencyDetailsByNVPFiatCurrencyId(
     env: string,
     api_key: string,
