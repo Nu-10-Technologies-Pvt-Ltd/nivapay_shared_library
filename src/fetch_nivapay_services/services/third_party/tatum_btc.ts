@@ -1,15 +1,17 @@
 import axios from 'axios';
 import * as Config from '../../../config';
 
-export async function getTransactionDetailsByHash(
+
+
+export async function estimateGasPriceByChain(
     env: string,
     api_key: string,
-    query: { hash: string, testnet: boolean }
+    query: { testnet: boolean }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.get(
-        `${host}/provider/tatum/bitcoin/transaction/byhash/${query.testnet}/${query.hash}`,
+        `${host}/provider/tatum/bitcoin/estimate/gas-price/?test=${query.testnet}`,
         {
             headers: {
                 'x-api-key': api_key,
