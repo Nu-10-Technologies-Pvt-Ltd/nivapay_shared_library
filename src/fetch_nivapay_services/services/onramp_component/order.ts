@@ -84,10 +84,15 @@ export async function updateTransactionStatus(
 export async function orderEvent(
     env: string,
     api_key: string,
-    query: { user_event: string; provider: string; data: any; timestamp: string },
+    query: {
+        data: {
+            user_event: string; provider: string; data: any; timestamp: string,
+        },
+        order_id: string
+    },
 ) {
     const host = Config.default.hosts.onramp_service[env];
-    const response = await axios.put(`${host}/sdk/onramp/order/events`, query, {
+    const response = await axios.post(`${host}/sdk/onramp/order/events/${query.order_id}`, query.data, {
         headers: {
             'x-api-key': api_key,
         },

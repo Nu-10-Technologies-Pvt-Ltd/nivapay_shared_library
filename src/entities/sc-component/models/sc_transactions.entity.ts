@@ -4,24 +4,34 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn
 @Entity("sc-transactions")
 export class ScTransactionsModel {
 
-    @Column()
-    transactionId: string;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
-    @PrimaryColumn()
+    @Column()
     scOrderId: string;
 
     @Column()
     transactionHash: string;
-    
-    @Column()
-    fromAddress: string;
 
-    @Column()
-    scAddress: string;
+    @Column({nullable: true})
+    onchainTxnId: string;
+    
+    // @Column()
+    // fromAddress: string;
+
+    // @Column()
+    // scAddress: string;
 
     @Column({ comment: "check transaction status and this gets updated if success" })
-    status: string; //pending, success
+    status: string; //SC_TXN_STATUS
 
     @CreateDateColumn({ type: "timestamp" })
     createdAt: Date;
+}
+
+export enum SC_TXN_STATUS{
+    PENDING = 'PENDING',
+    PROCESSING = 'PROCESSING',
+    SUCCESS = 'SUCCESS',
+    FAILED = 'FAILED'
 }

@@ -56,6 +56,24 @@ export async function getTransactionDetailsByHash_v2(
     return response.data ? response.data : null
 }
 
+export async function getTransactionDetailsByHash_ScId(
+    env: string,
+    api_key: string,
+    query: { hash: string, sc_id: string }
+) {
+
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.get(
+        `${host}/provider/tatum/ethereum/transaction/by/hash/${query.hash}/sc_id/${query.sc_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
 export async function getTransactionByAddress(
     env: string,
     api_key: string,
