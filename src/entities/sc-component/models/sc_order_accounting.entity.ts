@@ -23,6 +23,9 @@ export class ScOrderAccountingModal {
     @Column({comment: "Estimated network fee to be sent along with this on-chain transaction"})
     networkFeeEstimated: string;
 
+    @Column({comment: "Actual network fee during on-chain transaction"})
+    networkFeeActual: string;
+
     @Column({comment: "ID of virtual currency in which network fee is charged"})
     networkFeeCurrencyId: string;
     
