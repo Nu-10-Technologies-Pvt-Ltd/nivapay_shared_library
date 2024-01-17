@@ -5,32 +5,32 @@ export class ScOrderAccountingModal {
     @PrimaryGeneratedColumn('uuid')
     accountingEntryId: string;
     
-    @Column()
+    @Column({comment: "Order ID for which accounting entry is being maintained"})
     orderId: string;
     
-    @Column()
+    @Column({comment: "Onchain transaction id"})
     transactionId: string;
     
-    @Column()
-    paymentCurrencyId: string;
+    @Column({comment: "ID of virtual currency which will be paid to the SC function"})
+    payableCurrencyId: string;
     
-    @Column()
-    paymentAmount: string;
+    @Column({comment: "Amount in payableCurrencyId units paid by the user"})
+    grossAmount: string;
     
-    @Column()
+    @Column({comment: "Service Fee applicable on grossAmount"})
     serviceFee: string;
     
-    @Column()
-    networkFee: string;
+    @Column({comment: "Estimated network fee to be sent along with this on-chain transaction"})
+    networkFeeEstimated: string;
 
-    @Column()
+    @Column({comment: "ID of virtual currency in which network fee is charged"})
     networkFeeCurrencyId: string;
     
-    @Column()
+    @Column({comment: "Net amount to be paid to the SC function"})
     netAmount: string;
     
     @Column({type:'numeric', default:0, nullable: true})
-    paymentAmount_$: number;
+    grossAmountt_$: number;
     
     @Column({type:'numeric', default:0, nullable: true})
     serviceFee_$: number;
