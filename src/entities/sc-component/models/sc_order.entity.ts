@@ -17,6 +17,9 @@ export class ScOrderModel {
     @Column()
     pay_from_wallet_id: string;
 
+    @Column()
+    amount: string;
+
     @Column({nullable: true})
     custom_gas_price: string;
 
