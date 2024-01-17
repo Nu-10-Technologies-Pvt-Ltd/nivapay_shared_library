@@ -30,7 +30,7 @@ export class ScOrderAccountingModal {
     netAmount: string;
     
     @Column({type:'numeric', default:0, nullable: true})
-    grossAmountt_$: number;
+    grossAmount_$: number;
     
     @Column({type:'numeric', default:0, nullable: true})
     serviceFee_$: number;
