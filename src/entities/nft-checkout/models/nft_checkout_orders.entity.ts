@@ -41,7 +41,7 @@ export class NftCheckoutOrdersModel {
     payableCryptoContractAddress:string;
 
     @Column()
-    totalValue:number;
+    totalValue:string;
 
     @Column()
     networkName:string;
