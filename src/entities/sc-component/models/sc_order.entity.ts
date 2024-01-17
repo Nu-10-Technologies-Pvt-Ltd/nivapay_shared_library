@@ -26,6 +26,9 @@ export class ScOrderModel {
     @Column({nullable: true})
     order_status_detail: string;
 
+    @Column({nullable: true})
+    error_details: string;
+
     @CreateDateColumn({ type: 'timestamptz' })
     createdAt: Date;
 
