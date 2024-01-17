@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class createSCOrderDto {
     id?: string;
@@ -14,4 +14,12 @@ export class createSCOrderDto {
     @IsNotEmpty()
     @IsString()
     pay_from_wallet_id: string;
+
+    @IsOptional()
+    @IsString()
+    custom_gas_price: string;
+
+    @IsOptional()
+    @IsString()
+    custom_gas_limit: string;
 }
