@@ -23,7 +23,7 @@ export class NftCheckoutOrdersModel {
     hash: string;
 
     @Column()
-    order_fiat_amount: number;
+    order_fiat_amount: string;
 
     @Column()
     order_fiat_symbol:string;
