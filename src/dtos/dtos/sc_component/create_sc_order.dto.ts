@@ -15,6 +15,10 @@ export class createSCOrderDto {
     @IsString()
     pay_from_wallet_id: string;
 
+    @IsNotEmpty()
+    @IsString()
+    amount: string;
+
     @IsOptional()
     @IsString()
     custom_gas_price: string;
