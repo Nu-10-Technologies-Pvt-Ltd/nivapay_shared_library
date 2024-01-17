@@ -18,6 +18,12 @@ export class ScOrderModel {
     pay_from_wallet_id: string;
 
     @Column({nullable: true})
+    custom_gas_price: string;
+
+    @Column({nullable: true})
+    custom_gas_limit: string;
+
+    @Column({nullable: true})
     order_status_detail: string;
 
     @CreateDateColumn({ type: 'timestamptz' })
