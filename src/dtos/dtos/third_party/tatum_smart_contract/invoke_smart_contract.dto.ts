@@ -14,6 +14,8 @@ export class InvokeSmartContractDto{
 
     fromWalletId: string;
 
+    amountPayableToSC: string;
+
     customGasPrice: string;
 
     customGasLimit: string;
