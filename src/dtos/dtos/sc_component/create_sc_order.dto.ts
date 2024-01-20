@@ -21,6 +21,10 @@ export class createSCOrderDto {
 
     @IsOptional()
     @IsString()
+    amount_payable_to_sc: string;
+
+    @IsOptional()
+    @IsString()
     custom_gas_price: string;
 
     @IsOptional()

@@ -21,6 +21,9 @@ export class ScOrderModel {
     amount: string;
 
     @Column({nullable: true})
+    amount_payable_to_sc: string;
+
+    @Column({nullable: true})
     custom_gas_price: string;
 
     @Column({nullable: true})
