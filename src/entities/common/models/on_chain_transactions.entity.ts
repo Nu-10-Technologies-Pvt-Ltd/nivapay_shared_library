@@ -17,7 +17,7 @@ export class onChainTransactions {
     @Column({ nullable: true })
     transactionCurrencyId: string;
 
-    @Column()
+    @Column({ nullable: true })
     transactionAmount: string
 
     @Column({ nullable: true })
