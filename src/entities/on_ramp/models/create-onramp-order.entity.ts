@@ -15,6 +15,9 @@ export class OnrampOrder {
     @Column({ default: 'PENDING' })
     order_status: string;
 
+    @Column({ nullable: true })
+    order_status_detail: string;
+
     @Column()
     order_fiat_amount: string;
 
