@@ -8,7 +8,7 @@ export class ScOrderAccountingModal {
     @Column({comment: "Order ID for which accounting entry is being maintained"})
     orderId: string;
     
-    @Column({comment: "Onchain transaction id"})
+    @Column({comment: "Onchain transaction id", nullable: true})
     transactionId: string;
     
     @Column({comment: "ID of virtual currency which will be paid to the SC function"})
@@ -23,7 +23,7 @@ export class ScOrderAccountingModal {
     @Column({comment: "Estimated network fee to be sent along with this on-chain transaction"})
     networkFeeEstimated: string;
 
-    @Column({comment: "Actual network fee during on-chain transaction"})
+    @Column({comment: "Actual network fee during on-chain transaction", nullable: true})
     networkFeeActual: string;
 
     @Column({comment: "ID of virtual currency in which network fee is charged"})
