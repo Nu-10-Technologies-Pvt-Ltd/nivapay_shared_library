@@ -33,7 +33,7 @@ export class ScOrderModel {
     order_status_detail: string;
 
     @Column({nullable: true})
-    error_details: any;
+    error_details: string;
 
     @CreateDateColumn({ type: 'timestamptz' })
     createdAt: Date;
