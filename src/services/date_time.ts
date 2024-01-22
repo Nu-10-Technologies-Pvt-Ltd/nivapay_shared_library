@@ -42,3 +42,12 @@ export function currentTimePlusMinutes(minutesToAdd: number){
     const newTimeInMilliseconds = currentTimeInMilliseconds + minutesToAdd * 60000; // 60000 milliseconds in a minute
     return formatToISOString(newTimeInMilliseconds);
 }
+
+export function isExpiryTimeActive(expiry_time){
+    const formatted_expiry_time = formatToISOString(expiry_time);
+    const current_time = getCurrentDateTime()
+
+    const isExpired = formatted_expiry_time < current_time;
+
+    return !isExpired;
+}
