@@ -26,6 +26,9 @@ export class NftCheckoutOrdersModel {
     order_fiat_amount: string;
 
     @Column()
+    order_payment_method: string;
+
+    @Column()
     order_fiat_symbol:string;
 
     @Column()
