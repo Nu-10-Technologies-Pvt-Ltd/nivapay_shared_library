@@ -18,7 +18,7 @@ export default {
         onramp_service: {
             local: 'http://localhost:6000',
             dev: 'http://dev-ramp-component.nivapay.com',
-            prod: 'http://ramp-component.nivapay.com',
+            prod: 'https://ramp-component.nivapay.com',
         },
         swap_component: {
             local: 'http://localhost:5010',
