@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('crypto-order-accounting')
+@Entity('crypto_order_accounting')
 export class CryptoOrderAccountingModel {
     @PrimaryGeneratedColumn("uuid")
     id: string
