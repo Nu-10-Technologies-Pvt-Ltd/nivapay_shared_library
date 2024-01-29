@@ -8,7 +8,10 @@ export class CryptoOrderModel {
 
     @Column({default: COMPONENT_ORDER_STATUS.PENDING})
     order_status: string;
-
+    
+    @Column()
+    merchant_id: string;
+    
     @Column()
     crypto_currency_id: string;
 
