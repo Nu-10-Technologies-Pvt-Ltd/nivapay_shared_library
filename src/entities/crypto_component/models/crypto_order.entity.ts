@@ -18,6 +18,9 @@ export class CryptoOrderModel {
     @Column()
     crypto_currency_id: string;
 
+    @Column()
+    amount: string;
+
     @Column({ nullable: true, type: "jsonb", default: [] })
     crypto_wallet_addresses: deposit_wallet_addresses[]
 
