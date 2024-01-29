@@ -11,6 +11,9 @@ export class CryptoOrderModel {
     
     @Column()
     merchant_id: string;
+
+    @Column()
+    merchant_user_id: string;
     
     @Column()
     crypto_currency_id: string;
