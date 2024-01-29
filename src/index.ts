@@ -10,6 +10,7 @@ export * from "./entities/dw_component"
 export * from "./entities/sc-component"
 export * from "./entities/nft-checkout"
 export * from "./entities/web3-nft-checkout"
+export * from "./entities/crypto_component"
 export * from './dtos'
 
 export * as NivapayFunctions from './services'
