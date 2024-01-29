@@ -23,10 +23,10 @@ export class Web3NftCheckoutOrdersModel {
     crypto_network: string;
 
     @Column()
-    crypto_symbol
+    crypto_symbol: string;
 
     @Column()
-    crypto_contract_address
+    crypto_contract_address: string;
 
     @Column()
     hash: string;
