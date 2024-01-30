@@ -26,6 +26,9 @@ export class Web3NftCheckoutOrdersModel {
     crypto_symbol: string;
 
     @Column({ nullable: true })
+    crypto_amount: string;
+
+    @Column({ nullable: true })
     crypto_contract_address: string;
 
     @Column()
