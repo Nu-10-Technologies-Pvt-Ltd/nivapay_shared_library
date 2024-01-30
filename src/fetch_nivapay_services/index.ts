@@ -11,3 +11,5 @@ export * as swap_component from './services/swap_component';
 export * as dw_component from './services/dw_component';
 
 export * as sc_component from './services/sc_component';
+
+export * as crypto_component from './services/crypto_component';
