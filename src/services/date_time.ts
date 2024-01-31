@@ -23,12 +23,12 @@ export function formatToISOString(timestamp) {
     }
   
     // Check if the date is valid
-    if (!date && isNaN(date.getTime())) {
+    if (date && !isNaN(date.getTime())) {
+        return date.toISOString();
+    } else {
         console.log('Invalid timestamp');
-        return null
+        return null;
     }
-  
-    return date.toISOString();
 }
   
 export function getCurrentDateTime(){
