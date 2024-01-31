@@ -37,8 +37,8 @@ export default {
         },
         crypto_component: {
             local: 'http://localhost:5020',
-            dev: 'https://dev-api-crypto-component.nivapay.com/',
-            prod: 'https://api-crypto-component.nivapay.com/',
+            dev: 'https://dev-api-crypto-component.nivapay.com',
+            prod: 'https://api-crypto-component.nivapay.com',
         }
     },
 };
