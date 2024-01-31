@@ -23,7 +23,7 @@ export function formatToISOString(timestamp) {
     }
   
     // Check if the date is valid
-    if (isNaN(date.getTime())) {
+    if (!date && isNaN(date.getTime())) {
         console.log('Invalid timestamp');
         return null
     }
