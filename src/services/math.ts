@@ -1,6 +1,8 @@
 import Decimal from "decimal.js";
 import { BigNumber } from 'bignumber.js'
 
+export * as numberCompare from './numberCompare'
+
 export function roundUpToDecimalPlaces(numberIp, decimalPlacesIp) {
     const decimalNumber = new Decimal(parseFloat(numberIp));
     const decimalPlaces = parseInt(decimalPlacesIp);
