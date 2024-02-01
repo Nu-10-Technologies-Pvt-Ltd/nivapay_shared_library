@@ -30,7 +30,7 @@ export function formatToISOString(timestamp) {
         return null;
     }
 }
-  
+
 export function getCurrentDateTime(){
     return new Date().toISOString()
 }
