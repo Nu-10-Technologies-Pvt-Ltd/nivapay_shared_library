@@ -52,3 +52,18 @@ export async function initiateTransaction(env: string, api_key: string, query: {
     )
     return response.data;
 }
+
+export async function getCrypoTransactionDetails(env: string, api_key: string, query: {
+    order_id: string
+}){
+    const host = Config.default.hosts.crypto_component[env];
+    const response = await axios.get(
+        `${host}/accounting/transaction/details/${query.order_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data;
+}
