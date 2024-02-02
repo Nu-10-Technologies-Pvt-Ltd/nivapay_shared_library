@@ -1,7 +1,7 @@
 
 export function formatToISOString(timestamp) {
     let date;
-  
+
     if (typeof timestamp === 'string') {
         if (/^\d+$/.test(timestamp)) {
             // Check if the string contains only digits (e.g., "1673012096000")
@@ -21,7 +21,7 @@ export function formatToISOString(timestamp) {
             date = new Date(Number(timestamp) * 1000);
         }
     }
-  
+
     // Check if the date is valid
     if (date && !isNaN(date.getTime())) {
         return date.toISOString();
@@ -31,11 +31,11 @@ export function formatToISOString(timestamp) {
     }
 }
 
-export function getCurrentDateTime(){
+export function getCurrentDateTime() {
     return new Date().toISOString()
 }
 
-export function currentTimePlusMinutes(minutesToAdd: number){
+export function currentTimePlusMinutes(minutesToAdd: number) {
     const currentTime = getCurrentDateTime();
     const currentTimeInMilliseconds = Date.parse(currentTime);
 
@@ -43,7 +43,18 @@ export function currentTimePlusMinutes(minutesToAdd: number){
     return formatToISOString(newTimeInMilliseconds);
 }
 
-export function isExpiryTimeActive(expiry_time){
+export function dateTimePlusMinutes(dateTime: any, minutesToAdd: number) {
+    try {
+        const currentTimeInMilliseconds = Date.parse(dateTime);
+        const newTimeInMilliseconds = currentTimeInMilliseconds + minutesToAdd * 60000;
+        return formatToISOString(newTimeInMilliseconds);
+    } catch (error) {
+        console.error('Error calculating date time plus minutes:', error.message);
+        return null;
+    }
+}
+
+export function isExpiryTimeActive(expiry_time) {
     const formatted_expiry_time = formatToISOString(expiry_time);
     const current_time = getCurrentDateTime()
 
