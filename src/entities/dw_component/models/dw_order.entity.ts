@@ -5,6 +5,9 @@ export class DwComponentOrderModel {
     @PrimaryColumn({ comment: "Order Id" })
     id: string;
 
+    @Column({ nullable: true })
+    merchant_id: string;
+
     @Column({ comment: 'Status of order' })
     order_status: string;
 
@@ -19,7 +22,7 @@ export class DwComponentOrderModel {
 
     @Column({ nullable: true, comment: 'Account to which the amount should be credited' })
     to_account_id: string;
-    
+
     @Column({ nullable: true, comment: 'In case of withdrawal this is the wallet to which amount is transferred' })
     to_wallet_address: string;
 
