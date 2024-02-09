@@ -126,6 +126,9 @@ export class OnrampOrder {
     @Column({ nullable: true })
     transak_txn_hash: string;
 
+    @Column({ nullable: true })
+    fiat_payment_method: string;
+
     @UpdateDateColumn({ type: 'timestamp' })
     updatedAt: Date;
 
