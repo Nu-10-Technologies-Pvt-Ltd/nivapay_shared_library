@@ -113,3 +113,25 @@ export async function getWalletDetailsByAddress(
     )
     return response.data ? response.data : null
 }
+
+
+export async function updateWalletExpiry(
+    env: string,
+    api_key: string,
+    query: {
+        wallet_id: string,
+        expiry_time: string
+    }
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.patch(
+        `${host}/kms/address/wallet/expiry`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
