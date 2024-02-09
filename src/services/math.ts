@@ -61,10 +61,10 @@ export function addition(numberOne, numberTwo) {
     }
 }
 
-export function arrayAddition(numbers){
+export function arrayAddition(numbers) {
     let sum = 0;
-    for(const number of numbers){
-        sum = addition(sum,number).resultAsNumber
+    for (const number of numbers) {
+        sum = addition(sum, number).resultAsNumber
     }
     return {
         resultAsString: sum.toString(),
@@ -88,7 +88,7 @@ export function scientificToDecimal(scientificNotation) {
     return decimalNumber
 }
 
-export function getAbsoluteValue(value){
+export function getAbsoluteValue(value) {
     const result = new Decimal(value).abs();
     return {
         resultAsString: result.toString(),
@@ -96,12 +96,12 @@ export function getAbsoluteValue(value){
     }
 }
 
-export function getAverageInteger(numbers){
+export function getAverageInteger(numbers) {
     const average = divide(
         arrayAddition(numbers).resultAsString,
         numbers.length
     ).resultAsString
-    
+
     const result = roundUpToNearestInteger(average).resultAsNumber
 
     return {
