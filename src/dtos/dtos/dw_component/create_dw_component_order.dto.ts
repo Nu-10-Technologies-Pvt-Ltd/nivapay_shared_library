@@ -7,18 +7,22 @@ export class createOffChainDepositOrderDto {
     @IsNotEmpty()
     @IsString()
     from_account_id: string;
-    
+
     @IsNotEmpty()
     @IsString()
     to_account_id: string;
-    
+
     @IsNotEmpty()
     @IsString()
     transaction_currency_id: string
-    
+
     @IsNotEmpty()
     @IsString()
     transaction_amount: string;
+
+    @IsNotEmpty()
+    @IsString()
+    merchant_id: string;
 }
 
 export class createOnChainDepositOrderDto {
@@ -32,14 +36,19 @@ export class createOnChainDepositOrderDto {
     @IsNotEmpty()
     @IsString()
     to_wallet_id: string;
-    
+
     @IsNotEmpty()
     @IsString()
     transaction_currency_id: string
-    
+
     @IsNotEmpty()
     @IsString()
     transaction_amount: string;
+
+
+    @IsNotEmpty()
+    @IsString()
+    merchant_id: string;
 }
 
 export class createWithdrawOrderDto {
@@ -53,11 +62,11 @@ export class createWithdrawOrderDto {
     @IsNotEmpty()
     @IsString()
     to_wallet_address: string;
-    
+
     @IsNotEmpty()
     @IsString()
     transaction_currency_id: string
-    
+
     @IsNotEmpty()
     @IsString()
     transaction_amount: string;
