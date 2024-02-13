@@ -1,17 +1,17 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Accounts_Accounting{
+export class Accounts_Accounting {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column()
     accountId: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     orderId: string;
 
-    @Column()
+    @Column({ unique: true })
     transactionId: string;
 
     @Column()
@@ -29,16 +29,16 @@ export class Accounts_Accounting{
     @Column()
     balanceAfter: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     balanceBefore_$: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     credit_$: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     debit_$: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     balanceAfter_$: string;
 
     @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
