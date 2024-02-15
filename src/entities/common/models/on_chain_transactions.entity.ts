@@ -6,6 +6,9 @@ export class onChainTransactions {
     transactionId: string;
 
     @Column()
+    status: boolean;
+
+    @Column()
     walletId: string;
 
     @Column()
