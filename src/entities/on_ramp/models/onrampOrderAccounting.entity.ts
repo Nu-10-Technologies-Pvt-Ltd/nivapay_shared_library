@@ -24,13 +24,13 @@ export class OnrampOrderAccounting {
     netAmountFiat: number;
 
     @Column({ type: "numeric", default: null, nullable: true })
-    transak_transak_fee_percent: number;
+    transak_transak_fee: number;
 
     @Column({ type: "numeric", default: null, nullable: true })
-    transak_network_fee_percent: number;
+    transak_network_fee: number;
 
     @Column({ type: "numeric", default: null, nullable: true })
-    transak_partner_fee_percent: number;
+    transak_partner_fee: number;
 
     @Column()
     transak_paymentInstrument: string

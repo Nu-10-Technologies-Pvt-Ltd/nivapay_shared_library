@@ -5,6 +5,9 @@ export class onChainTransactions {
     @PrimaryGeneratedColumn("uuid")
     transactionId: string;
 
+    @Column({ nullable: true })
+    status: boolean;
+
     @Column()
     walletId: string;
 
