@@ -5,7 +5,7 @@ export class onChainTransactions {
     @PrimaryGeneratedColumn("uuid")
     transactionId: string;
 
-    @Column()
+    @Column({ nullable: true })
     status: boolean;
 
     @Column()
