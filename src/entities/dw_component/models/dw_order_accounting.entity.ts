@@ -24,10 +24,10 @@ export class DwComponentOrderAccountingModel {
     @Column({ comment: "Service fee incurred as per config" })
     serviceFee: string;
 
-    @Column({ comment: "Network fee estimated for transfer", nullable: true })
+    @Column({ comment: "Network fee estimated for transfer", nullable: true , default :'0'})
     estimatedNetworkFee: string;
 
-    @Column({ comment: "Network fee incurred for transfer", nullable: true })
+    @Column({ comment: "Network fee incurred for transfer", nullable: true, default :'0' })
     actualNetworkFee: string;
 
     @Column({ comment: "Net amount which was received after deducting the applicable fee" })
