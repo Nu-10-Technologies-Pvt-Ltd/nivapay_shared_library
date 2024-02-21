@@ -13,15 +13,15 @@ export function service_fee(service_fee_config, transaction_amount) {
     }
 }
 
-export async function network_fee(networkFeeAmount: string, networkFeeCurrencyId: string, transaction_currency_id: string){
+export async function network_fee(networkFeeAmount: string, networkFeeCurrencyId: string, transaction_currency_id: string, env?:string, i_api_key?: string){
     if(networkFeeCurrencyId.toLowerCase() === transaction_currency_id.toLowerCase()){
         return networkFeeAmount
     }
     else{
         const to_transaction_currency = (
             await FetchNivapayServices.third_party.cmc.rateConversion(
-                this.env,
-                this.i_api_key,
+                env,
+                i_api_key,
                 {
                     amount: Number(networkFeeAmount),
                     id: networkFeeCurrencyId,
