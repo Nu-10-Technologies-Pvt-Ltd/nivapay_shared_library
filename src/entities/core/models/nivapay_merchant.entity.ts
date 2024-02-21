@@ -1,5 +1,3 @@
-AWSE44E/.
-
 import {
   Column,
   CreateDateColumn,
