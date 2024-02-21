@@ -1,3 +1,5 @@
+AWSE44E/.
+
 import {
   Column,
   CreateDateColumn,
@@ -27,6 +29,12 @@ export class NivapayMerchantModel {
 
   @Column({ nullable: true })
   registered_email_id: string
+
+  @Column({ nullable: true })
+  password: string
+
+  @Column({ default: false })
+  is_m_dashboard: boolean
 
   @Column({ nullable: true })
   is_demo: boolean
