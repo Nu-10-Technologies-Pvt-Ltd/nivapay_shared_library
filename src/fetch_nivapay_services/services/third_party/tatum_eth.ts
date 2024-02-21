@@ -164,10 +164,12 @@ export async function transfer(
     env: string,
     api_key: string,
     query: {
-        fromAddress: string
-        toAddress: string
-        amount: string
-        currencyId: string
+        fromAddress: string,
+        toAddress: string,
+        amount: string,
+        currencyId: string,
+        gasPrice?: string,
+        gasLimit?: string
     }
 ) {
 
