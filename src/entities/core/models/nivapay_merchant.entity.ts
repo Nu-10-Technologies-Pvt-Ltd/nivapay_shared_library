@@ -29,6 +29,12 @@ export class NivapayMerchantModel {
   registered_email_id: string
 
   @Column({ nullable: true })
+  password: string
+
+  @Column({ default: false })
+  is_m_dashboard: boolean
+
+  @Column({ nullable: true })
   is_demo: boolean
 
   @Column({ nullable: true })
