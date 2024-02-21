@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as Config from '../../../config';
 import { InvokeSmartContractDto } from '../../../dtos/dtos/third_party';
+import { TatumBalanceDto } from '../../../dtos/dtos/third_party/tatum/balance.dto';
 
 export async function estimateGasPriceByChain(
     env: string,
@@ -191,6 +192,24 @@ export async function invokeSmartContract(
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
         `${host}/provider/tatum/ethereum/invoke/smart_contract`,
+        query,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data ? response.data : null
+}
+
+export async function getBalance(
+    env: string,
+    api_key: string,
+    query: TatumBalanceDto
+) {
+    const host = Config.default.hosts.third_party_service[env];
+    const response = await axios.post(
+        `${host}/provider/tatum/ethereum/balance`,
         query,
         {
             headers: {
