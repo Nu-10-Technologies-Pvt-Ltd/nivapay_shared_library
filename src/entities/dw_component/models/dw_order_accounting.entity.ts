@@ -12,7 +12,7 @@ export class DwComponentOrderAccountingModel {
     @Column()
     order_type: string;
 
-    @Column({ type:'jsonb', default:[], comment: "TransactionId from the on/off chain transactions table" })
+    @Column({ type:'jsonb', default:[], comment: "TransactionId from the on/off chain transactions table", nullable: true })
     transaction_id: string[];
 
     @Column({ comment: "Currency Id of the transaction", nullable: true })
@@ -35,6 +35,12 @@ export class DwComponentOrderAccountingModel {
 
     @Column({type:'numeric', default:0, nullable: true, comment: "Gross amount USD value"})
     grossAmount_$: number;
+
+    @Column({type:'numeric', default:0, nullable: true, comment: "Service fee USD value"})
+    serviceFee_$: number;
+
+    @Column({type:'numeric', default:0, nullable: true, comment: "Estimated network fee USD value"})
+    estimatedNetworkFee_$: number;
 
     @Column({type:'numeric', default:0, nullable: true, comment: "Net amount USD value"})
     netAmount_$: number;
