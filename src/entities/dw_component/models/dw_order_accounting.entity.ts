@@ -27,6 +27,12 @@ export class DwComponentOrderAccountingModel {
     @Column({ comment: "Network fee estimated for transfer", nullable: true , default : '0'})
     estimatedNetworkFee: string;
 
+    @Column({ comment: "Gas price estimated for transfer", nullable: true , default : '0'})
+    estimatedGasPrice: string;
+
+    @Column({ comment: "Gas Limit estimated for transfer", nullable: true , default : '0'})
+    estimatedGasLimit: string;
+
     @Column({ comment: "Network fee incurred for transfer", nullable: true, default : '0' })
     actualNetworkFee: string;
 
