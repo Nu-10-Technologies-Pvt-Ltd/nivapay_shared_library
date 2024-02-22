@@ -6,6 +6,9 @@ export class DwComponentOrderModel {
     id: string;
 
     @Column({ nullable: true })
+    order_type: string;
+
+    @Column({ nullable: true })
     merchant_id: string;
 
     @Column({ comment: 'Status of order' })
