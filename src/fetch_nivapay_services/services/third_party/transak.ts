@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import axios from 'axios';
 import * as Config from '../../../config';
 
@@ -24,12 +25,12 @@ export async function getFiatConversion(
     api_key: string,
     query: {
         test: boolean,
-        fiat:string,
-        crypto:string,
-        type:string,
-        network:string,
-        paymentMethod:string,
-        cryptoAmount:number
+        fiat: string,
+        crypto: string,
+        type: string,
+        network: string,
+        paymentMethod: string,
+        cryptoAmount: number
     }
 ) {
 
@@ -48,7 +49,7 @@ export async function getFiatConversion(
 export async function getFiatCurrencyDetailsByNVPFiatCurrencyId(
     env: string,
     api_key: string,
-    query: {fiat_currency_id: string}
+    query: { fiat_currency_id: string }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
@@ -66,7 +67,7 @@ export async function getFiatCurrencyDetailsByNVPFiatCurrencyId(
 export async function getFiatCurrencyDetailsByNVPFiatCurrencyIdArray(
     env: string,
     api_key: string,
-    query: {fiat_currency_ids: string[]}
+    query: { fiat_currency_ids: string[] }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];

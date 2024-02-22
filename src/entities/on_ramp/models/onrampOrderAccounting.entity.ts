@@ -1,6 +1,7 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique, UpdateDateColumn } from "typeorm";
 
 @Entity('onramping-order-accounting')
+@Unique(["order_id", "transactionId"])
 export class OnrampOrderAccounting {
     @PrimaryGeneratedColumn("uuid")
     accountingEntryId: string;
