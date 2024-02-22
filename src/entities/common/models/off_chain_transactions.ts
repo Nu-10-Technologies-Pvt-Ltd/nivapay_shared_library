@@ -1,6 +1,7 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
 
 @Entity("off-chain-transactions")
+@Unique(["accountId", "transactionId"])
 export class offChainTransactions {
     @PrimaryGeneratedColumn("uuid")
     transactionId: string;
@@ -14,7 +15,7 @@ export class offChainTransactions {
     transactionAmount: number
     @Column()
     accountFrom: string
-    @Column({nullable: true})
+    @Column({ nullable: true })
     accountTo: string
     @CreateDateColumn({ type: "timestamp" })
     createdAt: Date
