@@ -12,7 +12,7 @@ export class DwComponentTransactionsModel {
     transactionHash: string;
 
     @Column({nullable: true})
-    order_type: string;
+    transaction_type: string;
 
     @CreateDateColumn({ type: "timestamp" })
     createdAt: Date
