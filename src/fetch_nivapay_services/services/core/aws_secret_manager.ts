@@ -14,7 +14,7 @@ export async function getInterComApiKey(env: string) {
         else{
             const host = Config.default.hosts.lambda_functions.get_intercomm_api_key[env];
             const response = await axios.get(host)
-            return response['NIVAPAY_INTERCOMM_API_KEY']
+            return response?.data?.NIVAPAY_INTERCOMM_API_KEY ?? ""
         }
     } catch (error) {
         console.log("error")
