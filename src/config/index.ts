@@ -39,7 +39,12 @@ export default {
             local: 'http://localhost:5020',
             dev: 'https://dev-api-crypto-component.nivapay.com',
             prod: 'https://api-crypto-component.nivapay.com',
+        },
+        lambda_functions: {
+            get_intercomm_api_key: {
+                dev: 'https://9p4qtn6yyk.execute-api.ap-south-1.amazonaws.com/intercomm/api/key',
+                prod: 'https://qaiiezehna.execute-api.ap-south-1.amazonaws.com/intercomm/api/key'
+            }
         }
     },
 };
-
