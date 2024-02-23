@@ -4,12 +4,18 @@ import * as Config from '../../../config'
 
 export async function getInterComApiKey(env: string) {
     try {
-
-        const host = Config.default.hosts.core_service[env];
-        const response = await axios.get(
-            `${host}/aws/intercomm/apikey`
-        )
-        return response.data
+        if(env === 'local'){
+            const host = Config.default.hosts.core_service[env];
+            const response = await axios.get(
+                `${host}/aws/intercomm/apikey`
+            )
+            return response.data
+        }
+        else{
+            const host = Config.default.hosts.lambda_functions.get_intercomm_api_key[env];
+            const response = await axios.get(host)
+            return response['NIVAPAY_INTERCOMM_API_KEY']
+        }
     } catch (error) {
         console.log("error")
         return {
