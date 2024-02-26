@@ -7,6 +7,10 @@ export class OnRampMerchantWebhookDto{
     @IsNotEmpty()
     type: string;
 
+    status?: string;
+    
+    status_reason?: string;
+
     @IsNotEmpty()
     merchant_webhook_url: string;
     

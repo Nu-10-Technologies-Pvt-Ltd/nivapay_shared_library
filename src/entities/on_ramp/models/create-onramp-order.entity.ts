@@ -68,7 +68,14 @@ export class OnrampOrder {
 
     @Column()
     isBuyOrSell: string;
+    
 
+    @Column({ nullable: true })
+    transak_status: string;
+
+    @Column({ nullable: true })
+    transak_statusReason: string;
+    
     @Column({ nullable: true })
     transak_key_type: string;
 
