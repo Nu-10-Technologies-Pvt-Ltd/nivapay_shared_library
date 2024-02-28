@@ -63,4 +63,10 @@ export class OnRampWebhookContext {
     networkFee: string;
 
     creditedAmount: string;
+
+    @IsEmpty()
+    status: string;
+    
+    @IsEmpty()
+    status_reason: string;
 }
