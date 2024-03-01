@@ -4,18 +4,18 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique, Updat
 @Unique(['accountId', 'currencyId'])
 export class M_Balance {
     @PrimaryGeneratedColumn('uuid')
-    id: string;//
+    id: string;
 
-    @Column({ nullable: true })//
+    @Column({ nullable: true })
     accountId: string;
 
-    @Column({ nullable: true })//
+    @Column({ nullable: true })
     currencyId: string;
 
-    @Column({ default: '0' })//
+    @Column({ default: '0' })
     balance: string;
 
-    @Column({ default: '0' })//
+    @Column({ default: '0' })
     balance_$: string;
 
     @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
