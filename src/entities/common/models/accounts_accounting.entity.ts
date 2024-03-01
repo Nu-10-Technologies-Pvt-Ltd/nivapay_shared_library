@@ -12,7 +12,7 @@ export class Accounts_Accounting {
     @Column({ nullable: true })
     orderId: string;
 
-    @Column({ unique: true })
+    @Column()
     transactionId: string;
 
     @Column()

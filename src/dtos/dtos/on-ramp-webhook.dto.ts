@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsEmpty, IsNotEmpty } from "class-validator";
 
 export class OnRampMerchantWebhookDto{
     @IsNotEmpty()
@@ -6,6 +6,12 @@ export class OnRampMerchantWebhookDto{
 
     @IsNotEmpty()
     type: string;
+
+    @IsEmpty()
+    status: string;
+    
+    @IsEmpty()
+    status_reason: string;
 
     @IsNotEmpty()
     merchant_webhook_url: string;
@@ -57,4 +63,10 @@ export class OnRampWebhookContext {
     networkFee: string;
 
     creditedAmount: string;
+
+    @IsEmpty()
+    status: string;
+    
+    @IsEmpty()
+    status_reason: string;
 }

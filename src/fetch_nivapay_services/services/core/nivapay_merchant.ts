@@ -15,6 +15,19 @@ export async function getById (env: string, api_key: string, query: {id: string}
     return response.data
 }
 
+export async function getWebhookUrlByMerchantId (env: string, api_key: string, query: {merchant_id: string}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.get(
+        `${host}/nivapay/merchant/webhook-url/${query.merchant_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
+
 export async function getOrCreateSelfTxnDepositWallet (env: string, api_key: string, query: {
     merchant_id: string,
     currency_id: string,
