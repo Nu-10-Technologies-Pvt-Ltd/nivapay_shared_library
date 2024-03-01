@@ -31,7 +31,7 @@ export async function getById (env: string, api_key: string, query: {id: string}
 export async function getByNameSymbol (env: string, api_key: string, query: {name: string, symbol: string}) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.get(
-        `${host}/nivapay/fiat/currencies/${query.name}/${query.symbol}`,
+        `${host}/nivapay/fiat/currencies/${query.symbol}/${query.name}`,
         {
             headers: {
                 'x-api-key': api_key,
