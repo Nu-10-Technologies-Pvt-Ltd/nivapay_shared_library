@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, Unique } from "typeorm"
 
 @Entity("treasurySwap-order-accounting")
-@Unique(["order_id", "transaction_id"])
+@Unique(["orderId", "transactionId"])
 export class treasurySwapOrderAccountingModal {
     @PrimaryGeneratedColumn('uuid')
     accountingEntryId: string;
