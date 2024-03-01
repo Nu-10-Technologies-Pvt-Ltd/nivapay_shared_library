@@ -1,20 +1,22 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
 
 @Entity()
-export class Accounts{
+@Unique(["customerId", "merchantUserId"])
+
+export class Accounts {
     @PrimaryGeneratedColumn('uuid')
     accountId: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     accountName: string;
 
     @Column()
     entityType: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     customerId: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     merchantUserId: string;
 
     @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })

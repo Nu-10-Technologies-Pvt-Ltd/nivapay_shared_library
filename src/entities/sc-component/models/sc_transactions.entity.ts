@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { Column, CreateDateColumn, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm"
+import { Column, CreateDateColumn, Entity, Unique, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity("sc-transactions")
+@Unique(["scOrderId", "transactionHash"])
 export class ScTransactionsModel {
-
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
@@ -13,14 +13,8 @@ export class ScTransactionsModel {
     @Column()
     transactionHash: string;
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     onchainTxnId: string;
-    
-    // @Column()
-    // fromAddress: string;
-
-    // @Column()
-    // scAddress: string;
 
     @Column({ comment: "check transaction status and this gets updated if success" })
     status: string; //SC_TXN_STATUS
@@ -29,7 +23,7 @@ export class ScTransactionsModel {
     createdAt: Date;
 }
 
-export enum SC_TXN_STATUS{
+export enum SC_TXN_STATUS {
     PENDING = 'PENDING',
     PROCESSING = 'PROCESSING',
     SUCCESS = 'SUCCESS',

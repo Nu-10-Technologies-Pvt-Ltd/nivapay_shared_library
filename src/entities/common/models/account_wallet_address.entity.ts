@@ -1,6 +1,7 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
 
 @Entity("account-wallet-addresses")
+@Unique(["address", "currencyId"])
 export class AccountWalletAddress {
     @PrimaryGeneratedColumn("uuid")
     walletId: string;
