@@ -1,8 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
 
 @Entity()
-@Unique(["customerId", "merchantUserId"])
-
 export class Accounts {
     @PrimaryGeneratedColumn('uuid')
     accountId: string;
