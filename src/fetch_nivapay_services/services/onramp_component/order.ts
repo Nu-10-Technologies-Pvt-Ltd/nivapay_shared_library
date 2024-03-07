@@ -7,7 +7,7 @@ export async function createOrder(
     api_key: string,
     query: any,
 ) {
-    const host = Config.default.hosts.onramp_service[env];
+    const host = Config.default.hosts.onramp_component[env];
     const response = await axios.post(
         `${host}/merchant/sdk/onramp-order`,
         query,
@@ -25,7 +25,7 @@ export async function getOrderDetails(
     api_key: string,
     query: { order_id: string },
 ) {
-    const host = Config.default.hosts.onramp_service[env];
+    const host = Config.default.hosts.onramp_component[env];
     const response = await axios.get(
         `${host}/sdk/onramp/order/details/${query.order_id}`,
         {
@@ -41,7 +41,7 @@ export async function getOrderStatus(
     api_key: string,
     query: { order_id: string },
 ) {
-    const host = Config.default.hosts.onramp_service[env];
+    const host = Config.default.hosts.onramp_component[env];
     const response = await axios.get(
         `${host}/sdk/onramp/order/status/${query.order_id}`,
         {
@@ -57,7 +57,7 @@ export async function getTransactionDetails(
     api_key: string,
     query: { order_id: string },
 ) {
-    const host = Config.default.hosts.onramp_service[env];
+    const host = Config.default.hosts.onramp_component[env];
     const response = await axios.get(
         `${host}/sdk/onramp/transaction/details/${query.order_id}`,
         {
@@ -73,7 +73,7 @@ export async function updateTransactionStatus(
     api_key: string,
     query: { order_id: string; order_status: string },
 ) {
-    const host = Config.default.hosts.onramp_service[env];
+    const host = Config.default.hosts.onramp_component[env];
     const response = await axios.put(`${host}/sdk/onramp/update/status`, query, {
         headers: {
             'x-api-key': api_key,
@@ -91,7 +91,7 @@ export async function orderEvent(
         order_id: string
     },
 ) {
-    const host = Config.default.hosts.onramp_service[env];
+    const host = Config.default.hosts.onramp_component[env];
     const response = await axios.post(`${host}/sdk/onramp/order/events/${query.order_id}`, query.data, {
         headers: {
             'x-api-key': api_key,
