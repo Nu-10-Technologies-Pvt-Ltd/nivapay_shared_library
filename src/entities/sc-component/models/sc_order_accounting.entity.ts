@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique } from "typeorm"
 
 @Entity("sc-order-accounting")
-@Unique(["order_id", "transaction_id"])
+@Unique(["orderId", "transactionId"])
 export class ScOrderAccountingModal {
     @PrimaryGeneratedColumn('uuid')
     accountingEntryId: string;
