@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class createOffChainDepositOrderDto {
     id?: string;
@@ -45,7 +45,6 @@ export class createOnChainDepositOrderDto {
     @IsString()
     transaction_amount: string;
 
-
     @IsNotEmpty()
     @IsString()
     merchant_id: string;
@@ -70,4 +69,8 @@ export class createWithdrawOrderDto {
     @IsNotEmpty()
     @IsString()
     transaction_amount: string;
+
+    @IsOptional()
+    @IsString()
+    merchant_id?: string
 }
