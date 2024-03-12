@@ -7,7 +7,6 @@ import {
 } from 'typeorm';
 
 @Entity('nivapay_merchant')
-@Unique(["registered_email_id"])
 export class NivapayMerchantModel {
   @PrimaryGeneratedColumn("uuid")
   uuid: string;
@@ -27,7 +26,7 @@ export class NivapayMerchantModel {
   @Column({ nullable: true })
   webhook_url: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true , unique: true })
   registered_email_id: string
 
   @Column({ nullable: true })
