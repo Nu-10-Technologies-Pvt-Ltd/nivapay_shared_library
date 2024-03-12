@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  Unique,
 } from 'typeorm';
 
 @Entity('nivapay_merchant')
@@ -25,7 +26,7 @@ export class NivapayMerchantModel {
   @Column({ nullable: true })
   webhook_url: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true , unique: true })
   registered_email_id: string
 
   @Column({ nullable: true })
