@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  Unique,
 } from 'typeorm';
 
 @Entity('nivapay_merchant')
+@Unique(["registered_email_id"])
 export class NivapayMerchantModel {
   @PrimaryGeneratedColumn("uuid")
   uuid: string;

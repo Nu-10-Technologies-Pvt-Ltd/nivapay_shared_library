@@ -54,6 +54,9 @@ export class OnRampWebhookContext {
     @IsNotEmpty()
     virtualAssetNetwork: string;
 
+    @IsEmpty()
+    fiat_payment_method: string;
+
     virtualAssetAmount: string;
 
     depositAmount: string;
