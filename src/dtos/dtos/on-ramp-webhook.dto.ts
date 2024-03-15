@@ -71,5 +71,5 @@ export class OnRampWebhookContext {
     status: string;
     
     @IsEmpty()
-    status_reason: string;
+    status_details: string;
 }
