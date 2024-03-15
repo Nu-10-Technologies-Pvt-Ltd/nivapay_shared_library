@@ -45,3 +45,19 @@ export async function getOrCreateSelfTxnDepositWallet (env: string, api_key: str
     )
     return response.data
 }
+
+export async function getSelfTxnWithdrawWallets (env: string, api_key: string, query: {
+    merchant_id: string,
+    currency_id: string
+}) {
+    const host = Config.default.hosts.core_service[env];
+    const response = await axios.get(
+        `${host}/merchant/self-txn/address/get/withdraw/${query.merchant_id}/${query.currency_id}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data
+}
