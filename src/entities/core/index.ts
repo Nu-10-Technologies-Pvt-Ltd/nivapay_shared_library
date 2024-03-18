@@ -15,6 +15,7 @@ import { nvpNetworks } from './models/nvp_networks.entity';
 import { MerchantSelfTransactionAddressModel } from './models/merchant_self_txn_address.entity';
 import { NivapaySmartContractModel } from './models/nivapay_smart_contract.entity';
 import { MerchantProductSmartContractConfigurationModel } from './models/merchant_product_smart_contract_config.entity';
+import { MerchantMinimumWithdrawalConfigurationModel } from './models/merchant_minimum_withdrawal_configuration.entity';
 
 
 const Core_Entities = [
@@ -34,7 +35,8 @@ const Core_Entities = [
     nvpNetworks,
     MerchantSelfTransactionAddressModel,
     NivapaySmartContractModel,
-    MerchantProductSmartContractConfigurationModel
+    MerchantProductSmartContractConfigurationModel,
+    MerchantMinimumWithdrawalConfigurationModel
 ]
 
 export {
@@ -54,7 +56,8 @@ export {
     nvpNetworks,
     MerchantSelfTransactionAddressModel,
     NivapaySmartContractModel,
-    MerchantProductSmartContractConfigurationModel
+    MerchantProductSmartContractConfigurationModel,
+    MerchantMinimumWithdrawalConfigurationModel
 }
 
 export default Core_Entities
