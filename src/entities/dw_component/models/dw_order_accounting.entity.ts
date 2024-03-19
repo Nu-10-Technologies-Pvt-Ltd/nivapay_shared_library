@@ -16,7 +16,7 @@ export class DwComponentOrderAccountingModel {
     @Column({ nullable: true })
     accounting_type: string;
 
-    @Column({ type: 'jsonb', default: [], comment: "TransactionId from the on/off chain transactions table", nullable: true })
+    @Column({ type: 'jsonb', comment: "TransactionId from the on/off chain transactions table", nullable: true })
     transaction_id: string[];
 
     @Column({ comment: "Currency Id of the transaction", nullable: true })

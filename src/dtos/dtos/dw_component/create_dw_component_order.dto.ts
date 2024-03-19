@@ -70,7 +70,7 @@ export class createWithdrawOrderDto {
     @IsString()
     transaction_amount: string;
 
-    @IsOptional()
+    @IsNotEmpty()
     @IsString()
-    merchant_id?: string
+    merchant_id: string;
 }
