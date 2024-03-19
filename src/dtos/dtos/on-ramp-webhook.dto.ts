@@ -72,4 +72,11 @@ export class OnRampWebhookContext {
     
     @IsEmpty()
     status_details: string;
+
+    @IsEmpty()
+    transaction_hash: string;
+
+    @IsEmpty()
+    transaction_hash_url : string;
+
 }
