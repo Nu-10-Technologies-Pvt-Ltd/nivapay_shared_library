@@ -2,10 +2,13 @@ import axios from 'axios';
 import * as Config from '../../../config';
 import { WalletDirectionToWatch } from './wallet';
 
+/**
+ * @deprecated This function is deprecated. Use `tatum.getGasEstimate` instead. that will handle for all supported currencies
+ */
 export async function getGasEstimate(
     env: string,
     api_key: string,
-    query: {fromAddress: string, toAddress: string, amount: string, currencyId: string}
+    query: { fromAddress: string, toAddress: string, amount: string, currencyId: string }
 ) {
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
@@ -24,7 +27,7 @@ export async function getGasEstimate(
 export async function transfer(
     env: string,
     api_key: string,
-    query: {fromAddress: string, toAddress: string, amount: string, currencyId: string}
+    query: { fromAddress: string, toAddress: string, amount: string, currencyId: string }
 ) {
     const host = Config.default.hosts.third_party_service[env];
     const response = await axios.post(
@@ -78,7 +81,7 @@ export async function getTransactionByAddress(
 export async function getTransactionDetailsByHash(
     env: string,
     api_key: string,
-    query: { hash: string, currencyId: string}
+    query: { hash: string, currencyId: string }
 ) {
 
     const host = Config.default.hosts.third_party_service[env];
