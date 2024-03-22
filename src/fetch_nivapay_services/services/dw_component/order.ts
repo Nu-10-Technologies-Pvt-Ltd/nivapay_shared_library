@@ -48,9 +48,9 @@ export async function createWithdrawalOrder(env: string, api_key: string, query:
     transaction_currency_id: string,
     transaction_amount: string,
     merchant_id: string,
-    gas_estimate: {
-        gas_price: string,
-        gas_limit: string
+    gas_estimate?: {
+        gas_price?: string,
+        gas_limit?: string
     }
 }) {
     const host = Config.default.hosts.dw_component[env];
@@ -96,6 +96,19 @@ export async function updateOrderStatusOnDemand(env: string, api_key: string, qu
     const host = Config.default.hosts.dw_component[env];
     const response = await axios.patch(
         `${host}/order/status/${query.order_id}/${query.status}`,
+        {
+            headers: {
+                'x-api-key': api_key,
+            },
+        }
+    )
+    return response.data;
+}
+
+export async function priorWithdrawalOrderCheck(env: string, api_key: string, query: { merchant_id: string }) {
+    const host = Config.default.hosts.dw_component[env];
+    const response = await axios.get(
+        `${host}/order/check/prior/withdraw/${query.merchant_id}`,
         {
             headers: {
                 'x-api-key': api_key,
