@@ -45,7 +45,7 @@ export async function onramp_success(env: string, api_key: string, query: {
 }) {
     const host = Config.default.hosts.core_service[env];
     const response = await axios.post(
-        `${host}/sdk-o2d-mail/onramp_processing`,
+        `${host}/sdk-o2d-mail/onramp_success`,
         query.payload,
         {
             headers: {
