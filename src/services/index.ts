@@ -9,3 +9,5 @@ export * as date_time from './date_time';
 export * as fee_calculation from './fee_calculation';
 
 export * as numberCompare from './numberCompare';
+
+export * as validatee from './validate';
