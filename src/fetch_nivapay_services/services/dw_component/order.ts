@@ -48,10 +48,6 @@ export async function createWithdrawalOrder(env: string, api_key: string, query:
     transaction_currency_id: string,
     transaction_amount: string,
     merchant_id: string,
-    gas_estimate?: {
-        gas_price?: string,
-        gas_limit?: string
-    }
 }) {
     const host = Config.default.hosts.dw_component[env];
     const response = await axios.post(
