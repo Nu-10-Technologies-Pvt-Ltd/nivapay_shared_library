@@ -53,6 +53,9 @@ export class nvpNetworks {
     @Column({ nullable: true })
     blockExplorerWalletUrlPrefix: string;
 
+    @Column({ nullable: true })
+    blockExplorerTokenUrlPrefix: string;
+
     @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date
 
