@@ -38,3 +38,5 @@ export * as core_dtos from './dtos/core'
 export * as third_party_dtos from './dtos/third_party'
 
 export * as sc_component_dtos from './dtos/sc_component'
+
+export * as custom_validation_decorators from './custom_validators'
